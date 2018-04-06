@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-
         private static string auth_table = "[Student].[dbo].[auth]";
         private string enter_login = "";
         private string enter_passwd = "";
@@ -43,7 +42,7 @@ namespace WindowsFormsApp1
                     if (reader[1].ToString().Equals(enter_passwd))
                     {
                         isAuth = true;
-                        MessageBox.Show("Найдено и авторизованно");
+                        //MessageBox.Show("Переход на Form2");
 
                         // TODO передать в форму данные
                         // логин, пароль, тип пользователя(админ или юзер)
@@ -66,14 +65,14 @@ namespace WindowsFormsApp1
                 }
             }
 
-            if (!isAuth) MessageBox.Show("Test");
+            if (!isAuth) MessageBox.Show("Ошибка авторизации. Проверьте корректность данных.");
 
             reader.Close();
             conn.Close();
-            /*
+            
             Form2 form2 = new Form2();
             this.Hide();
-            form2.Show();*/
+            form2.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
