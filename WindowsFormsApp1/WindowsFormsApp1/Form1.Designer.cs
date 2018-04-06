@@ -96,15 +96,14 @@
             this.login.Size = new System.Drawing.Size(148, 20);
             this.login.TabIndex = 2;
             this.login.Tag = "";
-            this.login.Text = "Login";
             // 
             // password
             // 
             this.password.Location = new System.Drawing.Point(47, 35);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(148, 20);
             this.password.TabIndex = 3;
-            this.password.Text = "Password";
             // 
             // verification
             // 

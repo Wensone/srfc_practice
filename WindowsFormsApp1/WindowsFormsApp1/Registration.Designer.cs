@@ -48,6 +48,7 @@
             // 
             this.reg_password.Location = new System.Drawing.Point(68, 38);
             this.reg_password.Name = "reg_password";
+            this.reg_password.PasswordChar = '*';
             this.reg_password.Size = new System.Drawing.Size(100, 20);
             this.reg_password.TabIndex = 1;
             // 
