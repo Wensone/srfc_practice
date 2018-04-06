@@ -144,6 +144,7 @@
             this.registration.TabIndex = 7;
             this.registration.Text = "Регистрация";
             this.registration.UseVisualStyleBackColor = true;
+            this.registration.Click += new System.EventHandler(this.registration_Click);
             // 
             // Form1
             // 
