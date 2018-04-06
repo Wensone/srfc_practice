@@ -40,9 +40,6 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet.station". При необходимости она может быть перемещена или удалена.
-            this.stationTableAdapter.Fill(this.studentDataSet.station);
-            this.ownersTableAdapter.Fill(this.studentDataSet.owners);
 
         }
 
@@ -52,9 +49,10 @@ namespace WindowsFormsApp1
             SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
             DataSet data_set = new DataSet();
             adapter.Fill(data_set);
+            object own_id = data_set.Tables[0].Rows[0][0];
             agent_information.DataSource = data_set;
             agent_information.DataMember = data_set.Tables[0].TableName;
-            command = "select * from dbo.station where OWNER_ID = '" + (agents.SelectedNode.Index + 1) + "'";
+            command = "select * from dbo.station where OWNER_ID = " + own_id;
             adapter = new SqlDataAdapter(command, connection);
             adapter.Fill(data_set);
             station_information.DataSource = data_set;

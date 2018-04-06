@@ -102,11 +102,8 @@
             this.ownersTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.ownersTableAdapter();
             this.rich_res_tab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.station_information = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stationTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.stationTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.station_information = new System.Windows.Forms.DataGridView();
             this.statidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,6 +155,9 @@
             this.bSIDNRESRNCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bSIDNRESBASEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gUIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.stationTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.stationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.agent_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
@@ -173,7 +173,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.agents.Location = new System.Drawing.Point(13, 13);
             this.agents.Name = "agents";
-            this.agents.Size = new System.Drawing.Size(255, 620);
+            this.agents.Size = new System.Drawing.Size(170, 620);
             this.agents.TabIndex = 0;
             this.agents.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.agents_AfterSelect);
             // 
@@ -251,9 +251,9 @@
             this.tofaisDataGridViewTextBoxColumn,
             this.assigneeDataGridViewTextBoxColumn});
             this.agent_information.DataSource = this.ownersBindingSource;
-            this.agent_information.Location = new System.Drawing.Point(274, 13);
+            this.agent_information.Location = new System.Drawing.Point(189, 13);
             this.agent_information.Name = "agent_information";
-            this.agent_information.Size = new System.Drawing.Size(1158, 62);
+            this.agent_information.Size = new System.Drawing.Size(1093, 62);
             this.agent_information.TabIndex = 1;
             // 
             // owneridDataGridViewTextBoxColumn
@@ -674,10 +674,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rich_res_tab.Controls.Add(this.tabPage1);
             this.rich_res_tab.Controls.Add(this.tabPage2);
-            this.rich_res_tab.Location = new System.Drawing.Point(274, 82);
+            this.rich_res_tab.Location = new System.Drawing.Point(189, 82);
             this.rich_res_tab.Name = "rich_res_tab";
             this.rich_res_tab.SelectedIndex = 0;
-            this.rich_res_tab.Size = new System.Drawing.Size(1158, 551);
+            this.rich_res_tab.Size = new System.Drawing.Size(1093, 551);
             this.rich_res_tab.TabIndex = 2;
             // 
             // tabPage1
@@ -687,10 +687,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1150, 525);
+            this.tabPage1.Size = new System.Drawing.Size(1085, 525);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "РЭС";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Станции:";
             // 
             // station_information
             // 
@@ -751,37 +761,8 @@
             this.station_information.DataSource = this.stationBindingSource;
             this.station_information.Location = new System.Drawing.Point(0, 44);
             this.station_information.Name = "station_information";
-            this.station_information.Size = new System.Drawing.Size(1150, 150);
+            this.station_information.Size = new System.Drawing.Size(1137, 150);
             this.station_information.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1150, 525);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "РИЧ";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // stationBindingSource
-            // 
-            this.stationBindingSource.DataMember = "station";
-            this.stationBindingSource.DataSource = this.studentDataSet;
-            // 
-            // stationTableAdapter
-            // 
-            this.stationTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Станции:";
             // 
             // statidDataGridViewTextBoxColumn
             // 
@@ -1090,11 +1071,30 @@
             this.gUIDDataGridViewTextBoxColumn1.HeaderText = "GUID";
             this.gUIDDataGridViewTextBoxColumn1.Name = "gUIDDataGridViewTextBoxColumn1";
             // 
+            // stationBindingSource
+            // 
+            this.stationBindingSource.DataMember = "station";
+            this.stationBindingSource.DataSource = this.studentDataSet;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1150, 525);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "РИЧ";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // stationTableAdapter
+            // 
+            this.stationTableAdapter.ClearBeforeFill = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 645);
+            this.ClientSize = new System.Drawing.Size(1294, 645);
             this.Controls.Add(this.rich_res_tab);
             this.Controls.Add(this.agent_information);
             this.Controls.Add(this.agents);
