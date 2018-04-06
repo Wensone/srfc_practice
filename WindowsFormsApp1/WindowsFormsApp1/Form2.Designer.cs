@@ -253,7 +253,7 @@
             this.agent_information.DataSource = this.ownersBindingSource;
             this.agent_information.Location = new System.Drawing.Point(189, 13);
             this.agent_information.Name = "agent_information";
-            this.agent_information.Size = new System.Drawing.Size(1093, 62);
+            this.agent_information.Size = new System.Drawing.Size(1089, 62);
             this.agent_information.TabIndex = 1;
             // 
             // owneridDataGridViewTextBoxColumn
@@ -761,7 +761,7 @@
             this.station_information.DataSource = this.stationBindingSource;
             this.station_information.Location = new System.Drawing.Point(0, 44);
             this.station_information.Name = "station_information";
-            this.station_information.Size = new System.Drawing.Size(1137, 150);
+            this.station_information.Size = new System.Drawing.Size(1085, 150);
             this.station_information.TabIndex = 0;
             // 
             // statidDataGridViewTextBoxColumn
