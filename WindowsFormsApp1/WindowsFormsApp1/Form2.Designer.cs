@@ -158,6 +158,36 @@
             this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.stationTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.stationTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.freqBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.freqTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.freqTableAdapter();
+            this.freqidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freqantinfidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soglasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asnbaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.csnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.csindexDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fnomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frcvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bandwdthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignrcvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.channelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freqkindidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freqnaznidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.snchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createuserDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updateuserDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gUIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.agent_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
@@ -165,6 +195,8 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.station_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freqBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // agents
@@ -682,6 +714,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.station_information);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -1090,6 +1124,219 @@
             // 
             this.stationTableAdapter.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(7, 201);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 37);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Частоты:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.freqidDataGridViewTextBoxColumn,
+            this.statidDataGridViewTextBoxColumn1,
+            this.freqantinfidDataGridViewTextBoxColumn,
+            this.soglasidDataGridViewTextBoxColumn,
+            this.asnbaseDataGridViewTextBoxColumn,
+            this.assignDataGridViewTextBoxColumn,
+            this.csnameDataGridViewTextBoxColumn1,
+            this.csindexDataGridViewTextBoxColumn1,
+            this.fnomDataGridViewTextBoxColumn,
+            this.frcvDataGridViewTextBoxColumn,
+            this.bandwdthDataGridViewTextBoxColumn,
+            this.serviceDataGridViewTextBoxColumn,
+            this.groupDataGridViewTextBoxColumn,
+            this.assignrcvDataGridViewTextBoxColumn,
+            this.tipidDataGridViewTextBoxColumn,
+            this.shipDataGridViewTextBoxColumn,
+            this.channelDataGridViewTextBoxColumn,
+            this.freqkindidDataGridViewTextBoxColumn,
+            this.freqnaznidDataGridViewTextBoxColumn,
+            this.snchDataGridViewTextBoxColumn,
+            this.shipnumDataGridViewTextBoxColumn,
+            this.createuserDataGridViewTextBoxColumn2,
+            this.createdateDataGridViewTextBoxColumn2,
+            this.updateuserDataGridViewTextBoxColumn2,
+            this.updatedateDataGridViewTextBoxColumn2,
+            this.gUIDDataGridViewTextBoxColumn2});
+            this.dataGridView1.DataSource = this.freqBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 241);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1085, 284);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // freqBindingSource
+            // 
+            this.freqBindingSource.DataMember = "freq";
+            this.freqBindingSource.DataSource = this.studentDataSet;
+            // 
+            // freqTableAdapter
+            // 
+            this.freqTableAdapter.ClearBeforeFill = true;
+            // 
+            // freqidDataGridViewTextBoxColumn
+            // 
+            this.freqidDataGridViewTextBoxColumn.DataPropertyName = "freq_id";
+            this.freqidDataGridViewTextBoxColumn.HeaderText = "freq_id";
+            this.freqidDataGridViewTextBoxColumn.Name = "freqidDataGridViewTextBoxColumn";
+            this.freqidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statidDataGridViewTextBoxColumn1
+            // 
+            this.statidDataGridViewTextBoxColumn1.DataPropertyName = "stat_id";
+            this.statidDataGridViewTextBoxColumn1.HeaderText = "stat_id";
+            this.statidDataGridViewTextBoxColumn1.Name = "statidDataGridViewTextBoxColumn1";
+            // 
+            // freqantinfidDataGridViewTextBoxColumn
+            // 
+            this.freqantinfidDataGridViewTextBoxColumn.DataPropertyName = "freq_ant_inf_id";
+            this.freqantinfidDataGridViewTextBoxColumn.HeaderText = "freq_ant_inf_id";
+            this.freqantinfidDataGridViewTextBoxColumn.Name = "freqantinfidDataGridViewTextBoxColumn";
+            // 
+            // soglasidDataGridViewTextBoxColumn
+            // 
+            this.soglasidDataGridViewTextBoxColumn.DataPropertyName = "soglas_id";
+            this.soglasidDataGridViewTextBoxColumn.HeaderText = "soglas_id";
+            this.soglasidDataGridViewTextBoxColumn.Name = "soglasidDataGridViewTextBoxColumn";
+            // 
+            // asnbaseDataGridViewTextBoxColumn
+            // 
+            this.asnbaseDataGridViewTextBoxColumn.DataPropertyName = "asnbase";
+            this.asnbaseDataGridViewTextBoxColumn.HeaderText = "asnbase";
+            this.asnbaseDataGridViewTextBoxColumn.Name = "asnbaseDataGridViewTextBoxColumn";
+            // 
+            // assignDataGridViewTextBoxColumn
+            // 
+            this.assignDataGridViewTextBoxColumn.DataPropertyName = "assign";
+            this.assignDataGridViewTextBoxColumn.HeaderText = "assign";
+            this.assignDataGridViewTextBoxColumn.Name = "assignDataGridViewTextBoxColumn";
+            // 
+            // csnameDataGridViewTextBoxColumn1
+            // 
+            this.csnameDataGridViewTextBoxColumn1.DataPropertyName = "csname";
+            this.csnameDataGridViewTextBoxColumn1.HeaderText = "csname";
+            this.csnameDataGridViewTextBoxColumn1.Name = "csnameDataGridViewTextBoxColumn1";
+            // 
+            // csindexDataGridViewTextBoxColumn1
+            // 
+            this.csindexDataGridViewTextBoxColumn1.DataPropertyName = "csindex";
+            this.csindexDataGridViewTextBoxColumn1.HeaderText = "csindex";
+            this.csindexDataGridViewTextBoxColumn1.Name = "csindexDataGridViewTextBoxColumn1";
+            // 
+            // fnomDataGridViewTextBoxColumn
+            // 
+            this.fnomDataGridViewTextBoxColumn.DataPropertyName = "fnom";
+            this.fnomDataGridViewTextBoxColumn.HeaderText = "fnom";
+            this.fnomDataGridViewTextBoxColumn.Name = "fnomDataGridViewTextBoxColumn";
+            // 
+            // frcvDataGridViewTextBoxColumn
+            // 
+            this.frcvDataGridViewTextBoxColumn.DataPropertyName = "frcv";
+            this.frcvDataGridViewTextBoxColumn.HeaderText = "frcv";
+            this.frcvDataGridViewTextBoxColumn.Name = "frcvDataGridViewTextBoxColumn";
+            // 
+            // bandwdthDataGridViewTextBoxColumn
+            // 
+            this.bandwdthDataGridViewTextBoxColumn.DataPropertyName = "bandwdth";
+            this.bandwdthDataGridViewTextBoxColumn.HeaderText = "bandwdth";
+            this.bandwdthDataGridViewTextBoxColumn.Name = "bandwdthDataGridViewTextBoxColumn";
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "service";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            // 
+            // groupDataGridViewTextBoxColumn
+            // 
+            this.groupDataGridViewTextBoxColumn.DataPropertyName = "group_";
+            this.groupDataGridViewTextBoxColumn.HeaderText = "group_";
+            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
+            // 
+            // assignrcvDataGridViewTextBoxColumn
+            // 
+            this.assignrcvDataGridViewTextBoxColumn.DataPropertyName = "assign_rcv";
+            this.assignrcvDataGridViewTextBoxColumn.HeaderText = "assign_rcv";
+            this.assignrcvDataGridViewTextBoxColumn.Name = "assignrcvDataGridViewTextBoxColumn";
+            // 
+            // tipidDataGridViewTextBoxColumn
+            // 
+            this.tipidDataGridViewTextBoxColumn.DataPropertyName = "tip_id";
+            this.tipidDataGridViewTextBoxColumn.HeaderText = "tip_id";
+            this.tipidDataGridViewTextBoxColumn.Name = "tipidDataGridViewTextBoxColumn";
+            // 
+            // shipDataGridViewTextBoxColumn
+            // 
+            this.shipDataGridViewTextBoxColumn.DataPropertyName = "ship";
+            this.shipDataGridViewTextBoxColumn.HeaderText = "ship";
+            this.shipDataGridViewTextBoxColumn.Name = "shipDataGridViewTextBoxColumn";
+            // 
+            // channelDataGridViewTextBoxColumn
+            // 
+            this.channelDataGridViewTextBoxColumn.DataPropertyName = "channel";
+            this.channelDataGridViewTextBoxColumn.HeaderText = "channel";
+            this.channelDataGridViewTextBoxColumn.Name = "channelDataGridViewTextBoxColumn";
+            // 
+            // freqkindidDataGridViewTextBoxColumn
+            // 
+            this.freqkindidDataGridViewTextBoxColumn.DataPropertyName = "freq_kind_id";
+            this.freqkindidDataGridViewTextBoxColumn.HeaderText = "freq_kind_id";
+            this.freqkindidDataGridViewTextBoxColumn.Name = "freqkindidDataGridViewTextBoxColumn";
+            // 
+            // freqnaznidDataGridViewTextBoxColumn
+            // 
+            this.freqnaznidDataGridViewTextBoxColumn.DataPropertyName = "freq_nazn_id";
+            this.freqnaznidDataGridViewTextBoxColumn.HeaderText = "freq_nazn_id";
+            this.freqnaznidDataGridViewTextBoxColumn.Name = "freqnaznidDataGridViewTextBoxColumn";
+            // 
+            // snchDataGridViewTextBoxColumn
+            // 
+            this.snchDataGridViewTextBoxColumn.DataPropertyName = "snch";
+            this.snchDataGridViewTextBoxColumn.HeaderText = "snch";
+            this.snchDataGridViewTextBoxColumn.Name = "snchDataGridViewTextBoxColumn";
+            // 
+            // shipnumDataGridViewTextBoxColumn
+            // 
+            this.shipnumDataGridViewTextBoxColumn.DataPropertyName = "ship_num";
+            this.shipnumDataGridViewTextBoxColumn.HeaderText = "ship_num";
+            this.shipnumDataGridViewTextBoxColumn.Name = "shipnumDataGridViewTextBoxColumn";
+            // 
+            // createuserDataGridViewTextBoxColumn2
+            // 
+            this.createuserDataGridViewTextBoxColumn2.DataPropertyName = "create_user";
+            this.createuserDataGridViewTextBoxColumn2.HeaderText = "create_user";
+            this.createuserDataGridViewTextBoxColumn2.Name = "createuserDataGridViewTextBoxColumn2";
+            // 
+            // createdateDataGridViewTextBoxColumn2
+            // 
+            this.createdateDataGridViewTextBoxColumn2.DataPropertyName = "create_date";
+            this.createdateDataGridViewTextBoxColumn2.HeaderText = "create_date";
+            this.createdateDataGridViewTextBoxColumn2.Name = "createdateDataGridViewTextBoxColumn2";
+            // 
+            // updateuserDataGridViewTextBoxColumn2
+            // 
+            this.updateuserDataGridViewTextBoxColumn2.DataPropertyName = "update_user";
+            this.updateuserDataGridViewTextBoxColumn2.HeaderText = "update_user";
+            this.updateuserDataGridViewTextBoxColumn2.Name = "updateuserDataGridViewTextBoxColumn2";
+            // 
+            // updatedateDataGridViewTextBoxColumn2
+            // 
+            this.updatedateDataGridViewTextBoxColumn2.DataPropertyName = "update_date";
+            this.updatedateDataGridViewTextBoxColumn2.HeaderText = "update_date";
+            this.updatedateDataGridViewTextBoxColumn2.Name = "updatedateDataGridViewTextBoxColumn2";
+            // 
+            // gUIDDataGridViewTextBoxColumn2
+            // 
+            this.gUIDDataGridViewTextBoxColumn2.DataPropertyName = "GUID";
+            this.gUIDDataGridViewTextBoxColumn2.HeaderText = "GUID";
+            this.gUIDDataGridViewTextBoxColumn2.Name = "gUIDDataGridViewTextBoxColumn2";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1110,6 +1357,8 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.station_information)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freqBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1245,5 +1494,35 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bSIDNRESRNCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bSIDNRESBASEIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gUIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource freqBindingSource;
+        private StudentDataSetTableAdapters.freqTableAdapter freqTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freqidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freqantinfidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soglasidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asnbaseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn csnameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn csindexDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fnomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn frcvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bandwdthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignrcvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn channelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freqkindidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freqnaznidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snchDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipnumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createuserDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updateuserDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedateDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gUIDDataGridViewTextBoxColumn2;
     }
 }
