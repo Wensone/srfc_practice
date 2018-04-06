@@ -18,11 +18,6 @@ namespace WindowsFormsApp1
             
         }
 
-        public void Test(string str)
-        {
-            MessageBox.Show(str);
-        }
-
         private void exitfromapp(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

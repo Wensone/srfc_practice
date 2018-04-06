@@ -37,15 +37,12 @@
             this.studentDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.freqBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.freqTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.freqTableAdapter();
-            this.type = new System.Windows.Forms.ComboBox();
-            this.table = new System.Windows.Forms.ComboBox();
             this.login = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.verification = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.registration = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rclasBindingSource)).BeginInit();
@@ -92,112 +89,75 @@
             // 
             this.freqTableAdapter.ClearBeforeFill = true;
             // 
-            // type
-            // 
-            this.type.FormattingEnabled = true;
-            this.type.Items.AddRange(new object[] {
-            "РЭС",
-            "РИЧ"});
-            this.type.Location = new System.Drawing.Point(71, 7);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(121, 21);
-            this.type.TabIndex = 0;
-            this.type.Text = "DB type";
-            this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
-            // 
-            // table
-            // 
-            this.table.FormattingEnabled = true;
-            this.table.Location = new System.Drawing.Point(71, 39);
-            this.table.Name = "table";
-            this.table.Size = new System.Drawing.Size(121, 21);
-            this.table.TabIndex = 1;
-            this.table.Text = "DB table";
-            this.table.SelectedIndexChanged += new System.EventHandler(this.table_SelectedIndexChanged);
-            // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(71, 74);
+            this.login.Location = new System.Drawing.Point(47, 7);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(121, 20);
+            this.login.Size = new System.Drawing.Size(148, 20);
             this.login.TabIndex = 2;
             this.login.Tag = "";
             this.login.Text = "Login";
-            this.login.TextChanged += new System.EventHandler(this.login_TextChanged);
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(71, 102);
+            this.password.Location = new System.Drawing.Point(47, 35);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(121, 20);
+            this.password.Size = new System.Drawing.Size(148, 20);
             this.password.TabIndex = 3;
             this.password.Text = "Password";
             // 
             // verification
             // 
-            this.verification.Location = new System.Drawing.Point(71, 163);
+            this.verification.Location = new System.Drawing.Point(104, 61);
             this.verification.Name = "verification";
-            this.verification.Size = new System.Drawing.Size(121, 23);
+            this.verification.Size = new System.Drawing.Size(91, 23);
             this.verification.TabIndex = 4;
-            this.verification.Text = "Enter";
+            this.verification.Text = "Авторизация";
             this.verification.UseVisualStyleBackColor = true;
             this.verification.Click += new System.EventHandler(this.button_verification_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 77);
+            this.label1.Location = new System.Drawing.Point(-1, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.label1.Text = "Логин";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 105);
+            this.label2.Location = new System.Drawing.Point(-1, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
+            this.label2.Text = "Пароль";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // registration
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
+            this.registration.Location = new System.Drawing.Point(9, 61);
+            this.registration.Name = "registration";
+            this.registration.Size = new System.Drawing.Size(91, 23);
+            this.registration.TabIndex = 7;
+            this.registration.Text = "Регистрация";
+            this.registration.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 260);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(202, 91);
+            this.Controls.Add(this.registration);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+               this.Controls.Add(this.label1);
             this.Controls.Add(this.verification);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
-            this.Controls.Add(this.table);
-            this.Controls.Add(this.type);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Авторизация";
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rclasBindingSource)).EndInit();
@@ -218,15 +178,12 @@
         private System.Windows.Forms.BindingSource studentDataSetBindingSource1;
         private System.Windows.Forms.BindingSource freqBindingSource;
         private StudentDataSetTableAdapters.freqTableAdapter freqTableAdapter;
-        private System.Windows.Forms.ComboBox type;
-        private System.Windows.Forms.ComboBox table;
         private System.Windows.Forms.TextBox login;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button verification;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button registration;
     }
 }
 
