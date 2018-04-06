@@ -144,6 +144,7 @@
             this.registration.TabIndex = 7;
             this.registration.Text = "Регистрация";
             this.registration.UseVisualStyleBackColor = true;
+            this.registration.Click += new System.EventHandler(this.registration_Click);
             // 
             // Form1
             // 
@@ -152,7 +153,7 @@
             this.ClientSize = new System.Drawing.Size(202, 91);
             this.Controls.Add(this.registration);
             this.Controls.Add(this.label2);
-               this.Controls.Add(this.label1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.verification);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
