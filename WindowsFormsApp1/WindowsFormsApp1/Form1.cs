@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
                         // алмин - rwx
                         // юзер - rx
                         if (isAuth)
-                        {                            
+                        {
                             break;
                         }
                     } else
