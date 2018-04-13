@@ -1258,9 +1258,9 @@
             this.kRELDataGridViewTextBoxColumn,
             this.gUIDDataGridViewTextBoxColumn5});
             this.dataGridView4.DataSource = this.frsetsitesBindingSource1;
-            this.dataGridView4.Location = new System.Drawing.Point(246, 157);
+            this.dataGridView4.Location = new System.Drawing.Point(371, 249);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView4.Size = new System.Drawing.Size(352, 258);
             this.dataGridView4.TabIndex = 3;
             // 
             // frsetsitesidDataGridViewTextBoxColumn3
@@ -1467,9 +1467,9 @@
             this.updatedateDataGridViewTextBoxColumn4,
             this.gUIDDataGridViewTextBoxColumn4});
             this.dataGridView3.DataSource = this.frsetfreqsrclassBindingSource1;
-            this.dataGridView3.Location = new System.Drawing.Point(-3, 157);
+            this.dataGridView3.Location = new System.Drawing.Point(0, 251);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView3.Size = new System.Drawing.Size(352, 256);
             this.dataGridView3.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn1
@@ -1586,9 +1586,9 @@
             this.isseasonDataGridViewTextBoxColumn,
             this.gUIDDataGridViewTextBoxColumn3});
             this.dataGridView2.DataSource = this.frsetfreqsBindingSource1;
-            this.dataGridView2.Location = new System.Drawing.Point(246, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(371, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(352, 243);
             this.dataGridView2.TabIndex = 1;
             // 
             // frsetfreqsidDataGridViewTextBoxColumn
@@ -1809,9 +1809,9 @@
             this.psummDataGridViewTextBoxColumn,
             this.gUIDDataGridViewTextBoxColumn2});
             this.dataGridView1.DataSource = this.frsetantinfBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(351, 243);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
