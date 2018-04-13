@@ -16,10 +16,12 @@ namespace WindowsFormsApp1
         private static string auth_table = "[Student].[dbo].[auth]";
         private string enter_login = "";
         private string enter_passwd = "";
+        int ver = 2;
         
         public Form1()
         {
             InitializeComponent();
+            ver = 1;
         }
 
         private void button_verification_Click(object sender, EventArgs e)
@@ -27,12 +29,15 @@ namespace WindowsFormsApp1
             enter_login = this.login.Text;
             enter_passwd = this.password.Text;
 
-            string connStr = "server=172.22.1.11\\ONE_C;user=student;database=Student;password=Qwerty123;";
+            string connStr = 
+                "server=172.22.1.11\\ONE_C;user=student;" +
+                "database=Student;" +
+                "password=Qwerty123;";
+
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
             string sql = "SELECT [login], [passwd] FROM " + auth_table;
             SqlCommand command = new SqlCommand(sql, conn);
-            // command.ExecuteNonQuery();
             SqlDataReader reader = command.ExecuteReader();
             bool isAuth = false;
             while (reader.Read())
@@ -42,25 +47,16 @@ namespace WindowsFormsApp1
                     if (reader[1].ToString().Equals(enter_passwd))
                     {
                         isAuth = true;
-                        //MessageBox.Show("Переход на Form2");
-
-                        // TODO передать в форму данные
-                        // логин, пароль, тип пользователя(админ или юзер)
-                        // алмин - rwx
-                        // юзер - rx
                         if (isAuth)
                         {
                             break;
                         }
                     } else
                     {
-                        // если не верный пасс
                         continue;
                     }
                 } else
                 {
-                    // если не верный логин
-                    
                     continue;
                 }
             }
@@ -70,7 +66,7 @@ namespace WindowsFormsApp1
 
             if (!isAuth)
             {
-                MessageBox.Show("Ошибка авторизации. Проверьте корректность данных.");
+                MessageBox.Show("Проверьте корректность данных.", "Ошибка авторизации");
                 return;
             }
 
@@ -79,20 +75,9 @@ namespace WindowsFormsApp1
             form2.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // TODO: обработка текста ЛОГИН на окне авторизации
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            // TODO: обработка текста ПАРОЛЬ на окне авторизации
-        }
-
         private void registration_Click(object sender, EventArgs e)
         {
             Registration rega = new Registration();
-            //this.Hide();
             rega.Show();
         }
     }

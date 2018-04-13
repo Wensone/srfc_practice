@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             {
                 return;
             }
+            
 
             int enter_type = Convert.ToInt32(this.user_type.SelectedItem.ToString());
                

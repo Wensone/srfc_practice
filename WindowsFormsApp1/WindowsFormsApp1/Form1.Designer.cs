@@ -123,7 +123,6 @@
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Логин";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -133,7 +132,6 @@
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Пароль";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // registration
             // 
