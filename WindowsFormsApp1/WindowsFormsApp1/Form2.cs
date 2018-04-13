@@ -17,7 +17,13 @@ namespace WindowsFormsApp1
         public Form2()
         {
             InitializeComponent();
-            string connection_string = "Data Source = 172.22.1.11\\ONE_C; Initial Catalog = Student; Persist Security Info = True; User ID = student; Password = Qwerty123";
+            string connection_string = 
+                "Data Source = 172.22.1.11\\ONE_C; " +
+                "Initial Catalog = Student; " +
+                "Persist Security Info = True; " +
+                "User ID = student; " +
+                "Password = Qwerty123";
+
             connection = new SqlConnection(connection_string);
             connection.Open();
             SqlCommand owners = new SqlCommand("select * from dbo.owners", connection);
@@ -40,14 +46,22 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet1.frset_sites". При необходимости она может быть перемещена или удалена.
+            this.frset_sitesTableAdapter.Fill(this.studentDataSet1.frset_sites);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet1.frset_freqs". При необходимости она может быть перемещена или удалена.
+            this.frset_freqsTableAdapter.Fill(this.studentDataSet1.frset_freqs);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet1.frset_ant_inf". При необходимости она может быть перемещена или удалена.
+            this.frset_ant_infTableAdapter.Fill(this.studentDataSet1.frset_ant_inf);
             agent_information.RowHeadersVisible = false;
             station_information.RowHeadersVisible = false;
             station_information.Columns[station_information.Columns.Count - 1].Visible = false;
+
+
+            
         }
 
         private void agents_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            
             DataSet data_set = new DataSet();
             string command = "select * from dbo.owners";
             SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
@@ -65,6 +79,26 @@ namespace WindowsFormsApp1
             studentDataSet.Tables["station"].Clear();
             for (int i = 0; i < child_rows.Count(); i++) studentDataSet.Tables["station"].Rows.Add(child_rows[i].ItemArray);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Fill Dataset
+            string ConString = 
+                "Data Source = 172.22.1.11\\ONE_C; " +
+                "Initial Catalog = Student; " +
+                "Persist Security Info = True; " +
+                "User ID = student; " +
+                "Password = Qwerty123";
+
+            string Query = "SELECT * FROM frset_ant_inf";
+            SqlDataAdapter adapter = new SqlDataAdapter(Query, ConString);
+            DataSet set = new DataSet();
+            adapter.Fill(set, "frset_ant_inf");
         
+            //set.Tables["frset_ant_inf"].Rows[1]["frset_sites_id"] = "Graphics Card";
+
+            dataGridView1.DataSource = set.Tables["frset_ant_inf"];
+            GC.Collect();
+        }
     }
 }
