@@ -14,9 +14,11 @@ namespace WindowsFormsApp1
     public partial class Form2 : Form
     {
         SqlConnection connection;
+        DataSet filter_set;
         public Form2()
         {
             InitializeComponent();
+            filter_set = new DataSet();
             string connection_string = "Data Source = 172.22.1.11\\ONE_C; Initial Catalog = Student; Persist Security Info = True; User ID = student; Password = Qwerty123";
             connection = new SqlConnection(connection_string);
             connection.Open();
@@ -40,31 +42,45 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            filter_set = studentDataSet.Clone();
+            ownersTableAdapter.Fill(studentDataSet.owners);
+            stationTableAdapter.Fill(studentDataSet.station);
+            freqTableAdapter.Fill(studentDataSet.freq);
             agent_information.RowHeadersVisible = false;
             station_information.RowHeadersVisible = false;
-            station_information.Columns[station_information.Columns.Count - 1].Visible = false;
+            freq_information.RowHeadersVisible = false;
+            agent_information.DataSource = filter_set.Tables["owners"];
+            station_information.DataSource = filter_set.Tables["station"];
+            freq_information.DataSource = filter_set.Tables["freq"];
         }
 
         private void agents_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            
-            DataSet data_set = new DataSet();
-            string command = "select * from dbo.owners";
-            SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
-            adapter.Fill(data_set, "dbo.owners");
-            command = "select * from dbo.station";
-            SqlDataAdapter adapter_1 = new SqlDataAdapter(command, connection);
-            adapter_1.Fill(data_set, "dbo.station");
-            DataRelation owner_station_relation = new DataRelation("OWNER_STATION", data_set.Tables["dbo.owners"].Columns["owner_id"], data_set.Tables["dbo.station"].Columns["OWNER_ID"]);
-            data_set.Relations.Add(owner_station_relation);
-            DataRow[] owner = data_set.Tables["dbo.owners"].Select("own_name = '" + agents.SelectedNode.Text + "'");
-            studentDataSet.Tables["owners"].Clear();
-            studentDataSet.Tables["owners"].Rows.Add(owner[0].ItemArray);
+            DataRow[] owner = studentDataSet.Tables["owners"].Select("own_name = '" + agents.SelectedNode.Text + "'");
             DataRow[] child_rows = null;
-            child_rows = owner[0].GetChildRows(owner_station_relation);
-            studentDataSet.Tables["station"].Clear();
-            for (int i = 0; i < child_rows.Count(); i++) studentDataSet.Tables["station"].Rows.Add(child_rows[i].ItemArray);
+            filter_set.Tables["owners"].Clear();
+            filter_set.Tables["owners"].Rows.Add(owner[0].ItemArray);
+            child_rows = owner[0].GetChildRows("FK_station_owners");
+            if (child_rows.Count() == 0) filter_set.Tables["freq"].Clear();
+            filter_set.Tables["station"].Clear();
+            for (int i = 0; i < child_rows.Count(); i++) filter_set.Tables["station"].Rows.Add(child_rows[i].ItemArray);
+            if (station_information.Rows.Count != 0) station_information.Rows[0].Selected = false;
+            
+            station_information.Columns[station_information.Columns.Count - 1].Visible = false;
         }
-        
+
+        private void station_information_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow parent_row = station_information.CurrentRow;
+            if (parent_row == null) {
+                return;
+            }
+            int stat_id = Convert.ToInt32(parent_row.Cells[0].Value);
+            DataRow[] station = studentDataSet.Tables["station"].Select("stat_id = " + stat_id);
+            DataRow[] child_rows = station[0].GetChildRows("FK_freq_station");
+            filter_set.Tables["freq"].Clear();
+            for (int i = 0; i < child_rows.Count(); i++) filter_set.Tables["freq"].Rows.Add(child_rows[i].ItemArray);
+            if (freq_information.Rows.Count != 0) freq_information.Rows[0].Selected = false;
+        }
     }
 }

@@ -52,8 +52,6 @@ namespace WindowsFormsApp1 {
         
         private global::System.Data.DataRelation relationFK_freq_soglas;
         
-        private global::System.Data.DataRelation relationFK_freq_station;
-        
         private global::System.Data.DataRelation relationFK_freq_ant_inf_station;
         
         private global::System.Data.DataRelation relationFK_FREQ_RCLASS_freq;
@@ -75,6 +73,8 @@ namespace WindowsFormsApp1 {
         private global::System.Data.DataRelation relationFK_soglas_owners;
         
         private global::System.Data.DataRelation relationFK_station_owners;
+        
+        private global::System.Data.DataRelation relationFK_freq_station;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -488,7 +488,6 @@ namespace WindowsFormsApp1 {
             }
             this.relationFK_freq_freq_ant_inf = this.Relations["FK_freq_freq_ant_inf"];
             this.relationFK_freq_soglas = this.Relations["FK_freq_soglas"];
-            this.relationFK_freq_station = this.Relations["FK_freq_station"];
             this.relationFK_freq_ant_inf_station = this.Relations["FK_freq_ant_inf_station"];
             this.relationFK_FREQ_RCLASS_freq = this.Relations["FK_FREQ_RCLASS_freq"];
             this.relationFK_FREQ_RCLASS_rclas = this.Relations["FK_FREQ_RCLASS_rclas"];
@@ -500,6 +499,7 @@ namespace WindowsFormsApp1 {
             this.relationFK_frset_sites_soglas = this.Relations["FK_frset_sites_soglas"];
             this.relationFK_soglas_owners = this.Relations["FK_soglas_owners"];
             this.relationFK_station_owners = this.Relations["FK_station_owners"];
+            this.relationFK_freq_station = this.Relations["FK_freq_station"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -542,10 +542,6 @@ namespace WindowsFormsApp1 {
                         this.tablesoglas.sogl_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefreq.soglas_idColumn}, false);
             this.Relations.Add(this.relationFK_freq_soglas);
-            this.relationFK_freq_station = new global::System.Data.DataRelation("FK_freq_station", new global::System.Data.DataColumn[] {
-                        this.tablestation.stat_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablefreq.stat_idColumn}, false);
-            this.Relations.Add(this.relationFK_freq_station);
             this.relationFK_freq_ant_inf_station = new global::System.Data.DataRelation("FK_freq_ant_inf_station", new global::System.Data.DataColumn[] {
                         this.tablestation.stat_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefreq_ant_inf.stat_idColumn}, false);
@@ -590,6 +586,10 @@ namespace WindowsFormsApp1 {
                         this.tableowners.owner_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablestation.OWNER_IDColumn}, false);
             this.Relations.Add(this.relationFK_station_owners);
+            this.relationFK_freq_station = new global::System.Data.DataRelation("FK_freq_station", new global::System.Data.DataColumn[] {
+                        this.tablestation.stat_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefreq.stat_idColumn}, false);
+            this.Relations.Add(this.relationFK_freq_station);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18922,23 +18922,23 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public freqRow[] GetfreqRows() {
-                if ((this.Table.ChildRelations["FK_freq_station"] == null)) {
-                    return new freqRow[0];
-                }
-                else {
-                    return ((freqRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_station"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public freq_ant_infRow[] Getfreq_ant_infRows() {
                 if ((this.Table.ChildRelations["FK_freq_ant_inf_station"] == null)) {
                     return new freq_ant_infRow[0];
                 }
                 else {
                     return ((freq_ant_infRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_ant_inf_station"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freqRow[] GetfreqRows() {
+                if ((this.Table.ChildRelations["FK_freq_station"] == null)) {
+                    return new freqRow[0];
+                }
+                else {
+                    return ((freqRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_station"])));
                 }
             }
         }
