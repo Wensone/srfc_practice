@@ -13,7 +13,9 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+        object own_id;
         SqlConnection connection;
+
         public Form2()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand owners = new SqlCommand("select * from dbo.owners", connection);
             SqlDataReader data = owners.ExecuteReader();
+
             if (data.HasRows)
             {
                 while (data.Read())
@@ -38,8 +41,15 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        /** Заполнение гридов */
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet.frset_freqs_rclass". При необходимости она может быть перемещена или удалена.
+            this.frset_freqs_rclassTableAdapter.Fill(this.studentDataSet.frset_freqs_rclass);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet.frset_freqs". При необходимости она может быть перемещена или удалена.
+            this.frset_freqsTableAdapter.Fill(this.studentDataSet.frset_freqs);
+            this.frset_ant_infTableAdapter1.Fill(this.studentDataSet.frset_ant_inf);
+            this.frset_sitesTableAdapter1.Fill(this.studentDataSet.frset_sites);
 
         }
 
@@ -49,14 +59,31 @@ namespace WindowsFormsApp1
             SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
             DataSet data_set = new DataSet();
             adapter.Fill(data_set);
-            object own_id = data_set.Tables[0].Rows[0][0];
+            own_id = data_set.Tables[0].Rows[0][0];
             agent_information.DataSource = data_set;
             agent_information.DataMember = data_set.Tables[0].TableName;
             command = "select * from dbo.station where OWNER_ID = " + own_id;
             adapter = new SqlDataAdapter(command, connection);
             adapter.Fill(data_set);
+
+
             station_information.DataSource = data_set;
             station_information.DataMember = data_set.Tables[0].TableName;
+            MessageBox.Show(data_set.Tables[0].Rows[0][0].ToString());
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string command = "select * [Student].[dbo].[frset_ant_inf] where own_name = '" + agents.SelectedNode.Text + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
+            DataSet data_set = new DataSet();
+            adapter.Fill(data_set);
+            own_id = data_set.Tables[0].Rows[0][0];
+            agent_information.DataSource = data_set;
+            agent_information.DataMember = data_set.Tables[0].TableName;
+            command = "select * from dbo.station where OWNER_ID = " + own_id;
+            adapter = new SqlDataAdapter(command, connection);
+            adapter.Fill(data_set);
         }
     }
 }
