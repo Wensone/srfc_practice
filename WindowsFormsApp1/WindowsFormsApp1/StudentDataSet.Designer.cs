@@ -24,6 +24,8 @@ namespace WindowsFormsApp1 {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class StudentDataSet : global::System.Data.DataSet {
         
+        private authDataTable tableauth;
+        
         private freqDataTable tablefreq;
         
         private freq_ant_infDataTable tablefreq_ant_inf;
@@ -46,7 +48,33 @@ namespace WindowsFormsApp1 {
         
         private stationDataTable tablestation;
         
+        private global::System.Data.DataRelation relationFK_freq_freq_ant_inf;
+        
+        private global::System.Data.DataRelation relationFK_freq_soglas;
+        
+        private global::System.Data.DataRelation relationFK_freq_station;
+        
+        private global::System.Data.DataRelation relationFK_freq_ant_inf_station;
+        
+        private global::System.Data.DataRelation relationFK_FREQ_RCLASS_freq;
+        
+        private global::System.Data.DataRelation relationFK_FREQ_RCLASS_rclas;
+        
+        private global::System.Data.DataRelation relationFK_frset_ant_inf_frset_sites;
+        
+        private global::System.Data.DataRelation relationFK_frset_freqs_frset_ant_inf;
+        
+        private global::System.Data.DataRelation relationFK_frset_freqs_frset_sites;
+        
+        private global::System.Data.DataRelation relationFK_frset_freqs_rclass_frset_freqs;
+        
+        private global::System.Data.DataRelation relationFK_frset_freqs_rclass_rclas;
+        
+        private global::System.Data.DataRelation relationFK_frset_sites_soglas;
+        
         private global::System.Data.DataRelation relationFK_soglas_owners;
+        
+        private global::System.Data.DataRelation relationFK_station_owners;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -76,6 +104,9 @@ namespace WindowsFormsApp1 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["auth"] != null)) {
+                    base.Tables.Add(new authDataTable(ds.Tables["auth"]));
+                }
                 if ((ds.Tables["freq"] != null)) {
                     base.Tables.Add(new freqDataTable(ds.Tables["freq"]));
                 }
@@ -125,6 +156,16 @@ namespace WindowsFormsApp1 {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public authDataTable auth {
+            get {
+                return this.tableauth;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -304,6 +345,9 @@ namespace WindowsFormsApp1 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["auth"] != null)) {
+                    base.Tables.Add(new authDataTable(ds.Tables["auth"]));
+                }
                 if ((ds.Tables["freq"] != null)) {
                     base.Tables.Add(new freqDataTable(ds.Tables["freq"]));
                 }
@@ -370,6 +414,12 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableauth = ((authDataTable)(base.Tables["auth"]));
+            if ((initTable == true)) {
+                if ((this.tableauth != null)) {
+                    this.tableauth.InitVars();
+                }
+            }
             this.tablefreq = ((freqDataTable)(base.Tables["freq"]));
             if ((initTable == true)) {
                 if ((this.tablefreq != null)) {
@@ -436,7 +486,20 @@ namespace WindowsFormsApp1 {
                     this.tablestation.InitVars();
                 }
             }
+            this.relationFK_freq_freq_ant_inf = this.Relations["FK_freq_freq_ant_inf"];
+            this.relationFK_freq_soglas = this.Relations["FK_freq_soglas"];
+            this.relationFK_freq_station = this.Relations["FK_freq_station"];
+            this.relationFK_freq_ant_inf_station = this.Relations["FK_freq_ant_inf_station"];
+            this.relationFK_FREQ_RCLASS_freq = this.Relations["FK_FREQ_RCLASS_freq"];
+            this.relationFK_FREQ_RCLASS_rclas = this.Relations["FK_FREQ_RCLASS_rclas"];
+            this.relationFK_frset_ant_inf_frset_sites = this.Relations["FK_frset_ant_inf_frset_sites"];
+            this.relationFK_frset_freqs_frset_ant_inf = this.Relations["FK_frset_freqs_frset_ant_inf"];
+            this.relationFK_frset_freqs_frset_sites = this.Relations["FK_frset_freqs_frset_sites"];
+            this.relationFK_frset_freqs_rclass_frset_freqs = this.Relations["FK_frset_freqs_rclass_frset_freqs"];
+            this.relationFK_frset_freqs_rclass_rclas = this.Relations["FK_frset_freqs_rclass_rclas"];
+            this.relationFK_frset_sites_soglas = this.Relations["FK_frset_sites_soglas"];
             this.relationFK_soglas_owners = this.Relations["FK_soglas_owners"];
+            this.relationFK_station_owners = this.Relations["FK_station_owners"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -447,6 +510,8 @@ namespace WindowsFormsApp1 {
             this.Namespace = "http://tempuri.org/StudentDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableauth = new authDataTable();
+            base.Tables.Add(this.tableauth);
             this.tablefreq = new freqDataTable();
             base.Tables.Add(this.tablefreq);
             this.tablefreq_ant_inf = new freq_ant_infDataTable();
@@ -469,10 +534,68 @@ namespace WindowsFormsApp1 {
             base.Tables.Add(this.tablesoglas);
             this.tablestation = new stationDataTable();
             base.Tables.Add(this.tablestation);
+            this.relationFK_freq_freq_ant_inf = new global::System.Data.DataRelation("FK_freq_freq_ant_inf", new global::System.Data.DataColumn[] {
+                        this.tablefreq_ant_inf.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefreq.freq_ant_inf_idColumn}, false);
+            this.Relations.Add(this.relationFK_freq_freq_ant_inf);
+            this.relationFK_freq_soglas = new global::System.Data.DataRelation("FK_freq_soglas", new global::System.Data.DataColumn[] {
+                        this.tablesoglas.sogl_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefreq.soglas_idColumn}, false);
+            this.Relations.Add(this.relationFK_freq_soglas);
+            this.relationFK_freq_station = new global::System.Data.DataRelation("FK_freq_station", new global::System.Data.DataColumn[] {
+                        this.tablestation.stat_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefreq.stat_idColumn}, false);
+            this.Relations.Add(this.relationFK_freq_station);
+            this.relationFK_freq_ant_inf_station = new global::System.Data.DataRelation("FK_freq_ant_inf_station", new global::System.Data.DataColumn[] {
+                        this.tablestation.stat_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefreq_ant_inf.stat_idColumn}, false);
+            this.Relations.Add(this.relationFK_freq_ant_inf_station);
+            this.relationFK_FREQ_RCLASS_freq = new global::System.Data.DataRelation("FK_FREQ_RCLASS_freq", new global::System.Data.DataColumn[] {
+                        this.tablefreq.freq_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFREQ_RCLASS.FREQ_IDColumn}, false);
+            this.Relations.Add(this.relationFK_FREQ_RCLASS_freq);
+            this.relationFK_FREQ_RCLASS_rclas = new global::System.Data.DataRelation("FK_FREQ_RCLASS_rclas", new global::System.Data.DataColumn[] {
+                        this.tablerclas.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFREQ_RCLASS.RCLASS_IDColumn}, false);
+            this.Relations.Add(this.relationFK_FREQ_RCLASS_rclas);
+            this.relationFK_frset_ant_inf_frset_sites = new global::System.Data.DataRelation("FK_frset_ant_inf_frset_sites", new global::System.Data.DataColumn[] {
+                        this.tablefrset_sites.frset_sites_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefrset_ant_inf.frset_sites_idColumn}, false);
+            this.Relations.Add(this.relationFK_frset_ant_inf_frset_sites);
+            this.relationFK_frset_freqs_frset_ant_inf = new global::System.Data.DataRelation("FK_frset_freqs_frset_ant_inf", new global::System.Data.DataColumn[] {
+                        this.tablefrset_ant_inf.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefrset_freqs.frset_ant_inf_idColumn}, false);
+            this.Relations.Add(this.relationFK_frset_freqs_frset_ant_inf);
+            this.relationFK_frset_freqs_frset_sites = new global::System.Data.DataRelation("FK_frset_freqs_frset_sites", new global::System.Data.DataColumn[] {
+                        this.tablefrset_sites.frset_sites_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefrset_freqs.frset_sites_idColumn}, false);
+            this.Relations.Add(this.relationFK_frset_freqs_frset_sites);
+            this.relationFK_frset_freqs_rclass_frset_freqs = new global::System.Data.DataRelation("FK_frset_freqs_rclass_frset_freqs", new global::System.Data.DataColumn[] {
+                        this.tablefrset_freqs.frset_freqs_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefrset_freqs_rclass.frset_freqs_idColumn}, false);
+            this.Relations.Add(this.relationFK_frset_freqs_rclass_frset_freqs);
+            this.relationFK_frset_freqs_rclass_rclas = new global::System.Data.DataRelation("FK_frset_freqs_rclass_rclas", new global::System.Data.DataColumn[] {
+                        this.tablerclas.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefrset_freqs_rclass.rclass_idColumn}, false);
+            this.Relations.Add(this.relationFK_frset_freqs_rclass_rclas);
+            this.relationFK_frset_sites_soglas = new global::System.Data.DataRelation("FK_frset_sites_soglas", new global::System.Data.DataColumn[] {
+                        this.tablesoglas.sogl_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefrset_sites.sogl_idColumn}, false);
+            this.Relations.Add(this.relationFK_frset_sites_soglas);
             this.relationFK_soglas_owners = new global::System.Data.DataRelation("FK_soglas_owners", new global::System.Data.DataColumn[] {
                         this.tableowners.owner_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablesoglas.OWNER_IDColumn}, false);
             this.Relations.Add(this.relationFK_soglas_owners);
+            this.relationFK_station_owners = new global::System.Data.DataRelation("FK_station_owners", new global::System.Data.DataColumn[] {
+                        this.tableowners.owner_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestation.OWNER_IDColumn}, false);
+            this.Relations.Add(this.relationFK_station_owners);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeauth() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -597,6 +720,9 @@ namespace WindowsFormsApp1 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void authRowChangeEventHandler(object sender, authRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void freqRowChangeEventHandler(object sender, freqRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -628,6 +754,315 @@ namespace WindowsFormsApp1 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void stationRowChangeEventHandler(object sender, stationRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class authDataTable : global::System.Data.TypedTableBase<authRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnlogin;
+            
+            private global::System.Data.DataColumn columnpasswd;
+            
+            private global::System.Data.DataColumn columntype;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authDataTable() {
+                this.TableName = "auth";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal authDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected authDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn loginColumn {
+                get {
+                    return this.columnlogin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn passwdColumn {
+                get {
+                    return this.columnpasswd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn typeColumn {
+                get {
+                    return this.columntype;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authRow this[int index] {
+                get {
+                    return ((authRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event authRowChangeEventHandler authRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event authRowChangeEventHandler authRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event authRowChangeEventHandler authRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event authRowChangeEventHandler authRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddauthRow(authRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authRow AddauthRow(string login, string passwd, int type) {
+                authRow rowauthRow = ((authRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        login,
+                        passwd,
+                        type};
+                rowauthRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowauthRow);
+                return rowauthRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authRow FindByid(int id) {
+                return ((authRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                authDataTable cln = ((authDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new authDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnlogin = base.Columns["login"];
+                this.columnpasswd = base.Columns["passwd"];
+                this.columntype = base.Columns["type"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnlogin = new global::System.Data.DataColumn("login", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlogin);
+                this.columnpasswd = new global::System.Data.DataColumn("passwd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpasswd);
+                this.columntype = new global::System.Data.DataColumn("type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+                this.columnlogin.AllowDBNull = false;
+                this.columnlogin.MaxLength = 30;
+                this.columnpasswd.AllowDBNull = false;
+                this.columnpasswd.MaxLength = 50;
+                this.columntype.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authRow NewauthRow() {
+                return ((authRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new authRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(authRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.authRowChanged != null)) {
+                    this.authRowChanged(this, new authRowChangeEvent(((authRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.authRowChanging != null)) {
+                    this.authRowChanging(this, new authRowChangeEvent(((authRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.authRowDeleted != null)) {
+                    this.authRowDeleted(this, new authRowChangeEvent(((authRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.authRowDeleting != null)) {
+                    this.authRowDeleting(this, new authRowChangeEvent(((authRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveauthRow(authRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                StudentDataSet ds = new StudentDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "authDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -967,9 +1402,9 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public freqRow AddfreqRow(
-                        int stat_id, 
-                        int freq_ant_inf_id, 
-                        int soglas_id, 
+                        stationRow parentstationRowByFK_freq_station, 
+                        freq_ant_infRow parentfreq_ant_infRowByFK_freq_freq_ant_inf, 
+                        soglasRow parentsoglasRowByFK_freq_soglas, 
                         int asnbase, 
                         string assign, 
                         string csname, 
@@ -995,9 +1430,9 @@ namespace WindowsFormsApp1 {
                 freqRow rowfreqRow = ((freqRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        stat_id,
-                        freq_ant_inf_id,
-                        soglas_id,
+                        null,
+                        null,
+                        null,
                         asnbase,
                         assign,
                         csname,
@@ -1020,6 +1455,15 @@ namespace WindowsFormsApp1 {
                         update_user,
                         update_date,
                         GUID};
+                if ((parentstationRowByFK_freq_station != null)) {
+                    columnValuesArray[1] = parentstationRowByFK_freq_station[0];
+                }
+                if ((parentfreq_ant_infRowByFK_freq_freq_ant_inf != null)) {
+                    columnValuesArray[2] = parentfreq_ant_infRowByFK_freq_freq_ant_inf[0];
+                }
+                if ((parentsoglasRowByFK_freq_soglas != null)) {
+                    columnValuesArray[3] = parentsoglasRowByFK_freq_soglas[0];
+                }
                 rowfreqRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfreqRow);
                 return rowfreqRow;
@@ -1552,7 +1996,7 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public freq_ant_infRow Addfreq_ant_infRow(
-                        int stat_id, 
+                        stationRow parentstationRowByFK_freq_ant_inf_station, 
                         int antenna_id, 
                         decimal h_ant, 
                         decimal h_ant_eff, 
@@ -1574,7 +2018,7 @@ namespace WindowsFormsApp1 {
                 freq_ant_infRow rowfreq_ant_infRow = ((freq_ant_infRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        stat_id,
+                        null,
                         antenna_id,
                         h_ant,
                         h_ant_eff,
@@ -1593,6 +2037,9 @@ namespace WindowsFormsApp1 {
                         update_user,
                         update_date,
                         GUID};
+                if ((parentstationRowByFK_freq_ant_inf_station != null)) {
+                    columnValuesArray[1] = parentstationRowByFK_freq_ant_inf_station[0];
+                }
                 rowfreq_ant_infRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfreq_ant_infRow);
                 return rowfreq_ant_infRow;
@@ -2002,12 +2449,12 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public FREQ_RCLASSRow AddFREQ_RCLASSRow(int FREQ_ID, int RCLASS_ID, decimal RCL_POWER, decimal RCL_EIIM, string create_user, System.DateTime create_date, string update_user, System.DateTime update_date, System.Guid GUID) {
+            public FREQ_RCLASSRow AddFREQ_RCLASSRow(freqRow parentfreqRowByFK_FREQ_RCLASS_freq, rclasRow parentrclasRowByFK_FREQ_RCLASS_rclas, decimal RCL_POWER, decimal RCL_EIIM, string create_user, System.DateTime create_date, string update_user, System.DateTime update_date, System.Guid GUID) {
                 FREQ_RCLASSRow rowFREQ_RCLASSRow = ((FREQ_RCLASSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        FREQ_ID,
-                        RCLASS_ID,
+                        null,
+                        null,
                         RCL_POWER,
                         RCL_EIIM,
                         create_user,
@@ -2015,6 +2462,12 @@ namespace WindowsFormsApp1 {
                         update_user,
                         update_date,
                         GUID};
+                if ((parentfreqRowByFK_FREQ_RCLASS_freq != null)) {
+                    columnValuesArray[1] = parentfreqRowByFK_FREQ_RCLASS_freq[0];
+                }
+                if ((parentrclasRowByFK_FREQ_RCLASS_rclas != null)) {
+                    columnValuesArray[2] = parentrclasRowByFK_FREQ_RCLASS_rclas[0];
+                }
                 rowFREQ_RCLASSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFREQ_RCLASSRow);
                 return rowFREQ_RCLASSRow;
@@ -2555,7 +3008,7 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public frset_ant_infRow Addfrset_ant_infRow(
-                        int frset_sites_id, 
+                        frset_sitesRow parentfrset_sitesRowByFK_frset_ant_inf_frset_sites, 
                         int id_ant_type, 
                         decimal h_ant, 
                         decimal amp_ant, 
@@ -2583,7 +3036,7 @@ namespace WindowsFormsApp1 {
                 frset_ant_infRow rowfrset_ant_infRow = ((frset_ant_infRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        frset_sites_id,
+                        null,
                         id_ant_type,
                         h_ant,
                         amp_ant,
@@ -2608,6 +3061,9 @@ namespace WindowsFormsApp1 {
                         sputnik_id,
                         Psumm,
                         GUID};
+                if ((parentfrset_sitesRowByFK_frset_ant_inf_frset_sites != null)) {
+                    columnValuesArray[1] = parentfrset_sitesRowByFK_frset_ant_inf_frset_sites[0];
+                }
                 rowfrset_ant_infRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfrset_ant_infRow);
                 return rowfrset_ant_infRow;
@@ -3237,8 +3693,8 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public frset_freqsRow Addfrset_freqsRow(
-                        int frset_sites_id, 
-                        int frset_ant_inf_id, 
+                        frset_sitesRow parentfrset_sitesRowByFK_frset_freqs_frset_sites, 
+                        frset_ant_infRow parentfrset_ant_infRowByFK_frset_freqs_frset_ant_inf, 
                         int tip_id, 
                         int freq_kind_id, 
                         decimal fnom, 
@@ -3269,8 +3725,8 @@ namespace WindowsFormsApp1 {
                 frset_freqsRow rowfrset_freqsRow = ((frset_freqsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        frset_sites_id,
-                        frset_ant_inf_id,
+                        null,
+                        null,
                         tip_id,
                         freq_kind_id,
                         fnom,
@@ -3298,6 +3754,12 @@ namespace WindowsFormsApp1 {
                         UtrvUrCifr,
                         is_season,
                         GUID};
+                if ((parentfrset_sitesRowByFK_frset_freqs_frset_sites != null)) {
+                    columnValuesArray[1] = parentfrset_sitesRowByFK_frset_freqs_frset_sites[0];
+                }
+                if ((parentfrset_ant_infRowByFK_frset_freqs_frset_ant_inf != null)) {
+                    columnValuesArray[2] = parentfrset_ant_infRowByFK_frset_freqs_frset_ant_inf[0];
+                }
                 rowfrset_freqsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfrset_freqsRow);
                 return rowfrset_freqsRow;
@@ -3764,12 +4226,12 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public frset_freqs_rclassRow Addfrset_freqs_rclassRow(int frset_freqs_id, int rclass_id, decimal power, decimal eiim, string csname, int csindex, string create_user, System.DateTime create_date, string update_user, System.DateTime update_date, System.Guid GUID) {
+            public frset_freqs_rclassRow Addfrset_freqs_rclassRow(frset_freqsRow parentfrset_freqsRowByFK_frset_freqs_rclass_frset_freqs, rclasRow parentrclasRowByFK_frset_freqs_rclass_rclas, decimal power, decimal eiim, string csname, int csindex, string create_user, System.DateTime create_date, string update_user, System.DateTime update_date, System.Guid GUID) {
                 frset_freqs_rclassRow rowfrset_freqs_rclassRow = ((frset_freqs_rclassRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        frset_freqs_id,
-                        rclass_id,
+                        null,
+                        null,
                         power,
                         eiim,
                         csname,
@@ -3779,6 +4241,12 @@ namespace WindowsFormsApp1 {
                         update_user,
                         update_date,
                         GUID};
+                if ((parentfrset_freqsRowByFK_frset_freqs_rclass_frset_freqs != null)) {
+                    columnValuesArray[1] = parentfrset_freqsRowByFK_frset_freqs_rclass_frset_freqs[0];
+                }
+                if ((parentrclasRowByFK_frset_freqs_rclass_rclas != null)) {
+                    columnValuesArray[2] = parentrclasRowByFK_frset_freqs_rclass_rclas[0];
+                }
                 rowfrset_freqs_rclassRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfrset_freqs_rclassRow);
                 return rowfrset_freqs_rclassRow;
@@ -4365,7 +4833,7 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public frset_sitesRow Addfrset_sitesRow(
-                        int sogl_id, 
+                        soglasRow parentsoglasRowByFK_frset_sites_soglas, 
                         int site_id, 
                         string mobile, 
                         string prim, 
@@ -4397,7 +4865,7 @@ namespace WindowsFormsApp1 {
                 frset_sitesRow rowfrset_sitesRow = ((frset_sitesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        sogl_id,
+                        null,
                         site_id,
                         mobile,
                         prim,
@@ -4426,6 +4894,9 @@ namespace WindowsFormsApp1 {
                         ID_TYPE_RES_KEY,
                         KREL,
                         GUID};
+                if ((parentsoglasRowByFK_frset_sites_soglas != null)) {
+                    columnValuesArray[1] = parentsoglasRowByFK_frset_sites_soglas[0];
+                }
                 rowfrset_sitesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfrset_sitesRow);
                 return rowfrset_sitesRow;
@@ -6111,10 +6582,10 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public rclasRow AddrclasRow(string Rclass, string note, decimal NSHPI, int DIGIT_ANALOG) {
+            public rclasRow AddrclasRow(int id, string Rclass, string note, decimal NSHPI, int DIGIT_ANALOG) {
                 rclasRow rowrclasRow = ((rclasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        id,
                         Rclass,
                         note,
                         NSHPI,
@@ -6170,11 +6641,7 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnDIGIT_ANALOG);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
                 this.columnRclass.MaxLength = 50;
                 this.columnnote.MaxLength = 500;
@@ -7793,6 +8260,8 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnGUID;
             
+            private global::System.Data.DataColumn columnOWNER_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public stationDataTable() {
@@ -8236,6 +8705,14 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OWNER_IDColumn {
+                get {
+                    return this.columnOWNER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8321,7 +8798,8 @@ namespace WindowsFormsApp1 {
                         int ID_TYPE_RES_KEY, 
                         string BS_IDN_RES_RNC, 
                         string BS_IDN_RES_BASE_ID, 
-                        System.Guid GUID) {
+                        System.Guid GUID, 
+                        ownersRow parentownersRowByFK_station_owners) {
                 stationRow rowstationRow = ((stationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -8374,7 +8852,11 @@ namespace WindowsFormsApp1 {
                         ID_TYPE_RES_KEY,
                         BS_IDN_RES_RNC,
                         BS_IDN_RES_BASE_ID,
-                        GUID};
+                        GUID,
+                        null};
+                if ((parentownersRowByFK_station_owners != null)) {
+                    columnValuesArray[51] = parentownersRowByFK_station_owners[0];
+                }
                 rowstationRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstationRow);
                 return rowstationRow;
@@ -8455,6 +8937,7 @@ namespace WindowsFormsApp1 {
                 this.columnBS_IDN_RES_RNC = base.Columns["BS_IDN_RES_RNC"];
                 this.columnBS_IDN_RES_BASE_ID = base.Columns["BS_IDN_RES_BASE_ID"];
                 this.columnGUID = base.Columns["GUID"];
+                this.columnOWNER_ID = base.Columns["OWNER_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8562,6 +9045,8 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnBS_IDN_RES_BASE_ID);
                 this.columnGUID = new global::System.Data.DataColumn("GUID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGUID);
+                this.columnOWNER_ID = new global::System.Data.DataColumn("OWNER_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOWNER_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnstat_id}, true));
                 this.columnstat_id.AutoIncrement = true;
@@ -8717,6 +9202,65 @@ namespace WindowsFormsApp1 {
                 }
                 xs.Add(dsSchema);
                 return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class authRow : global::System.Data.DataRow {
+            
+            private authDataTable tableauth;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal authRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableauth = ((authDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableauth.idColumn]));
+                }
+                set {
+                    this[this.tableauth.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string login {
+                get {
+                    return ((string)(this[this.tableauth.loginColumn]));
+                }
+                set {
+                    this[this.tableauth.loginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string passwd {
+                get {
+                    return ((string)(this[this.tableauth.passwdColumn]));
+                }
+                set {
+                    this[this.tableauth.passwdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int type {
+                get {
+                    return ((int)(this[this.tableauth.typeColumn]));
+                }
+                set {
+                    this[this.tableauth.typeColumn] = value;
+                }
             }
         }
         
@@ -9142,6 +9686,39 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freq_ant_infRow freq_ant_infRow {
+                get {
+                    return ((freq_ant_infRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_freq_ant_inf"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_freq_freq_ant_inf"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public soglasRow soglasRow {
+                get {
+                    return ((soglasRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_soglas"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_freq_soglas"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public stationRow stationRow {
+                get {
+                    return ((stationRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_station"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_freq_station"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isstat_idNull() {
                 return this.IsNull(this.tablefreq.stat_idColumn);
             }
@@ -9426,6 +10003,17 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setupdate_dateNull() {
                 this[this.tablefreq.update_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public FREQ_RCLASSRow[] GetFREQ_RCLASSRows() {
+                if ((this.Table.ChildRelations["FK_FREQ_RCLASS_freq"] == null)) {
+                    return new FREQ_RCLASSRow[0];
+                }
+                else {
+                    return ((FREQ_RCLASSRow[])(base.GetChildRows(this.Table.ChildRelations["FK_FREQ_RCLASS_freq"])));
+                }
             }
         }
         
@@ -9755,6 +10343,17 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public stationRow stationRow {
+                get {
+                    return ((stationRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_ant_inf_station"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_freq_ant_inf_station"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isstat_idNull() {
                 return this.IsNull(this.tablefreq_ant_inf.stat_idColumn);
             }
@@ -9968,6 +10567,17 @@ namespace WindowsFormsApp1 {
             public void Setupdate_dateNull() {
                 this[this.tablefreq_ant_inf.update_dateColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freqRow[] GetfreqRows() {
+                if ((this.Table.ChildRelations["FK_freq_freq_ant_inf"] == null)) {
+                    return new freqRow[0];
+                }
+                else {
+                    return ((freqRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_freq_ant_inf"])));
+                }
+            }
         }
         
         /// <summary>
@@ -10126,6 +10736,28 @@ namespace WindowsFormsApp1 {
                 }
                 set {
                     this[this.tableFREQ_RCLASS.GUIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freqRow freqRow {
+                get {
+                    return ((freqRow)(this.GetParentRow(this.Table.ParentRelations["FK_FREQ_RCLASS_freq"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_FREQ_RCLASS_freq"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public rclasRow rclasRow {
+                get {
+                    return ((rclasRow)(this.GetParentRow(this.Table.ParentRelations["FK_FREQ_RCLASS_rclas"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_FREQ_RCLASS_rclas"]);
                 }
             }
             
@@ -10631,6 +11263,17 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_sitesRow frset_sitesRow {
+                get {
+                    return ((frset_sitesRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_ant_inf_frset_sites"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_ant_inf_frset_sites"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isfrset_sites_idNull() {
                 return this.IsNull(this.tablefrset_ant_inf.frset_sites_idColumn);
             }
@@ -10903,6 +11546,17 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPsummNull() {
                 this[this.tablefrset_ant_inf.PsummColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_freqsRow[] Getfrset_freqsRows() {
+                if ((this.Table.ChildRelations["FK_frset_freqs_frset_ant_inf"] == null)) {
+                    return new frset_freqsRow[0];
+                }
+                else {
+                    return ((frset_freqsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_freqs_frset_ant_inf"])));
+                }
             }
         }
         
@@ -11377,6 +12031,28 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_ant_infRow frset_ant_infRow {
+                get {
+                    return ((frset_ant_infRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_freqs_frset_ant_inf"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_freqs_frset_ant_inf"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_sitesRow frset_sitesRow {
+                get {
+                    return ((frset_sitesRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_freqs_frset_sites"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_freqs_frset_sites"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isfrset_sites_idNull() {
                 return this.IsNull(this.tablefrset_freqs.frset_sites_idColumn);
             }
@@ -11674,6 +12350,17 @@ namespace WindowsFormsApp1 {
             public void SetUtrvUrCifrNull() {
                 this[this.tablefrset_freqs.UtrvUrCifrColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_freqs_rclassRow[] Getfrset_freqs_rclassRows() {
+                if ((this.Table.ChildRelations["FK_frset_freqs_rclass_frset_freqs"] == null)) {
+                    return new frset_freqs_rclassRow[0];
+                }
+                else {
+                    return ((frset_freqs_rclassRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_freqs_rclass_frset_freqs"])));
+                }
+            }
         }
         
         /// <summary>
@@ -11870,6 +12557,28 @@ namespace WindowsFormsApp1 {
                 }
                 set {
                     this[this.tablefrset_freqs_rclass.GUIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_freqsRow frset_freqsRow {
+                get {
+                    return ((frset_freqsRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_freqs_rclass_frset_freqs"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_freqs_rclass_frset_freqs"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public rclasRow rclasRow {
+                get {
+                    return ((rclasRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_freqs_rclass_rclas"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_freqs_rclass_rclas"]);
                 }
             }
             
@@ -12480,6 +13189,17 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public soglasRow soglasRow {
+                get {
+                    return ((soglasRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_sites_soglas"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_sites_soglas"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Issogl_idNull() {
                 return this.IsNull(this.tablefrset_sites.sogl_idColumn);
             }
@@ -12812,6 +13532,28 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetKRELNull() {
                 this[this.tablefrset_sites.KRELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_ant_infRow[] Getfrset_ant_infRows() {
+                if ((this.Table.ChildRelations["FK_frset_ant_inf_frset_sites"] == null)) {
+                    return new frset_ant_infRow[0];
+                }
+                else {
+                    return ((frset_ant_infRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_ant_inf_frset_sites"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_freqsRow[] Getfrset_freqsRows() {
+                if ((this.Table.ChildRelations["FK_frset_freqs_frset_sites"] == null)) {
+                    return new frset_freqsRow[0];
+                }
+                else {
+                    return ((frset_freqsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_freqs_frset_sites"])));
+                }
             }
         }
         
@@ -14551,6 +15293,17 @@ namespace WindowsFormsApp1 {
                     return ((soglasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_soglas_owners"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public stationRow[] GetstationRows() {
+                if ((this.Table.ChildRelations["FK_station_owners"] == null)) {
+                    return new stationRow[0];
+                }
+                else {
+                    return ((stationRow[])(base.GetChildRows(this.Table.ChildRelations["FK_station_owners"])));
+                }
+            }
         }
         
         /// <summary>
@@ -14671,6 +15424,28 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNSHPINull() {
                 this[this.tablerclas.NSHPIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public FREQ_RCLASSRow[] GetFREQ_RCLASSRows() {
+                if ((this.Table.ChildRelations["FK_FREQ_RCLASS_rclas"] == null)) {
+                    return new FREQ_RCLASSRow[0];
+                }
+                else {
+                    return ((FREQ_RCLASSRow[])(base.GetChildRows(this.Table.ChildRelations["FK_FREQ_RCLASS_rclas"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_freqs_rclassRow[] Getfrset_freqs_rclassRows() {
+                if ((this.Table.ChildRelations["FK_frset_freqs_rclass_rclas"] == null)) {
+                    return new frset_freqs_rclassRow[0];
+                }
+                else {
+                    return ((frset_freqs_rclassRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_freqs_rclass_rclas"])));
+                }
             }
         }
         
@@ -16691,6 +17466,28 @@ namespace WindowsFormsApp1 {
             public void SetNET_CAT_IDNull() {
                 this[this.tablesoglas.NET_CAT_IDColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freqRow[] GetfreqRows() {
+                if ((this.Table.ChildRelations["FK_freq_soglas"] == null)) {
+                    return new freqRow[0];
+                }
+                else {
+                    return ((freqRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_soglas"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public frset_sitesRow[] Getfrset_sitesRows() {
+                if ((this.Table.ChildRelations["FK_frset_sites_soglas"] == null)) {
+                    return new frset_sitesRow[0];
+                }
+                else {
+                    return ((frset_sitesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_sites_soglas"])));
+                }
+            }
         }
         
         /// <summary>
@@ -17510,6 +18307,33 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int OWNER_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tablestation.OWNER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'OWNER_ID\' в таблице \'station\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestation.OWNER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ownersRow ownersRow {
+                get {
+                    return ((ownersRow)(this.GetParentRow(this.Table.ParentRelations["FK_station_owners"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_station_owners"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isnet_idNull() {
                 return this.IsNull(this.tablestation.net_idColumn);
             }
@@ -18083,6 +18907,74 @@ namespace WindowsFormsApp1 {
             public void SetBS_IDN_RES_BASE_IDNull() {
                 this[this.tablestation.BS_IDN_RES_BASE_IDColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOWNER_IDNull() {
+                return this.IsNull(this.tablestation.OWNER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOWNER_IDNull() {
+                this[this.tablestation.OWNER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freqRow[] GetfreqRows() {
+                if ((this.Table.ChildRelations["FK_freq_station"] == null)) {
+                    return new freqRow[0];
+                }
+                else {
+                    return ((freqRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_station"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freq_ant_infRow[] Getfreq_ant_infRows() {
+                if ((this.Table.ChildRelations["FK_freq_ant_inf_station"] == null)) {
+                    return new freq_ant_infRow[0];
+                }
+                else {
+                    return ((freq_ant_infRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_ant_inf_station"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class authRowChangeEvent : global::System.EventArgs {
+            
+            private authRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authRowChangeEvent(authRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public authRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
         }
         
         /// <summary>
@@ -18462,6 +19354,361 @@ namespace WindowsFormsApp1 {
 }
 namespace WindowsFormsApp1.StudentDataSetTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class authTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public authTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "auth";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("login", "login");
+            tableMapping.ColumnMappings.Add("passwd", "passwd");
+            tableMapping.ColumnMappings.Add("type", "type");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[auth] WHERE (([id] = @Original_id) AND ([login] = @Original_lo" +
+                "gin) AND ([passwd] = @Original_passwd) AND ([type] = @Original_type))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_login", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_passwd", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[auth] ([login], [passwd], [type]) VALUES (@login, @passwd, @ty" +
+                "pe);\r\nSELECT id, login, passwd, type FROM auth WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwd", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[auth] SET [login] = @login, [passwd] = @passwd, [type] = @type WHERE (([id] = @Original_id) AND ([login] = @Original_login) AND ([passwd] = @Original_passwd) AND ([type] = @Original_type));
+SELECT id, login, passwd, type FROM auth WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwd", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_login", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_passwd", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "passwd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.StudentConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, login, passwd, type FROM dbo.auth";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(StudentDataSet.authDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual StudentDataSet.authDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            StudentDataSet.authDataTable dataTable = new StudentDataSet.authDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(StudentDataSet.authDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(StudentDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "auth");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, string Original_login, string Original_passwd, int Original_type) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_login == null)) {
+                throw new global::System.ArgumentNullException("Original_login");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_login));
+            }
+            if ((Original_passwd == null)) {
+                throw new global::System.ArgumentNullException("Original_passwd");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_passwd));
+            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_type));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string login, string passwd, int type) {
+            if ((login == null)) {
+                throw new global::System.ArgumentNullException("login");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(login));
+            }
+            if ((passwd == null)) {
+                throw new global::System.ArgumentNullException("passwd");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(passwd));
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(type));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string login, string passwd, int type, int Original_id, string Original_login, string Original_passwd, int Original_type, int id) {
+            if ((login == null)) {
+                throw new global::System.ArgumentNullException("login");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(login));
+            }
+            if ((passwd == null)) {
+                throw new global::System.ArgumentNullException("passwd");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(passwd));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(type));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
+            if ((Original_login == null)) {
+                throw new global::System.ArgumentNullException("Original_login");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_login));
+            }
+            if ((Original_passwd == null)) {
+                throw new global::System.ArgumentNullException("Original_passwd");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_passwd));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_type));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string login, string passwd, int type, int Original_id, string Original_login, string Original_passwd, int Original_type) {
+            return this.Update(login, passwd, type, Original_id, Original_login, Original_passwd, Original_type, Original_id);
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -29652,19 +30899,21 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIGIT_ANALOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIGIT_ANALOG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[rclas] ([Rclass], [note], [NSHPI], [DIGIT_ANALOG]) VALUES (@Rc" +
-                "lass, @note, @NSHPI, @DIGIT_ANALOG);\r\nSELECT id, Rclass, note, NSHPI, DIGIT_ANAL" +
-                "OG FROM rclas WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[rclas] ([id], [Rclass], [note], [NSHPI], [DIGIT_ANALOG]) VALUE" +
+                "S (@id, @Rclass, @note, @NSHPI, @DIGIT_ANALOG);\r\nSELECT id, Rclass, note, NSHPI," +
+                " DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rclass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rclass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@note", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NSHPI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 6, "NSHPI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIGIT_ANALOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIGIT_ANALOG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[rclas] SET [Rclass] = @Rclass, [note] = @note, [NSHPI] = @NSHPI, [DIGIT_ANALOG] = @DIGIT_ANALOG WHERE (([id] = @Original_id) AND ((@IsNull_Rclass = 1 AND [Rclass] IS NULL) OR ([Rclass] = @Original_Rclass)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = @Original_note)) AND ((@IsNull_NSHPI = 1 AND [NSHPI] IS NULL) OR ([NSHPI] = @Original_NSHPI)) AND ([DIGIT_ANALOG] = @Original_DIGIT_ANALOG));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[rclas] SET [id] = @id, [Rclass] = @Rclass, [note] = @note, [NSHPI] = @NSHPI, [DIGIT_ANALOG] = @DIGIT_ANALOG WHERE (([id] = @Original_id) AND ((@IsNull_Rclass = 1 AND [Rclass] IS NULL) OR ([Rclass] = @Original_Rclass)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = @Original_note)) AND ((@IsNull_NSHPI = 1 AND [NSHPI] IS NULL) OR ([NSHPI] = @Original_NSHPI)) AND ([DIGIT_ANALOG] = @Original_DIGIT_ANALOG));
 SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rclass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rclass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@note", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NSHPI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 6, "NSHPI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -29677,7 +30926,6 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NSHPI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NSHPI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NSHPI", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 6, "NSHPI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DIGIT_ANALOG", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIGIT_ANALOG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29801,26 +31049,27 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Rclass, string note, global::System.Nullable<decimal> NSHPI, int DIGIT_ANALOG) {
+        public virtual int Insert(int id, string Rclass, string note, global::System.Nullable<decimal> NSHPI, int DIGIT_ANALOG) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
             if ((Rclass == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Rclass));
-            }
-            if ((note == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(note));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Rclass));
             }
-            if ((NSHPI.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(NSHPI.Value));
-            }
-            else {
+            if ((note == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(DIGIT_ANALOG));
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(note));
+            }
+            if ((NSHPI.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(NSHPI.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(DIGIT_ANALOG));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -29841,53 +31090,53 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Rclass, string note, global::System.Nullable<decimal> NSHPI, int DIGIT_ANALOG, int Original_id, string Original_Rclass, string Original_note, global::System.Nullable<decimal> Original_NSHPI, int Original_DIGIT_ANALOG, int id) {
+        public virtual int Update(int id, string Rclass, string note, global::System.Nullable<decimal> NSHPI, int DIGIT_ANALOG, int Original_id, string Original_Rclass, string Original_note, global::System.Nullable<decimal> Original_NSHPI, int Original_DIGIT_ANALOG) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
             if ((Rclass == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Rclass));
-            }
-            if ((note == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(note));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Rclass));
             }
-            if ((NSHPI.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(NSHPI.Value));
-            }
-            else {
+            if ((note == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(DIGIT_ANALOG));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
-            if ((Original_Rclass == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(note));
+            }
+            if ((NSHPI.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(NSHPI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Rclass));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(DIGIT_ANALOG));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
+            if ((Original_Rclass == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Rclass));
             }
             if ((Original_note == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_note));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_note));
             }
             if ((Original_NSHPI.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_NSHPI.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_NSHPI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_DIGIT_ANALOG));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_DIGIT_ANALOG));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -29909,7 +31158,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Rclass, string note, global::System.Nullable<decimal> NSHPI, int DIGIT_ANALOG, int Original_id, string Original_Rclass, string Original_note, global::System.Nullable<decimal> Original_NSHPI, int Original_DIGIT_ANALOG) {
-            return this.Update(Rclass, note, NSHPI, DIGIT_ANALOG, Original_id, Original_Rclass, Original_note, Original_NSHPI, Original_DIGIT_ANALOG, Original_id);
+            return this.Update(Original_id, Rclass, note, NSHPI, DIGIT_ANALOG, Original_id, Original_Rclass, Original_note, Original_NSHPI, Original_DIGIT_ANALOG);
         }
     }
     
@@ -33486,6 +34735,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("BS_IDN_RES_RNC", "BS_IDN_RES_RNC");
             tableMapping.ColumnMappings.Add("BS_IDN_RES_BASE_ID", "BS_IDN_RES_BASE_ID");
             tableMapping.ColumnMappings.Add("GUID", "GUID");
+            tableMapping.ColumnMappings.Add("OWNER_ID", "OWNER_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -33547,7 +34797,8 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 "l_ID_TYPE_RES_KEY)) AND ((@IsNull_BS_IDN_RES_RNC = 1 AND [BS_IDN_RES_RNC] IS NUL" +
                 "L) OR ([BS_IDN_RES_RNC] = @Original_BS_IDN_RES_RNC)) AND ((@IsNull_BS_IDN_RES_BA" +
                 "SE_ID = 1 AND [BS_IDN_RES_BASE_ID] IS NULL) OR ([BS_IDN_RES_BASE_ID] = @Original" +
-                "_BS_IDN_RES_BASE_ID)) AND ([GUID] = @Original_GUID))";
+                "_BS_IDN_RES_BASE_ID)) AND ([GUID] = @Original_GUID) AND ((@IsNull_OWNER_ID = 1 A" +
+                "ND [OWNER_ID] IS NULL) OR ([OWNER_ID] = @Original_OWNER_ID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stat_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stat_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_net_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -33648,6 +34899,8 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BS_IDN_RES_BASE_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_BASE_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BS_IDN_RES_BASE_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_BASE_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OWNER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OWNER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[station] ([net_id], [dev_id], [site_id], [statclass], [mobile]" +
@@ -33658,23 +34911,23 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 "C], [date_in_arhiv], [BS_NUM], [status], [ets_stat_id], [ID_VID], [RES_PAYMENT_S" +
                 "TATUS_ID], [frset_sites_id], [close_date], [create_user], [create_date], [update" +
                 "_user], [update_date], [low_orbit], [RK_site_id], [EIS_OBJECT_ID], [ID_TYPE_RES_" +
-                "KEY], [BS_IDN_RES_RNC], [BS_IDN_RES_BASE_ID], [GUID]) VALUES (@net_id, @dev_id, " +
-                "@site_id, @statclass, @mobile, @width, @factnumres, @madeyear, @transport, @nofc" +
-                "ar, @nrazr_mob, @nrazr_bas, @drazr_mob, @dend_mob, @csname, @csindex, @rclass, @" +
-                "power, @rpower, @dreg_sps, @dsniat_sps, @prim, @arhiv, @kol_freq, @area_id, @AVA" +
-                "IL_STATUS, @BS_IDN_NET, @BS_IDN_RES_LAC, @BS_IDN_RES_CI, @soglas_num, @BS_IDN_RE" +
-                "S_MAC, @date_in_arhiv, @BS_NUM, @status, @ets_stat_id, @ID_VID, @RES_PAYMENT_STA" +
-                "TUS_ID, @frset_sites_id, @close_date, @create_user, @create_date, @update_user, " +
-                "@update_date, @low_orbit, @RK_site_id, @EIS_OBJECT_ID, @ID_TYPE_RES_KEY, @BS_IDN" +
-                "_RES_RNC, @BS_IDN_RES_BASE_ID, @GUID);\r\nSELECT stat_id, net_id, dev_id, site_id," +
-                " statclass, mobile, width, factnumres, madeyear, transport, nofcar, nrazr_mob, n" +
-                "razr_bas, drazr_mob, dend_mob, csname, csindex, rclass, power, rpower, dreg_sps," +
-                " dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_IDN_NET, BS_IDN_RE" +
-                "S_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhiv, BS_NUM, status," +
-                " ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, close_date, create_" +
-                "user, create_date, update_user, update_date, low_orbit, RK_site_id, EIS_OBJECT_I" +
-                "D, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID FROM station WHERE " +
-                "(stat_id = SCOPE_IDENTITY())";
+                "KEY], [BS_IDN_RES_RNC], [BS_IDN_RES_BASE_ID], [GUID], [OWNER_ID]) VALUES (@net_i" +
+                "d, @dev_id, @site_id, @statclass, @mobile, @width, @factnumres, @madeyear, @tran" +
+                "sport, @nofcar, @nrazr_mob, @nrazr_bas, @drazr_mob, @dend_mob, @csname, @csindex" +
+                ", @rclass, @power, @rpower, @dreg_sps, @dsniat_sps, @prim, @arhiv, @kol_freq, @a" +
+                "rea_id, @AVAIL_STATUS, @BS_IDN_NET, @BS_IDN_RES_LAC, @BS_IDN_RES_CI, @soglas_num" +
+                ", @BS_IDN_RES_MAC, @date_in_arhiv, @BS_NUM, @status, @ets_stat_id, @ID_VID, @RES" +
+                "_PAYMENT_STATUS_ID, @frset_sites_id, @close_date, @create_user, @create_date, @u" +
+                "pdate_user, @update_date, @low_orbit, @RK_site_id, @EIS_OBJECT_ID, @ID_TYPE_RES_" +
+                "KEY, @BS_IDN_RES_RNC, @BS_IDN_RES_BASE_ID, @GUID, @OWNER_ID);\r\nSELECT stat_id, n" +
+                "et_id, dev_id, site_id, statclass, mobile, width, factnumres, madeyear, transpor" +
+                "t, nofcar, nrazr_mob, nrazr_bas, drazr_mob, dend_mob, csname, csindex, rclass, p" +
+                "ower, rpower, dreg_sps, dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS" +
+                ", BS_IDN_NET, BS_IDN_RES_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in" +
+                "_arhiv, BS_NUM, status, ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_" +
+                "id, close_date, create_user, create_date, update_user, update_date, low_orbit, R" +
+                "K_site_id, EIS_OBJECT_ID, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, G" +
+                "UID, OWNER_ID FROM station WHERE (stat_id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@net_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dev_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dev_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -33726,6 +34979,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BS_IDN_RES_RNC", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_RNC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BS_IDN_RES_BASE_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_BASE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWNER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[station] SET [net_id] = @net_id, [dev_id] = @dev_id, [site_id] = @s" +
@@ -33744,74 +34998,75 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 "user, [create_date] = @create_date, [update_user] = @update_user, [update_date] " +
                 "= @update_date, [low_orbit] = @low_orbit, [RK_site_id] = @RK_site_id, [EIS_OBJEC" +
                 "T_ID] = @EIS_OBJECT_ID, [ID_TYPE_RES_KEY] = @ID_TYPE_RES_KEY, [BS_IDN_RES_RNC] =" +
-                " @BS_IDN_RES_RNC, [BS_IDN_RES_BASE_ID] = @BS_IDN_RES_BASE_ID, [GUID] = @GUID WHE" +
-                "RE (([stat_id] = @Original_stat_id) AND ((@IsNull_net_id = 1 AND [net_id] IS NUL" +
-                "L) OR ([net_id] = @Original_net_id)) AND ((@IsNull_dev_id = 1 AND [dev_id] IS NU" +
-                "LL) OR ([dev_id] = @Original_dev_id)) AND ((@IsNull_site_id = 1 AND [site_id] IS" +
-                " NULL) OR ([site_id] = @Original_site_id)) AND ((@IsNull_statclass = 1 AND [stat" +
-                "class] IS NULL) OR ([statclass] = @Original_statclass)) AND ((@IsNull_mobile = 1" +
-                " AND [mobile] IS NULL) OR ([mobile] = @Original_mobile)) AND ((@IsNull_width = 1" +
-                " AND [width] IS NULL) OR ([width] = @Original_width)) AND ((@IsNull_factnumres =" +
-                " 1 AND [factnumres] IS NULL) OR ([factnumres] = @Original_factnumres)) AND ((@Is" +
-                "Null_madeyear = 1 AND [madeyear] IS NULL) OR ([madeyear] = @Original_madeyear)) " +
-                "AND ((@IsNull_transport = 1 AND [transport] IS NULL) OR ([transport] = @Original" +
-                "_transport)) AND ((@IsNull_nofcar = 1 AND [nofcar] IS NULL) OR ([nofcar] = @Orig" +
-                "inal_nofcar)) AND ((@IsNull_nrazr_mob = 1 AND [nrazr_mob] IS NULL) OR ([nrazr_mo" +
-                "b] = @Original_nrazr_mob)) AND ((@IsNull_nrazr_bas = 1 AND [nrazr_bas] IS NULL) " +
-                "OR ([nrazr_bas] = @Original_nrazr_bas)) AND ((@IsNull_drazr_mob = 1 AND [drazr_m" +
-                "ob] IS NULL) OR ([drazr_mob] = @Original_drazr_mob)) AND ((@IsNull_dend_mob = 1 " +
-                "AND [dend_mob] IS NULL) OR ([dend_mob] = @Original_dend_mob)) AND ((@IsNull_csna" +
-                "me = 1 AND [csname] IS NULL) OR ([csname] = @Original_csname)) AND ((@IsNull_csi" +
-                "ndex = 1 AND [csindex] IS NULL) OR ([csindex] = @Original_csindex)) AND ((@IsNul" +
-                "l_rclass = 1 AND [rclass] IS NULL) OR ([rclass] = @Original_rclass)) AND ((@IsNu" +
-                "ll_power = 1 AND [power] IS NULL) OR ([power] = @Original_power)) AND ((@IsNull_" +
-                "rpower = 1 AND [rpower] IS NULL) OR ([rpower] = @Original_rpower)) AND ((@IsNull" +
-                "_dreg_sps = 1 AND [dreg_sps] IS NULL) OR ([dreg_sps] = @Original_dreg_sps)) AND " +
-                "((@IsNull_dsniat_sps = 1 AND [dsniat_sps] IS NULL) OR ([dsniat_sps] = @Original_" +
-                "dsniat_sps)) AND ((@IsNull_prim = 1 AND [prim] IS NULL) OR ([prim] = @Original_p" +
-                "rim)) AND ([arhiv] = @Original_arhiv) AND ((@IsNull_kol_freq = 1 AND [kol_freq] " +
-                "IS NULL) OR ([kol_freq] = @Original_kol_freq)) AND ((@IsNull_area_id = 1 AND [ar" +
-                "ea_id] IS NULL) OR ([area_id] = @Original_area_id)) AND ((@IsNull_AVAIL_STATUS =" +
-                " 1 AND [AVAIL_STATUS] IS NULL) OR ([AVAIL_STATUS] = @Original_AVAIL_STATUS)) AND" +
-                " ((@IsNull_BS_IDN_NET = 1 AND [BS_IDN_NET] IS NULL) OR ([BS_IDN_NET] = @Original" +
-                "_BS_IDN_NET)) AND ((@IsNull_BS_IDN_RES_LAC = 1 AND [BS_IDN_RES_LAC] IS NULL) OR " +
-                "([BS_IDN_RES_LAC] = @Original_BS_IDN_RES_LAC)) AND ((@IsNull_BS_IDN_RES_CI = 1 A" +
-                "ND [BS_IDN_RES_CI] IS NULL) OR ([BS_IDN_RES_CI] = @Original_BS_IDN_RES_CI)) AND " +
-                "((@IsNull_soglas_num = 1 AND [soglas_num] IS NULL) OR ([soglas_num] = @Original_" +
-                "soglas_num)) AND ((@IsNull_BS_IDN_RES_MAC = 1 AND [BS_IDN_RES_MAC] IS NULL) OR (" +
-                "[BS_IDN_RES_MAC] = @Original_BS_IDN_RES_MAC)) AND ((@IsNull_date_in_arhiv = 1 AN" +
-                "D [date_in_arhiv] IS NULL) OR ([date_in_arhiv] = @Original_date_in_arhiv)) AND (" +
-                "(@IsNull_BS_NUM = 1 AND [BS_NUM] IS NULL) OR ([BS_NUM] = @Original_BS_NUM)) AND " +
-                "((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)) AND" +
-                " ((@IsNull_ets_stat_id = 1 AND [ets_stat_id] IS NULL) OR ([ets_stat_id] = @Origi" +
-                "nal_ets_stat_id)) AND ((@IsNull_ID_VID = 1 AND [ID_VID] IS NULL) OR ([ID_VID] = " +
-                "@Original_ID_VID)) AND ((@IsNull_RES_PAYMENT_STATUS_ID = 1 AND [RES_PAYMENT_STAT" +
-                "US_ID] IS NULL) OR ([RES_PAYMENT_STATUS_ID] = @Original_RES_PAYMENT_STATUS_ID)) " +
-                "AND ((@IsNull_frset_sites_id = 1 AND [frset_sites_id] IS NULL) OR ([frset_sites_" +
-                "id] = @Original_frset_sites_id)) AND ((@IsNull_close_date = 1 AND [close_date] I" +
-                "S NULL) OR ([close_date] = @Original_close_date)) AND ((@IsNull_create_user = 1 " +
-                "AND [create_user] IS NULL) OR ([create_user] = @Original_create_user)) AND ((@Is" +
-                "Null_create_date = 1 AND [create_date] IS NULL) OR ([create_date] = @Original_cr" +
-                "eate_date)) AND ((@IsNull_update_user = 1 AND [update_user] IS NULL) OR ([update" +
-                "_user] = @Original_update_user)) AND ((@IsNull_update_date = 1 AND [update_date]" +
-                " IS NULL) OR ([update_date] = @Original_update_date)) AND ((@IsNull_low_orbit = " +
-                "1 AND [low_orbit] IS NULL) OR ([low_orbit] = @Original_low_orbit)) AND ((@IsNull" +
-                "_RK_site_id = 1 AND [RK_site_id] IS NULL) OR ([RK_site_id] = @Original_RK_site_i" +
-                "d)) AND ((@IsNull_EIS_OBJECT_ID = 1 AND [EIS_OBJECT_ID] IS NULL) OR ([EIS_OBJECT" +
-                "_ID] = @Original_EIS_OBJECT_ID)) AND ((@IsNull_ID_TYPE_RES_KEY = 1 AND [ID_TYPE_" +
-                "RES_KEY] IS NULL) OR ([ID_TYPE_RES_KEY] = @Original_ID_TYPE_RES_KEY)) AND ((@IsN" +
-                "ull_BS_IDN_RES_RNC = 1 AND [BS_IDN_RES_RNC] IS NULL) OR ([BS_IDN_RES_RNC] = @Ori" +
-                "ginal_BS_IDN_RES_RNC)) AND ((@IsNull_BS_IDN_RES_BASE_ID = 1 AND [BS_IDN_RES_BASE" +
-                "_ID] IS NULL) OR ([BS_IDN_RES_BASE_ID] = @Original_BS_IDN_RES_BASE_ID)) AND ([GU" +
-                "ID] = @Original_GUID));\r\nSELECT stat_id, net_id, dev_id, site_id, statclass, mob" +
-                "ile, width, factnumres, madeyear, transport, nofcar, nrazr_mob, nrazr_bas, drazr" +
-                "_mob, dend_mob, csname, csindex, rclass, power, rpower, dreg_sps, dsniat_sps, pr" +
-                "im, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_IDN_NET, BS_IDN_RES_LAC, BS_IDN_R" +
-                "ES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhiv, BS_NUM, status, ets_stat_id, I" +
-                "D_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, close_date, create_user, create_da" +
-                "te, update_user, update_date, low_orbit, RK_site_id, EIS_OBJECT_ID, ID_TYPE_RES_" +
-                "KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID FROM station WHERE (stat_id = @sta" +
-                "t_id)";
+                " @BS_IDN_RES_RNC, [BS_IDN_RES_BASE_ID] = @BS_IDN_RES_BASE_ID, [GUID] = @GUID, [O" +
+                "WNER_ID] = @OWNER_ID WHERE (([stat_id] = @Original_stat_id) AND ((@IsNull_net_id" +
+                " = 1 AND [net_id] IS NULL) OR ([net_id] = @Original_net_id)) AND ((@IsNull_dev_i" +
+                "d = 1 AND [dev_id] IS NULL) OR ([dev_id] = @Original_dev_id)) AND ((@IsNull_site" +
+                "_id = 1 AND [site_id] IS NULL) OR ([site_id] = @Original_site_id)) AND ((@IsNull" +
+                "_statclass = 1 AND [statclass] IS NULL) OR ([statclass] = @Original_statclass)) " +
+                "AND ((@IsNull_mobile = 1 AND [mobile] IS NULL) OR ([mobile] = @Original_mobile))" +
+                " AND ((@IsNull_width = 1 AND [width] IS NULL) OR ([width] = @Original_width)) AN" +
+                "D ((@IsNull_factnumres = 1 AND [factnumres] IS NULL) OR ([factnumres] = @Origina" +
+                "l_factnumres)) AND ((@IsNull_madeyear = 1 AND [madeyear] IS NULL) OR ([madeyear]" +
+                " = @Original_madeyear)) AND ((@IsNull_transport = 1 AND [transport] IS NULL) OR " +
+                "([transport] = @Original_transport)) AND ((@IsNull_nofcar = 1 AND [nofcar] IS NU" +
+                "LL) OR ([nofcar] = @Original_nofcar)) AND ((@IsNull_nrazr_mob = 1 AND [nrazr_mob" +
+                "] IS NULL) OR ([nrazr_mob] = @Original_nrazr_mob)) AND ((@IsNull_nrazr_bas = 1 A" +
+                "ND [nrazr_bas] IS NULL) OR ([nrazr_bas] = @Original_nrazr_bas)) AND ((@IsNull_dr" +
+                "azr_mob = 1 AND [drazr_mob] IS NULL) OR ([drazr_mob] = @Original_drazr_mob)) AND" +
+                " ((@IsNull_dend_mob = 1 AND [dend_mob] IS NULL) OR ([dend_mob] = @Original_dend_" +
+                "mob)) AND ((@IsNull_csname = 1 AND [csname] IS NULL) OR ([csname] = @Original_cs" +
+                "name)) AND ((@IsNull_csindex = 1 AND [csindex] IS NULL) OR ([csindex] = @Origina" +
+                "l_csindex)) AND ((@IsNull_rclass = 1 AND [rclass] IS NULL) OR ([rclass] = @Origi" +
+                "nal_rclass)) AND ((@IsNull_power = 1 AND [power] IS NULL) OR ([power] = @Origina" +
+                "l_power)) AND ((@IsNull_rpower = 1 AND [rpower] IS NULL) OR ([rpower] = @Origina" +
+                "l_rpower)) AND ((@IsNull_dreg_sps = 1 AND [dreg_sps] IS NULL) OR ([dreg_sps] = @" +
+                "Original_dreg_sps)) AND ((@IsNull_dsniat_sps = 1 AND [dsniat_sps] IS NULL) OR ([" +
+                "dsniat_sps] = @Original_dsniat_sps)) AND ((@IsNull_prim = 1 AND [prim] IS NULL) " +
+                "OR ([prim] = @Original_prim)) AND ([arhiv] = @Original_arhiv) AND ((@IsNull_kol_" +
+                "freq = 1 AND [kol_freq] IS NULL) OR ([kol_freq] = @Original_kol_freq)) AND ((@Is" +
+                "Null_area_id = 1 AND [area_id] IS NULL) OR ([area_id] = @Original_area_id)) AND " +
+                "((@IsNull_AVAIL_STATUS = 1 AND [AVAIL_STATUS] IS NULL) OR ([AVAIL_STATUS] = @Ori" +
+                "ginal_AVAIL_STATUS)) AND ((@IsNull_BS_IDN_NET = 1 AND [BS_IDN_NET] IS NULL) OR (" +
+                "[BS_IDN_NET] = @Original_BS_IDN_NET)) AND ((@IsNull_BS_IDN_RES_LAC = 1 AND [BS_I" +
+                "DN_RES_LAC] IS NULL) OR ([BS_IDN_RES_LAC] = @Original_BS_IDN_RES_LAC)) AND ((@Is" +
+                "Null_BS_IDN_RES_CI = 1 AND [BS_IDN_RES_CI] IS NULL) OR ([BS_IDN_RES_CI] = @Origi" +
+                "nal_BS_IDN_RES_CI)) AND ((@IsNull_soglas_num = 1 AND [soglas_num] IS NULL) OR ([" +
+                "soglas_num] = @Original_soglas_num)) AND ((@IsNull_BS_IDN_RES_MAC = 1 AND [BS_ID" +
+                "N_RES_MAC] IS NULL) OR ([BS_IDN_RES_MAC] = @Original_BS_IDN_RES_MAC)) AND ((@IsN" +
+                "ull_date_in_arhiv = 1 AND [date_in_arhiv] IS NULL) OR ([date_in_arhiv] = @Origin" +
+                "al_date_in_arhiv)) AND ((@IsNull_BS_NUM = 1 AND [BS_NUM] IS NULL) OR ([BS_NUM] =" +
+                " @Original_BS_NUM)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] " +
+                "= @Original_status)) AND ((@IsNull_ets_stat_id = 1 AND [ets_stat_id] IS NULL) OR" +
+                " ([ets_stat_id] = @Original_ets_stat_id)) AND ((@IsNull_ID_VID = 1 AND [ID_VID] " +
+                "IS NULL) OR ([ID_VID] = @Original_ID_VID)) AND ((@IsNull_RES_PAYMENT_STATUS_ID =" +
+                " 1 AND [RES_PAYMENT_STATUS_ID] IS NULL) OR ([RES_PAYMENT_STATUS_ID] = @Original_" +
+                "RES_PAYMENT_STATUS_ID)) AND ((@IsNull_frset_sites_id = 1 AND [frset_sites_id] IS" +
+                " NULL) OR ([frset_sites_id] = @Original_frset_sites_id)) AND ((@IsNull_close_dat" +
+                "e = 1 AND [close_date] IS NULL) OR ([close_date] = @Original_close_date)) AND ((" +
+                "@IsNull_create_user = 1 AND [create_user] IS NULL) OR ([create_user] = @Original" +
+                "_create_user)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([cre" +
+                "ate_date] = @Original_create_date)) AND ((@IsNull_update_user = 1 AND [update_us" +
+                "er] IS NULL) OR ([update_user] = @Original_update_user)) AND ((@IsNull_update_da" +
+                "te = 1 AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)) AN" +
+                "D ((@IsNull_low_orbit = 1 AND [low_orbit] IS NULL) OR ([low_orbit] = @Original_l" +
+                "ow_orbit)) AND ((@IsNull_RK_site_id = 1 AND [RK_site_id] IS NULL) OR ([RK_site_i" +
+                "d] = @Original_RK_site_id)) AND ((@IsNull_EIS_OBJECT_ID = 1 AND [EIS_OBJECT_ID] " +
+                "IS NULL) OR ([EIS_OBJECT_ID] = @Original_EIS_OBJECT_ID)) AND ((@IsNull_ID_TYPE_R" +
+                "ES_KEY = 1 AND [ID_TYPE_RES_KEY] IS NULL) OR ([ID_TYPE_RES_KEY] = @Original_ID_T" +
+                "YPE_RES_KEY)) AND ((@IsNull_BS_IDN_RES_RNC = 1 AND [BS_IDN_RES_RNC] IS NULL) OR " +
+                "([BS_IDN_RES_RNC] = @Original_BS_IDN_RES_RNC)) AND ((@IsNull_BS_IDN_RES_BASE_ID " +
+                "= 1 AND [BS_IDN_RES_BASE_ID] IS NULL) OR ([BS_IDN_RES_BASE_ID] = @Original_BS_ID" +
+                "N_RES_BASE_ID)) AND ([GUID] = @Original_GUID) AND ((@IsNull_OWNER_ID = 1 AND [OW" +
+                "NER_ID] IS NULL) OR ([OWNER_ID] = @Original_OWNER_ID)));\r\nSELECT stat_id, net_id" +
+                ", dev_id, site_id, statclass, mobile, width, factnumres, madeyear, transport, no" +
+                "fcar, nrazr_mob, nrazr_bas, drazr_mob, dend_mob, csname, csindex, rclass, power," +
+                " rpower, dreg_sps, dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_" +
+                "IDN_NET, BS_IDN_RES_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhi" +
+                "v, BS_NUM, status, ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, c" +
+                "lose_date, create_user, create_date, update_user, update_date, low_orbit, RK_sit" +
+                "e_id, EIS_OBJECT_ID, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID, " +
+                "OWNER_ID FROM station WHERE (stat_id = @stat_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@net_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dev_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dev_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -33863,6 +35118,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BS_IDN_RES_RNC", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_RNC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BS_IDN_RES_BASE_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_BASE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWNER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stat_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stat_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_net_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_net_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -33962,6 +35218,8 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BS_IDN_RES_BASE_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_BASE_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BS_IDN_RES_BASE_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BS_IDN_RES_BASE_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OWNER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OWNER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stat_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "stat_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -33978,7 +35236,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT stat_id, net_id, dev_id, site_id, statclass, mobile, width, factnumres, madeyear, transport, nofcar, nrazr_mob, nrazr_bas, drazr_mob, dend_mob, csname, csindex, rclass, power, rpower, dreg_sps, dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_IDN_NET, BS_IDN_RES_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhiv, BS_NUM, status, ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, close_date, create_user, create_date, update_user, update_date, low_orbit, RK_site_id, EIS_OBJECT_ID, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID FROM dbo.station";
+            this._commandCollection[0].CommandText = @"SELECT stat_id, net_id, dev_id, site_id, statclass, mobile, width, factnumres, madeyear, transport, nofcar, nrazr_mob, nrazr_bas, drazr_mob, dend_mob, csname, csindex, rclass, power, rpower, dreg_sps, dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_IDN_NET, BS_IDN_RES_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhiv, BS_NUM, status, ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, close_date, create_user, create_date, update_user, update_date, low_orbit, RK_site_id, EIS_OBJECT_ID, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID, OWNER_ID FROM dbo.station";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34090,7 +35348,8 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     global::System.Nullable<int> Original_ID_TYPE_RES_KEY, 
                     string Original_BS_IDN_RES_RNC, 
                     string Original_BS_IDN_RES_BASE_ID, 
-                    System.Guid Original_GUID) {
+                    System.Guid Original_GUID, 
+                    global::System.Nullable<int> Original_OWNER_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_stat_id));
             if ((Original_net_id.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -34478,6 +35737,14 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 this.Adapter.DeleteCommand.Parameters[97].Value = ((string)(Original_BS_IDN_RES_BASE_ID));
             }
             this.Adapter.DeleteCommand.Parameters[98].Value = ((System.Guid)(Original_GUID));
+            if ((Original_OWNER_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[100].Value = ((int)(Original_OWNER_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[100].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34548,7 +35815,8 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     global::System.Nullable<int> ID_TYPE_RES_KEY, 
                     string BS_IDN_RES_RNC, 
                     string BS_IDN_RES_BASE_ID, 
-                    System.Guid GUID) {
+                    System.Guid GUID, 
+                    global::System.Nullable<int> OWNER_ID) {
             if ((net_id.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(net_id.Value));
             }
@@ -34839,6 +36107,12 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 this.Adapter.InsertCommand.Parameters[48].Value = ((string)(BS_IDN_RES_BASE_ID));
             }
             this.Adapter.InsertCommand.Parameters[49].Value = ((System.Guid)(GUID));
+            if ((OWNER_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[50].Value = ((int)(OWNER_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34910,6 +36184,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     string BS_IDN_RES_RNC, 
                     string BS_IDN_RES_BASE_ID, 
                     System.Guid GUID, 
+                    global::System.Nullable<int> OWNER_ID, 
                     int Original_stat_id, 
                     global::System.Nullable<int> Original_net_id, 
                     global::System.Nullable<int> Original_dev_id, 
@@ -34961,6 +36236,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     string Original_BS_IDN_RES_RNC, 
                     string Original_BS_IDN_RES_BASE_ID, 
                     System.Guid Original_GUID, 
+                    global::System.Nullable<int> Original_OWNER_ID, 
                     int stat_id) {
             if ((net_id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(net_id.Value));
@@ -35252,394 +36528,408 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(BS_IDN_RES_BASE_ID));
             }
             this.Adapter.UpdateCommand.Parameters[49].Value = ((System.Guid)(GUID));
-            this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(Original_stat_id));
-            if ((Original_net_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_net_id.Value));
+            if ((OWNER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(OWNER_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_stat_id));
+            if ((Original_net_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((int)(Original_net_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             if ((Original_dev_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_dev_id.Value));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Original_dev_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             if ((Original_site_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_site_id.Value));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(Original_site_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
             if ((Original_statclass == null)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_statclass));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_statclass));
             }
             if ((Original_mobile == null)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_mobile));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_mobile));
             }
             if ((Original_width.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((decimal)(Original_width.Value));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((decimal)(Original_width.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
             }
             if ((Original_factnumres == null)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_factnumres));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_factnumres));
             }
             if ((Original_madeyear.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((short)(Original_madeyear.Value));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((short)(Original_madeyear.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
             if ((Original_transport == null)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_transport));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_transport));
             }
             if ((Original_nofcar == null)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_nofcar));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_nofcar));
             }
             if ((Original_nrazr_mob == null)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_nrazr_mob));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(Original_nrazr_mob));
             }
             if ((Original_nrazr_bas == null)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_nrazr_bas));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((string)(Original_nrazr_bas));
             }
             if ((Original_drazr_mob.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((System.DateTime)(Original_drazr_mob.Value));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((System.DateTime)(Original_drazr_mob.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
             }
             if ((Original_dend_mob.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((System.DateTime)(Original_dend_mob.Value));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((System.DateTime)(Original_dend_mob.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
             }
             if ((Original_csname == null)) {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_csname));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((string)(Original_csname));
             }
             if ((Original_csindex.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((int)(Original_csindex.Value));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((int)(Original_csindex.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
             }
             if ((Original_rclass == null)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_rclass));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(Original_rclass));
             }
             if ((Original_power.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((decimal)(Original_power.Value));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((decimal)(Original_power.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
             }
             if ((Original_rpower.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((decimal)(Original_rpower.Value));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((decimal)(Original_rpower.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
             }
             if ((Original_dreg_sps.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((System.DateTime)(Original_dreg_sps.Value));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((System.DateTime)(Original_dreg_sps.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
             }
             if ((Original_dsniat_sps.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((System.DateTime)(Original_dsniat_sps.Value));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((System.DateTime)(Original_dsniat_sps.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
             }
             if ((Original_prim == null)) {
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((string)(Original_prim));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((string)(Original_prim));
             }
-            this.Adapter.UpdateCommand.Parameters[95].Value = ((bool)(Original_arhiv));
+            this.Adapter.UpdateCommand.Parameters[96].Value = ((bool)(Original_arhiv));
             if ((Original_kol_freq.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((int)(Original_kol_freq.Value));
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((int)(Original_kol_freq.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
             }
             if ((Original_area_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((int)(Original_area_id.Value));
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((int)(Original_area_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[99].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
             }
             if ((Original_AVAIL_STATUS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((int)(Original_AVAIL_STATUS.Value));
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((int)(Original_AVAIL_STATUS.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[101].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
             }
             if ((Original_BS_IDN_NET == null)) {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[103].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[104].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((string)(Original_BS_IDN_NET));
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((string)(Original_BS_IDN_NET));
             }
             if ((Original_BS_IDN_RES_LAC == null)) {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[105].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((string)(Original_BS_IDN_RES_LAC));
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((string)(Original_BS_IDN_RES_LAC));
             }
             if ((Original_BS_IDN_RES_CI == null)) {
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[107].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((string)(Original_BS_IDN_RES_CI));
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((string)(Original_BS_IDN_RES_CI));
             }
             if ((Original_soglas_num == null)) {
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[109].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[110].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[109].Value = ((string)(Original_soglas_num));
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[110].Value = ((string)(Original_soglas_num));
             }
             if ((Original_BS_IDN_RES_MAC == null)) {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[111].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[112].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[111].Value = ((string)(Original_BS_IDN_RES_MAC));
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[112].Value = ((string)(Original_BS_IDN_RES_MAC));
             }
             if ((Original_date_in_arhiv.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[112].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[113].Value = ((System.DateTime)(Original_date_in_arhiv.Value));
+                this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[114].Value = ((System.DateTime)(Original_date_in_arhiv.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[112].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[113].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[114].Value = global::System.DBNull.Value;
             }
             if ((Original_BS_NUM == null)) {
-                this.Adapter.UpdateCommand.Parameters[114].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[115].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[116].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[114].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[115].Value = ((string)(Original_BS_NUM));
+                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[116].Value = ((string)(Original_BS_NUM));
             }
             if ((Original_status == null)) {
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[117].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[118].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[117].Value = ((string)(Original_status));
+                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[118].Value = ((string)(Original_status));
             }
             if ((Original_ets_stat_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[119].Value = ((int)(Original_ets_stat_id.Value));
+                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[120].Value = ((int)(Original_ets_stat_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[119].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[120].Value = global::System.DBNull.Value;
             }
             if ((Original_ID_VID == null)) {
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[121].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[122].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[121].Value = ((string)(Original_ID_VID));
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[122].Value = ((string)(Original_ID_VID));
             }
             if ((Original_RES_PAYMENT_STATUS_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[123].Value = ((int)(Original_RES_PAYMENT_STATUS_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[124].Value = ((int)(Original_RES_PAYMENT_STATUS_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[123].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[124].Value = global::System.DBNull.Value;
             }
             if ((Original_frset_sites_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[124].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[125].Value = ((int)(Original_frset_sites_id.Value));
+                this.Adapter.UpdateCommand.Parameters[125].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[126].Value = ((int)(Original_frset_sites_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[124].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[125].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[125].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[126].Value = global::System.DBNull.Value;
             }
             if ((Original_close_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[126].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[127].Value = ((System.DateTime)(Original_close_date.Value));
+                this.Adapter.UpdateCommand.Parameters[127].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[128].Value = ((System.DateTime)(Original_close_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[126].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[127].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[127].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[128].Value = global::System.DBNull.Value;
             }
             if ((Original_create_user == null)) {
-                this.Adapter.UpdateCommand.Parameters[128].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[129].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[130].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[128].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[129].Value = ((string)(Original_create_user));
+                this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[130].Value = ((string)(Original_create_user));
             }
             if ((Original_create_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[130].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[131].Value = ((System.DateTime)(Original_create_date.Value));
+                this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[132].Value = ((System.DateTime)(Original_create_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[130].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[131].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[132].Value = global::System.DBNull.Value;
             }
             if ((Original_update_user == null)) {
-                this.Adapter.UpdateCommand.Parameters[132].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[133].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[134].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[132].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[133].Value = ((string)(Original_update_user));
+                this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[134].Value = ((string)(Original_update_user));
             }
             if ((Original_update_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[134].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[135].Value = ((System.DateTime)(Original_update_date.Value));
+                this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[136].Value = ((System.DateTime)(Original_update_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[134].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[135].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[136].Value = global::System.DBNull.Value;
             }
             if ((Original_low_orbit.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[136].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[137].Value = ((bool)(Original_low_orbit.Value));
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[138].Value = ((bool)(Original_low_orbit.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[136].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[137].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[138].Value = global::System.DBNull.Value;
             }
             if ((Original_RK_site_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[138].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[139].Value = ((int)(Original_RK_site_id.Value));
+                this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[140].Value = ((int)(Original_RK_site_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[138].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[139].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[140].Value = global::System.DBNull.Value;
             }
             if ((Original_EIS_OBJECT_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[140].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[141].Value = ((long)(Original_EIS_OBJECT_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[141].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[142].Value = ((long)(Original_EIS_OBJECT_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[140].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[141].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[141].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[142].Value = global::System.DBNull.Value;
             }
             if ((Original_ID_TYPE_RES_KEY.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[142].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[143].Value = ((int)(Original_ID_TYPE_RES_KEY.Value));
+                this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[144].Value = ((int)(Original_ID_TYPE_RES_KEY.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[142].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[143].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[144].Value = global::System.DBNull.Value;
             }
             if ((Original_BS_IDN_RES_RNC == null)) {
-                this.Adapter.UpdateCommand.Parameters[144].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[145].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[146].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[144].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[145].Value = ((string)(Original_BS_IDN_RES_RNC));
+                this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[146].Value = ((string)(Original_BS_IDN_RES_RNC));
             }
             if ((Original_BS_IDN_RES_BASE_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[146].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[147].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[147].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[148].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[146].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[147].Value = ((string)(Original_BS_IDN_RES_BASE_ID));
+                this.Adapter.UpdateCommand.Parameters[147].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[148].Value = ((string)(Original_BS_IDN_RES_BASE_ID));
             }
-            this.Adapter.UpdateCommand.Parameters[148].Value = ((System.Guid)(Original_GUID));
-            this.Adapter.UpdateCommand.Parameters[149].Value = ((int)(stat_id));
+            this.Adapter.UpdateCommand.Parameters[149].Value = ((System.Guid)(Original_GUID));
+            if ((Original_OWNER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[150].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[151].Value = ((int)(Original_OWNER_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[150].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[151].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[152].Value = ((int)(stat_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -35711,6 +37001,7 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     string BS_IDN_RES_RNC, 
                     string BS_IDN_RES_BASE_ID, 
                     System.Guid GUID, 
+                    global::System.Nullable<int> OWNER_ID, 
                     int Original_stat_id, 
                     global::System.Nullable<int> Original_net_id, 
                     global::System.Nullable<int> Original_dev_id, 
@@ -35761,8 +37052,9 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     global::System.Nullable<int> Original_ID_TYPE_RES_KEY, 
                     string Original_BS_IDN_RES_RNC, 
                     string Original_BS_IDN_RES_BASE_ID, 
-                    System.Guid Original_GUID) {
-            return this.Update(net_id, dev_id, site_id, statclass, mobile, width, factnumres, madeyear, transport, nofcar, nrazr_mob, nrazr_bas, drazr_mob, dend_mob, csname, csindex, rclass, power, rpower, dreg_sps, dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_IDN_NET, BS_IDN_RES_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhiv, BS_NUM, status, ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, close_date, create_user, create_date, update_user, update_date, low_orbit, RK_site_id, EIS_OBJECT_ID, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID, Original_stat_id, Original_net_id, Original_dev_id, Original_site_id, Original_statclass, Original_mobile, Original_width, Original_factnumres, Original_madeyear, Original_transport, Original_nofcar, Original_nrazr_mob, Original_nrazr_bas, Original_drazr_mob, Original_dend_mob, Original_csname, Original_csindex, Original_rclass, Original_power, Original_rpower, Original_dreg_sps, Original_dsniat_sps, Original_prim, Original_arhiv, Original_kol_freq, Original_area_id, Original_AVAIL_STATUS, Original_BS_IDN_NET, Original_BS_IDN_RES_LAC, Original_BS_IDN_RES_CI, Original_soglas_num, Original_BS_IDN_RES_MAC, Original_date_in_arhiv, Original_BS_NUM, Original_status, Original_ets_stat_id, Original_ID_VID, Original_RES_PAYMENT_STATUS_ID, Original_frset_sites_id, Original_close_date, Original_create_user, Original_create_date, Original_update_user, Original_update_date, Original_low_orbit, Original_RK_site_id, Original_EIS_OBJECT_ID, Original_ID_TYPE_RES_KEY, Original_BS_IDN_RES_RNC, Original_BS_IDN_RES_BASE_ID, Original_GUID, Original_stat_id);
+                    System.Guid Original_GUID, 
+                    global::System.Nullable<int> Original_OWNER_ID) {
+            return this.Update(net_id, dev_id, site_id, statclass, mobile, width, factnumres, madeyear, transport, nofcar, nrazr_mob, nrazr_bas, drazr_mob, dend_mob, csname, csindex, rclass, power, rpower, dreg_sps, dsniat_sps, prim, arhiv, kol_freq, area_id, AVAIL_STATUS, BS_IDN_NET, BS_IDN_RES_LAC, BS_IDN_RES_CI, soglas_num, BS_IDN_RES_MAC, date_in_arhiv, BS_NUM, status, ets_stat_id, ID_VID, RES_PAYMENT_STATUS_ID, frset_sites_id, close_date, create_user, create_date, update_user, update_date, low_orbit, RK_site_id, EIS_OBJECT_ID, ID_TYPE_RES_KEY, BS_IDN_RES_RNC, BS_IDN_RES_BASE_ID, GUID, OWNER_ID, Original_stat_id, Original_net_id, Original_dev_id, Original_site_id, Original_statclass, Original_mobile, Original_width, Original_factnumres, Original_madeyear, Original_transport, Original_nofcar, Original_nrazr_mob, Original_nrazr_bas, Original_drazr_mob, Original_dend_mob, Original_csname, Original_csindex, Original_rclass, Original_power, Original_rpower, Original_dreg_sps, Original_dsniat_sps, Original_prim, Original_arhiv, Original_kol_freq, Original_area_id, Original_AVAIL_STATUS, Original_BS_IDN_NET, Original_BS_IDN_RES_LAC, Original_BS_IDN_RES_CI, Original_soglas_num, Original_BS_IDN_RES_MAC, Original_date_in_arhiv, Original_BS_NUM, Original_status, Original_ets_stat_id, Original_ID_VID, Original_RES_PAYMENT_STATUS_ID, Original_frset_sites_id, Original_close_date, Original_create_user, Original_create_date, Original_update_user, Original_update_date, Original_low_orbit, Original_RK_site_id, Original_EIS_OBJECT_ID, Original_ID_TYPE_RES_KEY, Original_BS_IDN_RES_RNC, Original_BS_IDN_RES_BASE_ID, Original_GUID, Original_OWNER_ID, Original_stat_id);
         }
     }
     
@@ -35777,6 +37069,8 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
     public partial class TableAdapterManager : global::System.ComponentModel.Component {
         
         private UpdateOrderOption _updateOrder;
+        
+        private authTableAdapter _authTableAdapter;
         
         private freqTableAdapter _freqTableAdapter;
         
@@ -35812,6 +37106,20 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public authTableAdapter authTableAdapter {
+            get {
+                return this._authTableAdapter;
+            }
+            set {
+                this._authTableAdapter = value;
             }
         }
         
@@ -35988,6 +37296,10 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._authTableAdapter != null) 
+                            && (this._authTableAdapter.Connection != null))) {
+                    return this._authTableAdapter.Connection;
+                }
                 if (((this._freqTableAdapter != null) 
                             && (this._freqTableAdapter.Connection != null))) {
                     return this._freqTableAdapter.Connection;
@@ -36045,6 +37357,9 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._authTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._freqTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -36098,57 +37413,12 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._freqTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.freq.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._soglasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.soglas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._freqTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._freq_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._freq_ant_infTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._fREQ_RCLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FREQ_RCLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._fREQ_RCLASSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._frset_freqsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.frset_freqs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._frset_freqsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._frset_freqs_rclassTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._frset_freqs_rclassTableAdapter.Update(updatedRows));
+                    result = (result + this._soglasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36161,6 +37431,51 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._stationTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._stationTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._freq_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._freq_ant_infTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._freqTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.freq.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._freqTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._frset_freqsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.frset_freqs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._frset_freqsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._rclasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.rclas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -36170,21 +37485,30 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._soglasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.soglas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._authTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.auth.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._soglasTableAdapter.Update(updatedRows));
+                    result = (result + this._authTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._stationTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._fREQ_RCLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FREQ_RCLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._stationTableAdapter.Update(updatedRows));
+                    result = (result + this._fREQ_RCLASSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._frset_freqs_rclassTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._frset_freqs_rclassTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36206,51 +37530,11 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._freqTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.freq.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._soglasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.soglas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._freqTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._freq_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._freq_ant_infTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._fREQ_RCLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FREQ_RCLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._fREQ_RCLASSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._frset_freqsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.frset_freqs.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._frset_freqsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._frset_freqs_rclassTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._frset_freqs_rclassTableAdapter.Update(addedRows));
+                    result = (result + this._soglasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36262,6 +37546,46 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._stationTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._stationTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._freq_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._freq_ant_infTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._freqTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.freq.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._freqTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._frset_freqsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.frset_freqs.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._frset_freqsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._rclasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.rclas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -36270,19 +37594,27 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._soglasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.soglas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._authTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.auth.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._soglasTableAdapter.Update(addedRows));
+                    result = (result + this._authTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._stationTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._fREQ_RCLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FREQ_RCLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._stationTableAdapter.Update(addedRows));
+                    result = (result + this._fREQ_RCLASSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._frset_freqs_rclassTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._frset_freqs_rclassTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36296,59 +37628,11 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(StudentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._stationTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._stationTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._soglasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.soglas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._soglasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rclasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rclas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rclasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._frset_sitesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.frset_sites.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._frset_sitesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._frset_freqs_rclassTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._frset_freqs_rclassTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._frset_freqsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.frset_freqs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._frset_freqsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36360,11 +37644,27 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._freq_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._authTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.auth.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._freq_ant_infTableAdapter.Update(deletedRows));
+                    result = (result + this._authTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rclasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rclas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rclasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._frset_freqsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.frset_freqs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._frset_freqsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36373,6 +37673,46 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._freqTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._freq_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._freq_ant_infTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._stationTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._stationTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._frset_sitesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.frset_sites.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._frset_sitesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._soglasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.soglas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._soglasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36422,6 +37762,11 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._authTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._authTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
             }
             if (((this._freqTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._freqTableAdapter.Connection) == false))) {
@@ -36510,6 +37855,15 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._authTableAdapter != null)) {
+                    revertConnections.Add(this._authTableAdapter, this._authTableAdapter.Connection);
+                    this._authTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._authTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._authTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._authTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._authTableAdapter.Adapter);
+                    }
+                }
                 if ((this._freqTableAdapter != null)) {
                     revertConnections.Add(this._freqTableAdapter, this._freqTableAdapter.Connection);
                     this._freqTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -36666,6 +38020,10 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._authTableAdapter != null)) {
+                    this._authTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._authTableAdapter]));
+                    this._authTableAdapter.Transaction = null;
                 }
                 if ((this._freqTableAdapter != null)) {
                     this._freqTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._freqTableAdapter]));

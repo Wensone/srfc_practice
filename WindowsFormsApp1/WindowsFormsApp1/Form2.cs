@@ -13,9 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        object own_id;
         SqlConnection connection;
-
         public Form2()
         {
             InitializeComponent();
@@ -24,7 +22,6 @@ namespace WindowsFormsApp1
             connection.Open();
             SqlCommand owners = new SqlCommand("select * from dbo.owners", connection);
             SqlDataReader data = owners.ExecuteReader();
-
             if (data.HasRows)
             {
                 while (data.Read())
@@ -41,49 +38,33 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        /** Заполнение гридов */
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet.frset_freqs_rclass". При необходимости она может быть перемещена или удалена.
-            this.frset_freqs_rclassTableAdapter.Fill(this.studentDataSet.frset_freqs_rclass);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "studentDataSet.frset_freqs". При необходимости она может быть перемещена или удалена.
-            this.frset_freqsTableAdapter.Fill(this.studentDataSet.frset_freqs);
-            this.frset_ant_infTableAdapter1.Fill(this.studentDataSet.frset_ant_inf);
-            this.frset_sitesTableAdapter1.Fill(this.studentDataSet.frset_sites);
-
+            agent_information.RowHeadersVisible = false;
+            station_information.RowHeadersVisible = false;
+            station_information.Columns[station_information.Columns.Count - 1].Visible = false;
         }
 
         private void agents_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            string command = "select * from dbo.owners where own_name = '" + agents.SelectedNode.Text + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
+            
             DataSet data_set = new DataSet();
-            adapter.Fill(data_set);
-            own_id = data_set.Tables[0].Rows[0][0];
-            agent_information.DataSource = data_set;
-            agent_information.DataMember = data_set.Tables[0].TableName;
-            command = "select * from dbo.station where OWNER_ID = " + own_id;
-            adapter = new SqlDataAdapter(command, connection);
-            adapter.Fill(data_set);
-
-
-            station_information.DataSource = data_set;
-            station_information.DataMember = data_set.Tables[0].TableName;
-            MessageBox.Show(data_set.Tables[0].Rows[0][0].ToString());
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string command = "select * [Student].[dbo].[frset_ant_inf] where own_name = '" + agents.SelectedNode.Text + "'";
+            string command = "select * from dbo.owners";
             SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
-            DataSet data_set = new DataSet();
-            adapter.Fill(data_set);
-            own_id = data_set.Tables[0].Rows[0][0];
-            agent_information.DataSource = data_set;
-            agent_information.DataMember = data_set.Tables[0].TableName;
-            command = "select * from dbo.station where OWNER_ID = " + own_id;
-            adapter = new SqlDataAdapter(command, connection);
-            adapter.Fill(data_set);
+            adapter.Fill(data_set, "dbo.owners");
+            command = "select * from dbo.station";
+            SqlDataAdapter adapter_1 = new SqlDataAdapter(command, connection);
+            adapter_1.Fill(data_set, "dbo.station");
+            DataRelation owner_station_relation = new DataRelation("OWNER_STATION", data_set.Tables["dbo.owners"].Columns["owner_id"], data_set.Tables["dbo.station"].Columns["OWNER_ID"]);
+            data_set.Relations.Add(owner_station_relation);
+            DataRow[] owner = data_set.Tables["dbo.owners"].Select("own_name = '" + agents.SelectedNode.Text + "'");
+            studentDataSet.Tables["owners"].Clear();
+            studentDataSet.Tables["owners"].Rows.Add(owner[0].ItemArray);
+            DataRow[] child_rows = null;
+            child_rows = owner[0].GetChildRows(owner_station_relation);
+            studentDataSet.Tables["station"].Clear();
+            for (int i = 0; i < child_rows.Count(); i++) studentDataSet.Tables["station"].Rows.Add(child_rows[i].ItemArray);
         }
+        
     }
 }
