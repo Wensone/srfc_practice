@@ -46,12 +46,15 @@ namespace WindowsFormsApp1
             ownersTableAdapter.Fill(studentDataSet.owners);
             stationTableAdapter.Fill(studentDataSet.station);
             freqTableAdapter.Fill(studentDataSet.freq);
+            freq_ant_infTableAdapter.Fill(studentDataSet.freq_ant_inf);
             agent_information.RowHeadersVisible = false;
             station_information.RowHeadersVisible = false;
             freq_information.RowHeadersVisible = false;
+            ant_information.RowHeadersVisible = false;
             agent_information.DataSource = filter_set.Tables["owners"];
             station_information.DataSource = filter_set.Tables["station"];
             freq_information.DataSource = filter_set.Tables["freq"];
+            ant_information.DataSource = filter_set.Tables["freq_ant_inf"];
         }
 
         private void agents_AfterSelect(object sender, TreeViewEventArgs e)
@@ -81,6 +84,21 @@ namespace WindowsFormsApp1
             filter_set.Tables["freq"].Clear();
             for (int i = 0; i < child_rows.Count(); i++) filter_set.Tables["freq"].Rows.Add(child_rows[i].ItemArray);
             if (freq_information.Rows.Count != 0) freq_information.Rows[0].Selected = false;
+        }
+
+        private void freq_information_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow parent_row = freq_information.CurrentRow;
+            if (parent_row == null)
+            {
+                return;
+            }
+            int freq_ant_inf_id = Convert.ToInt32(parent_row.Cells[2].Value);
+            DataRow[] station = studentDataSet.Tables["freq"].Select("freq_ant_inf_id = " + freq_ant_inf_id);
+            DataRow[] child_rows = station[0].GetChildRows("FK_freq_freq_ant_inf");
+            filter_set.Tables["freq_ant_inf"].Clear();
+            for (int i = 0; i < child_rows.Count(); i++) filter_set.Tables["freq_ant_inf"].Rows.Add(child_rows[i].ItemArray);
+            if (ant_information.Rows.Count != 0) ant_information.Rows[0].Selected = false;
         }
     }
 }

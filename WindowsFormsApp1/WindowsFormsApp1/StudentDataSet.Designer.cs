@@ -48,8 +48,6 @@ namespace WindowsFormsApp1 {
         
         private stationDataTable tablestation;
         
-        private global::System.Data.DataRelation relationFK_freq_freq_ant_inf;
-        
         private global::System.Data.DataRelation relationFK_freq_soglas;
         
         private global::System.Data.DataRelation relationFK_freq_ant_inf_station;
@@ -75,6 +73,8 @@ namespace WindowsFormsApp1 {
         private global::System.Data.DataRelation relationFK_station_owners;
         
         private global::System.Data.DataRelation relationFK_freq_station;
+        
+        private global::System.Data.DataRelation relationFK_freq_freq_ant_inf;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -486,7 +486,6 @@ namespace WindowsFormsApp1 {
                     this.tablestation.InitVars();
                 }
             }
-            this.relationFK_freq_freq_ant_inf = this.Relations["FK_freq_freq_ant_inf"];
             this.relationFK_freq_soglas = this.Relations["FK_freq_soglas"];
             this.relationFK_freq_ant_inf_station = this.Relations["FK_freq_ant_inf_station"];
             this.relationFK_FREQ_RCLASS_freq = this.Relations["FK_FREQ_RCLASS_freq"];
@@ -500,6 +499,7 @@ namespace WindowsFormsApp1 {
             this.relationFK_soglas_owners = this.Relations["FK_soglas_owners"];
             this.relationFK_station_owners = this.Relations["FK_station_owners"];
             this.relationFK_freq_station = this.Relations["FK_freq_station"];
+            this.relationFK_freq_freq_ant_inf = this.Relations["FK_freq_freq_ant_inf"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -534,10 +534,6 @@ namespace WindowsFormsApp1 {
             base.Tables.Add(this.tablesoglas);
             this.tablestation = new stationDataTable();
             base.Tables.Add(this.tablestation);
-            this.relationFK_freq_freq_ant_inf = new global::System.Data.DataRelation("FK_freq_freq_ant_inf", new global::System.Data.DataColumn[] {
-                        this.tablefreq_ant_inf.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablefreq.freq_ant_inf_idColumn}, false);
-            this.Relations.Add(this.relationFK_freq_freq_ant_inf);
             this.relationFK_freq_soglas = new global::System.Data.DataRelation("FK_freq_soglas", new global::System.Data.DataColumn[] {
                         this.tablesoglas.sogl_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefreq.soglas_idColumn}, false);
@@ -590,6 +586,10 @@ namespace WindowsFormsApp1 {
                         this.tablestation.stat_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefreq.stat_idColumn}, false);
             this.Relations.Add(this.relationFK_freq_station);
+            this.relationFK_freq_freq_ant_inf = new global::System.Data.DataRelation("FK_freq_freq_ant_inf", new global::System.Data.DataColumn[] {
+                        this.tablefreq.freq_ant_inf_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefreq_ant_inf.idColumn}, false);
+            this.Relations.Add(this.relationFK_freq_freq_ant_inf);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1403,7 +1403,7 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public freqRow AddfreqRow(
                         stationRow parentstationRowByFK_freq_station, 
-                        freq_ant_infRow parentfreq_ant_infRowByFK_freq_freq_ant_inf, 
+                        int freq_ant_inf_id, 
                         soglasRow parentsoglasRowByFK_freq_soglas, 
                         int asnbase, 
                         string assign, 
@@ -1431,7 +1431,7 @@ namespace WindowsFormsApp1 {
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null,
+                        freq_ant_inf_id,
                         null,
                         asnbase,
                         assign,
@@ -1457,9 +1457,6 @@ namespace WindowsFormsApp1 {
                         GUID};
                 if ((parentstationRowByFK_freq_station != null)) {
                     columnValuesArray[1] = parentstationRowByFK_freq_station[0];
-                }
-                if ((parentfreq_ant_infRowByFK_freq_freq_ant_inf != null)) {
-                    columnValuesArray[2] = parentfreq_ant_infRowByFK_freq_freq_ant_inf[0];
                 }
                 if ((parentsoglasRowByFK_freq_soglas != null)) {
                     columnValuesArray[3] = parentsoglasRowByFK_freq_soglas[0];
@@ -9686,17 +9683,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public freq_ant_infRow freq_ant_infRow {
-                get {
-                    return ((freq_ant_infRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_freq_ant_inf"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_freq_freq_ant_inf"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public soglasRow soglasRow {
                 get {
                     return ((soglasRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_soglas"])));
@@ -10013,6 +9999,17 @@ namespace WindowsFormsApp1 {
                 }
                 else {
                     return ((FREQ_RCLASSRow[])(base.GetChildRows(this.Table.ChildRelations["FK_FREQ_RCLASS_freq"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freq_ant_infRow[] Getfreq_ant_infRows() {
+                if ((this.Table.ChildRelations["FK_freq_freq_ant_inf"] == null)) {
+                    return new freq_ant_infRow[0];
+                }
+                else {
+                    return ((freq_ant_infRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_freq_ant_inf"])));
                 }
             }
         }
@@ -10354,6 +10351,17 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public freqRow freqRow {
+                get {
+                    return ((freqRow)(this.GetParentRow(this.Table.ParentRelations["FK_freq_freq_ant_inf"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_freq_freq_ant_inf"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isstat_idNull() {
                 return this.IsNull(this.tablefreq_ant_inf.stat_idColumn);
             }
@@ -10566,17 +10574,6 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setupdate_dateNull() {
                 this[this.tablefreq_ant_inf.update_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public freqRow[] GetfreqRows() {
-                if ((this.Table.ChildRelations["FK_freq_freq_ant_inf"] == null)) {
-                    return new freqRow[0];
-                }
-                else {
-                    return ((freqRow[])(base.GetChildRows(this.Table.ChildRelations["FK_freq_freq_ant_inf"])));
-                }
             }
         }
         
@@ -37431,30 +37428,21 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._stationTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._stationTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._freq_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._freq_ant_infTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._frset_ant_infTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._frset_ant_infTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._stationTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._stationTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -37491,6 +37479,15 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._authTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._freq_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._freq_ant_infTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -37546,27 +37543,19 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._stationTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._stationTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._freq_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._freq_ant_infTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._frset_ant_infTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._frset_ant_infTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._stationTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._stationTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -37599,6 +37588,14 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._authTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._freq_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._freq_ant_infTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -37644,6 +37641,14 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._freq_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._freq_ant_infTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._authTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.auth.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -37676,27 +37681,19 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._freq_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.freq_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._freq_ant_infTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._stationTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._stationTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
