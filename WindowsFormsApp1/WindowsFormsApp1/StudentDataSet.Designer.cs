@@ -58,8 +58,6 @@ namespace WindowsFormsApp1 {
         
         private global::System.Data.DataRelation relationFK_frset_ant_inf_frset_sites;
         
-        private global::System.Data.DataRelation relationFK_frset_freqs_frset_ant_inf;
-        
         private global::System.Data.DataRelation relationFK_frset_freqs_frset_sites;
         
         private global::System.Data.DataRelation relationFK_frset_freqs_rclass_frset_freqs;
@@ -491,7 +489,6 @@ namespace WindowsFormsApp1 {
             this.relationFK_FREQ_RCLASS_freq = this.Relations["FK_FREQ_RCLASS_freq"];
             this.relationFK_FREQ_RCLASS_rclas = this.Relations["FK_FREQ_RCLASS_rclas"];
             this.relationFK_frset_ant_inf_frset_sites = this.Relations["FK_frset_ant_inf_frset_sites"];
-            this.relationFK_frset_freqs_frset_ant_inf = this.Relations["FK_frset_freqs_frset_ant_inf"];
             this.relationFK_frset_freqs_frset_sites = this.Relations["FK_frset_freqs_frset_sites"];
             this.relationFK_frset_freqs_rclass_frset_freqs = this.Relations["FK_frset_freqs_rclass_frset_freqs"];
             this.relationFK_frset_freqs_rclass_rclas = this.Relations["FK_frset_freqs_rclass_rclas"];
@@ -554,10 +551,6 @@ namespace WindowsFormsApp1 {
                         this.tablefrset_sites.frset_sites_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefrset_ant_inf.frset_sites_idColumn}, false);
             this.Relations.Add(this.relationFK_frset_ant_inf_frset_sites);
-            this.relationFK_frset_freqs_frset_ant_inf = new global::System.Data.DataRelation("FK_frset_freqs_frset_ant_inf", new global::System.Data.DataColumn[] {
-                        this.tablefrset_ant_inf.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablefrset_freqs.frset_ant_inf_idColumn}, false);
-            this.Relations.Add(this.relationFK_frset_freqs_frset_ant_inf);
             this.relationFK_frset_freqs_frset_sites = new global::System.Data.DataRelation("FK_frset_freqs_frset_sites", new global::System.Data.DataColumn[] {
                         this.tablefrset_sites.frset_sites_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablefrset_freqs.frset_sites_idColumn}, false);
@@ -3691,7 +3684,7 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public frset_freqsRow Addfrset_freqsRow(
                         frset_sitesRow parentfrset_sitesRowByFK_frset_freqs_frset_sites, 
-                        frset_ant_infRow parentfrset_ant_infRowByFK_frset_freqs_frset_ant_inf, 
+                        int frset_ant_inf_id, 
                         int tip_id, 
                         int freq_kind_id, 
                         decimal fnom, 
@@ -3723,7 +3716,7 @@ namespace WindowsFormsApp1 {
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null,
+                        frset_ant_inf_id,
                         tip_id,
                         freq_kind_id,
                         fnom,
@@ -3753,9 +3746,6 @@ namespace WindowsFormsApp1 {
                         GUID};
                 if ((parentfrset_sitesRowByFK_frset_freqs_frset_sites != null)) {
                     columnValuesArray[1] = parentfrset_sitesRowByFK_frset_freqs_frset_sites[0];
-                }
-                if ((parentfrset_ant_infRowByFK_frset_freqs_frset_ant_inf != null)) {
-                    columnValuesArray[2] = parentfrset_ant_infRowByFK_frset_freqs_frset_ant_inf[0];
                 }
                 rowfrset_freqsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfrset_freqsRow);
@@ -11544,17 +11534,6 @@ namespace WindowsFormsApp1 {
             public void SetPsummNull() {
                 this[this.tablefrset_ant_inf.PsummColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public frset_freqsRow[] Getfrset_freqsRows() {
-                if ((this.Table.ChildRelations["FK_frset_freqs_frset_ant_inf"] == null)) {
-                    return new frset_freqsRow[0];
-                }
-                else {
-                    return ((frset_freqsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_frset_freqs_frset_ant_inf"])));
-                }
-            }
         }
         
         /// <summary>
@@ -12023,17 +12002,6 @@ namespace WindowsFormsApp1 {
                 }
                 set {
                     this[this.tablefrset_freqs.GUIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public frset_ant_infRow frset_ant_infRow {
-                get {
-                    return ((frset_ant_infRow)(this.GetParentRow(this.Table.ParentRelations["FK_frset_freqs_frset_ant_inf"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_frset_freqs_frset_ant_inf"]);
                 }
             }
             
@@ -37428,15 +37396,6 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._stationTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.station.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -37500,6 +37459,15 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._frset_freqs_rclassTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -37540,14 +37508,6 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._frset_sitesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -37607,6 +37567,14 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._frset_freqs_rclassTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.frset_freqs_rclass.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -37630,6 +37598,14 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._frset_freqs_rclassTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._frset_ant_infTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._frset_ant_infTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -37686,14 +37662,6 @@ SELECT id, Rclass, note, NSHPI, DIGIT_ANALOG FROM rclas WHERE (id = @id)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._stationTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._frset_ant_infTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.frset_ant_inf.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._frset_ant_infTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

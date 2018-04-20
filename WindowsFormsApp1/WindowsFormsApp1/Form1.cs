@@ -16,12 +16,10 @@ namespace WindowsFormsApp1
         private static string auth_table = "[Student].[dbo].[auth]";
         private string enter_login = "";
         private string enter_passwd = "";
-        int ver = 2;
         
         public Form1()
         {
             InitializeComponent();
-            ver = 1;
         }
 
         private void button_verification_Click(object sender, EventArgs e)

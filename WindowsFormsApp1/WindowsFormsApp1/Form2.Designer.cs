@@ -33,11 +33,18 @@
             this.agent_information = new System.Windows.Forms.DataGridView();
             this.rich_res_tab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ant_information = new System.Windows.Forms.DataGridView();
             this.freq_information = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.station_information = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.soglas_grid = new System.Windows.Forms.DataGridView();
+            this.frset_sites_grid = new System.Windows.Forms.DataGridView();
+            this.frset_freqs_grid = new System.Windows.Forms.DataGridView();
+            this.ant_inf_grid = new System.Windows.Forms.DataGridView();
             this.freqBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDataSet = new WindowsFormsApp1.StudentDataSet();
             this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,22 +52,36 @@
             this.stationTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.stationTableAdapter();
             this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ownersTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.ownersTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ant_information = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.freqantinfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.freq_ant_infTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.freq_ant_infTableAdapter();
+            this.soglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.soglasTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.soglasTableAdapter();
+            this.frsetsitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.frset_sitesTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_sitesTableAdapter();
+            this.frsetfreqsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.frset_freqsTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_freqsTableAdapter();
+            this.frsetantinfBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.frset_ant_infTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_ant_infTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.agent_information)).BeginInit();
             this.rich_res_tab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ant_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freq_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.station_information)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soglas_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_sites_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_freqs_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ant_inf_grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ant_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqantinfBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soglasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frsetsitesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frsetfreqsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frsetantinfBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // agents
@@ -98,6 +119,7 @@
             this.rich_res_tab.SelectedIndex = 0;
             this.rich_res_tab.Size = new System.Drawing.Size(1083, 551);
             this.rich_res_tab.TabIndex = 2;
+            this.rich_res_tab.SelectedIndexChanged += new System.EventHandler(this.rich_res_tab_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -114,6 +136,27 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "РЭС";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(3, 302);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 37);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Антенны:";
+            // 
+            // ant_information
+            // 
+            this.ant_information.AllowUserToAddRows = false;
+            this.ant_information.AllowUserToDeleteRows = false;
+            this.ant_information.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ant_information.Location = new System.Drawing.Point(0, 342);
+            this.ant_information.Name = "ant_information";
+            this.ant_information.ReadOnly = true;
+            this.ant_information.Size = new System.Drawing.Size(1075, 122);
+            this.ant_information.TabIndex = 4;
             // 
             // freq_information
             // 
@@ -161,6 +204,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.ant_inf_grid);
+            this.tabPage2.Controls.Add(this.frset_freqs_grid);
+            this.tabPage2.Controls.Add(this.frset_sites_grid);
+            this.tabPage2.Controls.Add(this.soglas_grid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -168,6 +215,66 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "РИЧ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 606);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Операции с базой";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // soglas_grid
+            // 
+            this.soglas_grid.AllowUserToAddRows = false;
+            this.soglas_grid.AllowUserToDeleteRows = false;
+            this.soglas_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.soglas_grid.Location = new System.Drawing.Point(0, 24);
+            this.soglas_grid.Name = "soglas_grid";
+            this.soglas_grid.ReadOnly = true;
+            this.soglas_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.soglas_grid.Size = new System.Drawing.Size(1075, 89);
+            this.soglas_grid.TabIndex = 0;
+            this.soglas_grid.SelectionChanged += new System.EventHandler(this.soglas_grid_SelectionChanged);
+            // 
+            // frset_sites_grid
+            // 
+            this.frset_sites_grid.AllowUserToAddRows = false;
+            this.frset_sites_grid.AllowUserToDeleteRows = false;
+            this.frset_sites_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.frset_sites_grid.Location = new System.Drawing.Point(0, 145);
+            this.frset_sites_grid.Name = "frset_sites_grid";
+            this.frset_sites_grid.ReadOnly = true;
+            this.frset_sites_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.frset_sites_grid.Size = new System.Drawing.Size(1075, 87);
+            this.frset_sites_grid.TabIndex = 1;
+            this.frset_sites_grid.SelectionChanged += new System.EventHandler(this.frset_sites_grid_SelectionChanged);
+            // 
+            // frset_freqs_grid
+            // 
+            this.frset_freqs_grid.AllowUserToAddRows = false;
+            this.frset_freqs_grid.AllowUserToDeleteRows = false;
+            this.frset_freqs_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.frset_freqs_grid.Location = new System.Drawing.Point(0, 265);
+            this.frset_freqs_grid.Name = "frset_freqs_grid";
+            this.frset_freqs_grid.ReadOnly = true;
+            this.frset_freqs_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.frset_freqs_grid.Size = new System.Drawing.Size(1075, 93);
+            this.frset_freqs_grid.TabIndex = 2;
+            // 
+            // ant_inf_grid
+            // 
+            this.ant_inf_grid.AllowUserToAddRows = false;
+            this.ant_inf_grid.AllowUserToDeleteRows = false;
+            this.ant_inf_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ant_inf_grid.Location = new System.Drawing.Point(0, 393);
+            this.ant_inf_grid.Name = "ant_inf_grid";
+            this.ant_inf_grid.ReadOnly = true;
+            this.ant_inf_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ant_inf_grid.Size = new System.Drawing.Size(1075, 93);
+            this.ant_inf_grid.TabIndex = 3;
+           
             // 
             // freqBindingSource
             // 
@@ -201,36 +308,6 @@
             // 
             this.ownersTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 606);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Операции с базой";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // ant_information
-            // 
-            this.ant_information.AllowUserToAddRows = false;
-            this.ant_information.AllowUserToDeleteRows = false;
-            this.ant_information.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ant_information.Location = new System.Drawing.Point(0, 342);
-            this.ant_information.Name = "ant_information";
-            this.ant_information.ReadOnly = true;
-            this.ant_information.Size = new System.Drawing.Size(1075, 122);
-            this.ant_information.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 302);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 37);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Антенны:";
-            // 
             // freqantinfBindingSource
             // 
             this.freqantinfBindingSource.DataMember = "freq_ant_inf";
@@ -239,6 +316,42 @@
             // freq_ant_infTableAdapter
             // 
             this.freq_ant_infTableAdapter.ClearBeforeFill = true;
+            // 
+            // soglasBindingSource
+            // 
+            this.soglasBindingSource.DataMember = "soglas";
+            this.soglasBindingSource.DataSource = this.studentDataSet;
+            // 
+            // soglasTableAdapter
+            // 
+            this.soglasTableAdapter.ClearBeforeFill = true;
+            // 
+            // frsetsitesBindingSource
+            // 
+            this.frsetsitesBindingSource.DataMember = "frset_sites";
+            this.frsetsitesBindingSource.DataSource = this.studentDataSet;
+            // 
+            // frset_sitesTableAdapter
+            // 
+            this.frset_sitesTableAdapter.ClearBeforeFill = true;
+            // 
+            // frsetfreqsBindingSource
+            // 
+            this.frsetfreqsBindingSource.DataMember = "frset_freqs";
+            this.frsetfreqsBindingSource.DataSource = this.studentDataSet;
+            // 
+            // frset_freqsTableAdapter
+            // 
+            this.frset_freqsTableAdapter.ClearBeforeFill = true;
+            // 
+            // frsetantinfBindingSource
+            // 
+            this.frsetantinfBindingSource.DataMember = "frset_ant_inf";
+            this.frsetantinfBindingSource.DataSource = this.studentDataSet;
+            // 
+            // frset_ant_infTableAdapter
+            // 
+            this.frset_ant_infTableAdapter.ClearBeforeFill = true;
             // 
             // Form2
             // 
@@ -257,14 +370,23 @@
             this.rich_res_tab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ant_information)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freq_information)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.station_information)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.soglas_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_sites_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_freqs_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ant_inf_grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ant_information)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqantinfBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soglasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frsetsitesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frsetfreqsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frsetantinfBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +414,17 @@
         private System.Windows.Forms.DataGridView ant_information;
         private System.Windows.Forms.BindingSource freqantinfBindingSource;
         private StudentDataSetTableAdapters.freq_ant_infTableAdapter freq_ant_infTableAdapter;
+        private System.Windows.Forms.DataGridView ant_inf_grid;
+        private System.Windows.Forms.DataGridView frset_freqs_grid;
+        private System.Windows.Forms.DataGridView frset_sites_grid;
+        private System.Windows.Forms.DataGridView soglas_grid;
+        private System.Windows.Forms.BindingSource soglasBindingSource;
+        private StudentDataSetTableAdapters.soglasTableAdapter soglasTableAdapter;
+        private System.Windows.Forms.BindingSource frsetsitesBindingSource;
+        private StudentDataSetTableAdapters.frset_sitesTableAdapter frset_sitesTableAdapter;
+        private System.Windows.Forms.BindingSource frsetfreqsBindingSource;
+        private StudentDataSetTableAdapters.frset_freqsTableAdapter frset_freqsTableAdapter;
+        private System.Windows.Forms.BindingSource frsetantinfBindingSource;
+        private StudentDataSetTableAdapters.frset_ant_infTableAdapter frset_ant_infTableAdapter;
     }
 }
