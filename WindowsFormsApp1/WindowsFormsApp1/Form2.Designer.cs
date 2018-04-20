@@ -40,11 +40,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.station_information = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.soglas_grid = new System.Windows.Forms.DataGridView();
-            this.frset_sites_grid = new System.Windows.Forms.DataGridView();
-            this.frset_freqs_grid = new System.Windows.Forms.DataGridView();
             this.ant_inf_grid = new System.Windows.Forms.DataGridView();
+            this.frset_freqs_grid = new System.Windows.Forms.DataGridView();
+            this.frset_sites_grid = new System.Windows.Forms.DataGridView();
+            this.soglas_grid = new System.Windows.Forms.DataGridView();
+            this.agent_delete_button = new System.Windows.Forms.Button();
             this.freqBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDataSet = new WindowsFormsApp1.StudentDataSet();
             this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,6 +62,8 @@
             this.frset_freqsTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_freqsTableAdapter();
             this.frsetantinfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.frset_ant_infTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_ant_infTableAdapter();
+            this.agent_add_button = new System.Windows.Forms.Button();
+            this.agent_edit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.agent_information)).BeginInit();
             this.rich_res_tab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -69,10 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.freq_information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.station_information)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soglas_grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frset_sites_grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frset_freqs_grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ant_inf_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_freqs_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_sites_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soglas_grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).BeginInit();
@@ -90,7 +92,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.agents.Location = new System.Drawing.Point(13, 13);
             this.agents.Name = "agents";
-            this.agents.Size = new System.Drawing.Size(170, 577);
+            this.agents.Size = new System.Drawing.Size(170, 503);
             this.agents.TabIndex = 0;
             this.agents.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.agents_AfterSelect);
             // 
@@ -155,6 +157,7 @@
             this.ant_information.Location = new System.Drawing.Point(0, 342);
             this.ant_information.Name = "ant_information";
             this.ant_information.ReadOnly = true;
+            this.ant_information.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ant_information.Size = new System.Drawing.Size(1075, 122);
             this.ant_information.TabIndex = 4;
             // 
@@ -216,27 +219,29 @@
             this.tabPage2.Text = "РИЧ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ant_inf_grid
             // 
-            this.button1.Location = new System.Drawing.Point(12, 606);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Операции с базой";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ant_inf_grid.AllowUserToAddRows = false;
+            this.ant_inf_grid.AllowUserToDeleteRows = false;
+            this.ant_inf_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ant_inf_grid.Location = new System.Drawing.Point(0, 393);
+            this.ant_inf_grid.Name = "ant_inf_grid";
+            this.ant_inf_grid.ReadOnly = true;
+            this.ant_inf_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ant_inf_grid.Size = new System.Drawing.Size(1075, 93);
+            this.ant_inf_grid.TabIndex = 3;
             // 
-            // soglas_grid
+            // frset_freqs_grid
             // 
-            this.soglas_grid.AllowUserToAddRows = false;
-            this.soglas_grid.AllowUserToDeleteRows = false;
-            this.soglas_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.soglas_grid.Location = new System.Drawing.Point(0, 24);
-            this.soglas_grid.Name = "soglas_grid";
-            this.soglas_grid.ReadOnly = true;
-            this.soglas_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.soglas_grid.Size = new System.Drawing.Size(1075, 89);
-            this.soglas_grid.TabIndex = 0;
-            this.soglas_grid.SelectionChanged += new System.EventHandler(this.soglas_grid_SelectionChanged);
+            this.frset_freqs_grid.AllowUserToAddRows = false;
+            this.frset_freqs_grid.AllowUserToDeleteRows = false;
+            this.frset_freqs_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.frset_freqs_grid.Location = new System.Drawing.Point(0, 265);
+            this.frset_freqs_grid.Name = "frset_freqs_grid";
+            this.frset_freqs_grid.ReadOnly = true;
+            this.frset_freqs_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.frset_freqs_grid.Size = new System.Drawing.Size(1075, 93);
+            this.frset_freqs_grid.TabIndex = 2;
             // 
             // frset_sites_grid
             // 
@@ -251,30 +256,30 @@
             this.frset_sites_grid.TabIndex = 1;
             this.frset_sites_grid.SelectionChanged += new System.EventHandler(this.frset_sites_grid_SelectionChanged);
             // 
-            // frset_freqs_grid
+            // soglas_grid
             // 
-            this.frset_freqs_grid.AllowUserToAddRows = false;
-            this.frset_freqs_grid.AllowUserToDeleteRows = false;
-            this.frset_freqs_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.frset_freqs_grid.Location = new System.Drawing.Point(0, 265);
-            this.frset_freqs_grid.Name = "frset_freqs_grid";
-            this.frset_freqs_grid.ReadOnly = true;
-            this.frset_freqs_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.frset_freqs_grid.Size = new System.Drawing.Size(1075, 93);
-            this.frset_freqs_grid.TabIndex = 2;
+            this.soglas_grid.AllowUserToAddRows = false;
+            this.soglas_grid.AllowUserToDeleteRows = false;
+            this.soglas_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.soglas_grid.Location = new System.Drawing.Point(0, 24);
+            this.soglas_grid.Name = "soglas_grid";
+            this.soglas_grid.ReadOnly = true;
+            this.soglas_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.soglas_grid.Size = new System.Drawing.Size(1075, 89);
+            this.soglas_grid.TabIndex = 0;
+            this.soglas_grid.SelectionChanged += new System.EventHandler(this.soglas_grid_SelectionChanged);
             // 
-            // ant_inf_grid
+            // agent_delete_button
             // 
-            this.ant_inf_grid.AllowUserToAddRows = false;
-            this.ant_inf_grid.AllowUserToDeleteRows = false;
-            this.ant_inf_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ant_inf_grid.Location = new System.Drawing.Point(0, 393);
-            this.ant_inf_grid.Name = "ant_inf_grid";
-            this.ant_inf_grid.ReadOnly = true;
-            this.ant_inf_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ant_inf_grid.Size = new System.Drawing.Size(1075, 93);
-            this.ant_inf_grid.TabIndex = 3;
-           
+            this.agent_delete_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.agent_delete_button.Location = new System.Drawing.Point(13, 581);
+            this.agent_delete_button.MaximumSize = new System.Drawing.Size(170, 30);
+            this.agent_delete_button.Name = "agent_delete_button";
+            this.agent_delete_button.Size = new System.Drawing.Size(170, 30);
+            this.agent_delete_button.TabIndex = 3;
+            this.agent_delete_button.Text = "Удалить запись";
+            this.agent_delete_button.UseVisualStyleBackColor = true;
+            this.agent_delete_button.Click += new System.EventHandler(this.agent_delete_button_Click);
             // 
             // freqBindingSource
             // 
@@ -353,12 +358,34 @@
             // 
             this.frset_ant_infTableAdapter.ClearBeforeFill = true;
             // 
+            // agent_add_button
+            // 
+            this.agent_add_button.Location = new System.Drawing.Point(13, 523);
+            this.agent_add_button.Name = "agent_add_button";
+            this.agent_add_button.Size = new System.Drawing.Size(170, 23);
+            this.agent_add_button.TabIndex = 4;
+            this.agent_add_button.Text = "Добавить запись";
+            this.agent_add_button.UseVisualStyleBackColor = true;
+            this.agent_add_button.Click += new System.EventHandler(this.agent_add_button_Click);
+            // 
+            // agent_edit_button
+            // 
+            this.agent_edit_button.Location = new System.Drawing.Point(13, 552);
+            this.agent_edit_button.Name = "agent_edit_button";
+            this.agent_edit_button.Size = new System.Drawing.Size(170, 23);
+            this.agent_edit_button.TabIndex = 5;
+            this.agent_edit_button.Text = "Изменить запись";
+            this.agent_edit_button.UseVisualStyleBackColor = true;
+            this.agent_edit_button.Click += new System.EventHandler(this.agent_edit_button_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 645);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.agent_edit_button);
+            this.Controls.Add(this.agent_add_button);
+            this.Controls.Add(this.agent_delete_button);
             this.Controls.Add(this.rich_res_tab);
             this.Controls.Add(this.agent_information);
             this.Controls.Add(this.agents);
@@ -374,10 +401,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.freq_information)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.station_information)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.soglas_grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frset_sites_grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frset_freqs_grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ant_inf_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_freqs_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frset_sites_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soglas_grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).EndInit();
@@ -409,7 +436,7 @@
         private System.Windows.Forms.BindingSource freqBindingSource;
         private System.Windows.Forms.BindingSource ownersBindingSource;
         private StudentDataSetTableAdapters.ownersTableAdapter ownersTableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button agent_delete_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView ant_information;
         private System.Windows.Forms.BindingSource freqantinfBindingSource;
@@ -426,5 +453,7 @@
         private StudentDataSetTableAdapters.frset_freqsTableAdapter frset_freqsTableAdapter;
         private System.Windows.Forms.BindingSource frsetantinfBindingSource;
         private StudentDataSetTableAdapters.frset_ant_infTableAdapter frset_ant_infTableAdapter;
+        private System.Windows.Forms.Button agent_add_button;
+        private System.Windows.Forms.Button agent_edit_button;
     }
 }

@@ -71,19 +71,18 @@ namespace WindowsFormsApp1
             ant_inf_grid.DataSource = filter_set.Tables["frset_ant_inf"];
         }
 
+        public void load_agent()
+        {
+            SqlCommand select_owner = new SqlCommand("SELECT * FROM dbo.owners WHERE own_name = '" + agents.SelectedNode.Text + "';", connection);
+            SqlDataReader information = select_owner.ExecuteReader();
+            filter_set.Tables["owners"].Clear();
+            filter_set.Tables["owners"].Load(information);
+        }
+
         private void agents_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            DataRow[] owner = studentDataSet.Tables["owners"].Select("own_name = '" + agents.SelectedNode.Text + "'");
-            filter_set.Tables["owners"].Clear();
-            filter_set.Tables["owners"].Rows.Add(owner[0].ItemArray);
+            load_agent();
             this.rich_res_tab_SelectedIndexChanged(sender, e);
-            /*child_rows = owner[0].GetChildRows("FK_station_owners");
-            if (child_rows.Count() == 0) filter_set.Tables["freq"].Clear();
-            filter_set.Tables["station"].Clear();
-            for (int i = 0; i < child_rows.Count(); i++) filter_set.Tables["station"].Rows.Add(child_rows[i].ItemArray);
-            if (station_information.Rows.Count != 0) station_information.Rows[0].Selected = false;
-            
-            station_information.Columns[station_information.Columns.Count - 1].Visible = false;*/
         }
 
         private void station_information_SelectionChanged(object sender, EventArgs e)
@@ -180,5 +179,23 @@ namespace WindowsFormsApp1
 
         }
 
+        private void agent_add_button_Click(object sender, EventArgs e)
+        {
+            DataProcessing dp = new DataProcessing(agents);
+            dp.Show();
+        }
+
+        private void agent_edit_button_Click(object sender, EventArgs e)
+        {
+            AgentEdit edit_window = new AgentEdit(agents, agent_information.CurrentRow);
+            edit_window.ShowDialog();
+            load_agent();
+        }
+
+        private void agent_delete_button_Click(object sender, EventArgs e)
+        {
+            SqlCommand delete_command = new SqlCommand("DELETE FROM dbo.owners WHERE own_name = '" + agents.SelectedNode.Text + "';", connection);
+            delete_command.ExecuteNonQuery();
+        }
     }
 }

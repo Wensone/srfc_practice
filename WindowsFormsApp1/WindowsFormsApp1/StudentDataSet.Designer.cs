@@ -5208,8 +5208,6 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnbank_ks4;
             
-            private global::System.Data.DataColumn columniscellular;
-            
             private global::System.Data.DataColumn columntel_kod;
             
             private global::System.Data.DataColumn columnphone;
@@ -5218,15 +5216,11 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnmail;
             
-            private global::System.Data.DataColumn columnlicenz;
-            
             private global::System.Data.DataColumn columnlicenz_nom;
             
             private global::System.Data.DataColumn columnlicenz_work;
             
             private global::System.Data.DataColumn columnlicenz_do;
-            
-            private global::System.Data.DataColumn columnarhiv;
             
             private global::System.Data.DataColumn columnprim;
             
@@ -5278,17 +5272,9 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnEIS_OBJECT_ID;
             
-            private global::System.Data.DataColumn columnFILIAL_CODE;
-            
             private global::System.Data.DataColumn columnwebsite;
             
-            private global::System.Data.DataColumn columnEGR_out;
-            
             private global::System.Data.DataColumn columnEGR_outD;
-            
-            private global::System.Data.DataColumn columnGUID;
-            
-            private global::System.Data.DataColumn columnto_fais;
             
             private global::System.Data.DataColumn columnassignee;
             
@@ -5519,14 +5505,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn iscellularColumn {
-                get {
-                    return this.columniscellular;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn tel_kodColumn {
                 get {
                     return this.columntel_kod;
@@ -5559,14 +5537,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn licenzColumn {
-                get {
-                    return this.columnlicenz;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn licenz_nomColumn {
                 get {
                     return this.columnlicenz_nom;
@@ -5586,14 +5556,6 @@ namespace WindowsFormsApp1 {
             public global::System.Data.DataColumn licenz_doColumn {
                 get {
                     return this.columnlicenz_do;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn arhivColumn {
-                get {
-                    return this.columnarhiv;
                 }
             }
             
@@ -5799,14 +5761,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn FILIAL_CODEColumn {
-                get {
-                    return this.columnFILIAL_CODE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn websiteColumn {
                 get {
                     return this.columnwebsite;
@@ -5815,33 +5769,9 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn EGR_outColumn {
-                get {
-                    return this.columnEGR_out;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn EGR_outDColumn {
                 get {
                     return this.columnEGR_outD;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn GUIDColumn {
-                get {
-                    return this.columnGUID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn to_faisColumn {
-                get {
-                    return this.columnto_fais;
                 }
             }
             
@@ -5914,16 +5844,13 @@ namespace WindowsFormsApp1 {
                         string okohx, 
                         string kors4et, 
                         string bank_ks4, 
-                        bool iscellular, 
                         string tel_kod, 
                         string phone, 
                         string fax, 
                         string mail, 
-                        bool licenz, 
                         string licenz_nom, 
                         string licenz_work, 
                         System.DateTime licenz_do, 
-                        bool arhiv, 
                         string prim, 
                         string f_code_address, 
                         string u_code_address, 
@@ -5949,12 +5876,8 @@ namespace WindowsFormsApp1 {
                         string update_user, 
                         System.DateTime update_date, 
                         long EIS_OBJECT_ID, 
-                        string FILIAL_CODE, 
                         string website, 
-                        int EGR_out, 
                         System.DateTime EGR_outD, 
-                        System.Guid GUID, 
-                        byte to_fais, 
                         int assignee) {
                 ownersRow rowownersRow = ((ownersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -5982,16 +5905,13 @@ namespace WindowsFormsApp1 {
                         okohx,
                         kors4et,
                         bank_ks4,
-                        iscellular,
                         tel_kod,
                         phone,
                         fax,
                         mail,
-                        licenz,
                         licenz_nom,
                         licenz_work,
                         licenz_do,
-                        arhiv,
                         prim,
                         f_code_address,
                         u_code_address,
@@ -6017,12 +5937,8 @@ namespace WindowsFormsApp1 {
                         update_user,
                         update_date,
                         EIS_OBJECT_ID,
-                        FILIAL_CODE,
                         website,
-                        EGR_out,
                         EGR_outD,
-                        GUID,
-                        to_fais,
                         assignee};
                 rowownersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowownersRow);
@@ -6077,16 +5993,13 @@ namespace WindowsFormsApp1 {
                 this.columnokohx = base.Columns["okohx"];
                 this.columnkors4et = base.Columns["kors4et"];
                 this.columnbank_ks4 = base.Columns["bank_ks4"];
-                this.columniscellular = base.Columns["iscellular"];
                 this.columntel_kod = base.Columns["tel_kod"];
                 this.columnphone = base.Columns["phone"];
                 this.columnfax = base.Columns["fax"];
                 this.columnmail = base.Columns["mail"];
-                this.columnlicenz = base.Columns["licenz"];
                 this.columnlicenz_nom = base.Columns["licenz_nom"];
                 this.columnlicenz_work = base.Columns["licenz_work"];
                 this.columnlicenz_do = base.Columns["licenz_do"];
-                this.columnarhiv = base.Columns["arhiv"];
                 this.columnprim = base.Columns["prim"];
                 this.columnf_code_address = base.Columns["f_code_address"];
                 this.columnu_code_address = base.Columns["u_code_address"];
@@ -6112,12 +6025,8 @@ namespace WindowsFormsApp1 {
                 this.columnupdate_user = base.Columns["update_user"];
                 this.columnupdate_date = base.Columns["update_date"];
                 this.columnEIS_OBJECT_ID = base.Columns["EIS_OBJECT_ID"];
-                this.columnFILIAL_CODE = base.Columns["FILIAL_CODE"];
                 this.columnwebsite = base.Columns["website"];
-                this.columnEGR_out = base.Columns["EGR_out"];
                 this.columnEGR_outD = base.Columns["EGR_outD"];
-                this.columnGUID = base.Columns["GUID"];
-                this.columnto_fais = base.Columns["to_fais"];
                 this.columnassignee = base.Columns["assignee"];
             }
             
@@ -6172,8 +6081,6 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnkors4et);
                 this.columnbank_ks4 = new global::System.Data.DataColumn("bank_ks4", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbank_ks4);
-                this.columniscellular = new global::System.Data.DataColumn("iscellular", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columniscellular);
                 this.columntel_kod = new global::System.Data.DataColumn("tel_kod", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntel_kod);
                 this.columnphone = new global::System.Data.DataColumn("phone", typeof(string), null, global::System.Data.MappingType.Element);
@@ -6182,16 +6089,12 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnfax);
                 this.columnmail = new global::System.Data.DataColumn("mail", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmail);
-                this.columnlicenz = new global::System.Data.DataColumn("licenz", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlicenz);
                 this.columnlicenz_nom = new global::System.Data.DataColumn("licenz_nom", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlicenz_nom);
                 this.columnlicenz_work = new global::System.Data.DataColumn("licenz_work", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlicenz_work);
                 this.columnlicenz_do = new global::System.Data.DataColumn("licenz_do", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlicenz_do);
-                this.columnarhiv = new global::System.Data.DataColumn("arhiv", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnarhiv);
                 this.columnprim = new global::System.Data.DataColumn("prim", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprim);
                 this.columnf_code_address = new global::System.Data.DataColumn("f_code_address", typeof(string), null, global::System.Data.MappingType.Element);
@@ -6242,18 +6145,10 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnupdate_date);
                 this.columnEIS_OBJECT_ID = new global::System.Data.DataColumn("EIS_OBJECT_ID", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEIS_OBJECT_ID);
-                this.columnFILIAL_CODE = new global::System.Data.DataColumn("FILIAL_CODE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFILIAL_CODE);
                 this.columnwebsite = new global::System.Data.DataColumn("website", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnwebsite);
-                this.columnEGR_out = new global::System.Data.DataColumn("EGR_out", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEGR_out);
                 this.columnEGR_outD = new global::System.Data.DataColumn("EGR_outD", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEGR_outD);
-                this.columnGUID = new global::System.Data.DataColumn("GUID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGUID);
-                this.columnto_fais = new global::System.Data.DataColumn("to_fais", typeof(byte), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnto_fais);
                 this.columnassignee = new global::System.Data.DataColumn("assignee", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnassignee);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -6283,15 +6178,12 @@ namespace WindowsFormsApp1 {
                 this.columnokohx.MaxLength = 17;
                 this.columnkors4et.MaxLength = 20;
                 this.columnbank_ks4.MaxLength = 40;
-                this.columniscellular.AllowDBNull = false;
                 this.columntel_kod.MaxLength = 10;
                 this.columnphone.MaxLength = 50;
                 this.columnfax.MaxLength = 50;
                 this.columnmail.MaxLength = 250;
-                this.columnlicenz.AllowDBNull = false;
                 this.columnlicenz_nom.MaxLength = 20;
                 this.columnlicenz_work.MaxLength = 50;
-                this.columnarhiv.AllowDBNull = false;
                 this.columnprim.MaxLength = 1000;
                 this.columnf_code_address.MaxLength = 17;
                 this.columnu_code_address.MaxLength = 17;
@@ -6310,12 +6202,7 @@ namespace WindowsFormsApp1 {
                 this.columnkurator.MaxLength = 50;
                 this.columncreate_user.MaxLength = 100;
                 this.columnupdate_user.MaxLength = 100;
-                this.columnFILIAL_CODE.AllowDBNull = false;
-                this.columnFILIAL_CODE.MaxLength = 2;
                 this.columnwebsite.MaxLength = 250;
-                this.columnEGR_out.AllowDBNull = false;
-                this.columnGUID.AllowDBNull = false;
-                this.columnto_fais.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13917,17 +13804,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool iscellular {
-                get {
-                    return ((bool)(this[this.tableowners.iscellularColumn]));
-                }
-                set {
-                    this[this.tableowners.iscellularColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string tel_kod {
                 get {
                     try {
@@ -13992,17 +13868,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool licenz {
-                get {
-                    return ((bool)(this[this.tableowners.licenzColumn]));
-                }
-                set {
-                    this[this.tableowners.licenzColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string licenz_nom {
                 get {
                     try {
@@ -14046,17 +13911,6 @@ namespace WindowsFormsApp1 {
                 }
                 set {
                     this[this.tableowners.licenz_doColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool arhiv {
-                get {
-                    return ((bool)(this[this.tableowners.arhivColumn]));
-                }
-                set {
-                    this[this.tableowners.arhivColumn] = value;
                 }
             }
             
@@ -14462,17 +14316,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string FILIAL_CODE {
-                get {
-                    return ((string)(this[this.tableowners.FILIAL_CODEColumn]));
-                }
-                set {
-                    this[this.tableowners.FILIAL_CODEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string website {
                 get {
                     try {
@@ -14489,17 +14332,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int EGR_out {
-                get {
-                    return ((int)(this[this.tableowners.EGR_outColumn]));
-                }
-                set {
-                    this[this.tableowners.EGR_outColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime EGR_outD {
                 get {
                     try {
@@ -14511,28 +14343,6 @@ namespace WindowsFormsApp1 {
                 }
                 set {
                     this[this.tableowners.EGR_outDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.Guid GUID {
-                get {
-                    return ((global::System.Guid)(this[this.tableowners.GUIDColumn]));
-                }
-                set {
-                    this[this.tableowners.GUIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public byte to_fais {
-                get {
-                    return ((byte)(this[this.tableowners.to_faisColumn]));
-                }
-                set {
-                    this[this.tableowners.to_faisColumn] = value;
                 }
             }
             
@@ -27873,16 +27683,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             tableMapping.ColumnMappings.Add("okohx", "okohx");
             tableMapping.ColumnMappings.Add("kors4et", "kors4et");
             tableMapping.ColumnMappings.Add("bank_ks4", "bank_ks4");
-            tableMapping.ColumnMappings.Add("iscellular", "iscellular");
             tableMapping.ColumnMappings.Add("tel_kod", "tel_kod");
             tableMapping.ColumnMappings.Add("phone", "phone");
             tableMapping.ColumnMappings.Add("fax", "fax");
             tableMapping.ColumnMappings.Add("mail", "mail");
-            tableMapping.ColumnMappings.Add("licenz", "licenz");
             tableMapping.ColumnMappings.Add("licenz_nom", "licenz_nom");
             tableMapping.ColumnMappings.Add("licenz_work", "licenz_work");
             tableMapping.ColumnMappings.Add("licenz_do", "licenz_do");
-            tableMapping.ColumnMappings.Add("arhiv", "arhiv");
             tableMapping.ColumnMappings.Add("prim", "prim");
             tableMapping.ColumnMappings.Add("f_code_address", "f_code_address");
             tableMapping.ColumnMappings.Add("u_code_address", "u_code_address");
@@ -27908,88 +27715,81 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             tableMapping.ColumnMappings.Add("update_user", "update_user");
             tableMapping.ColumnMappings.Add("update_date", "update_date");
             tableMapping.ColumnMappings.Add("EIS_OBJECT_ID", "EIS_OBJECT_ID");
-            tableMapping.ColumnMappings.Add("FILIAL_CODE", "FILIAL_CODE");
             tableMapping.ColumnMappings.Add("website", "website");
-            tableMapping.ColumnMappings.Add("EGR_out", "EGR_out");
             tableMapping.ColumnMappings.Add("EGR_outD", "EGR_outD");
-            tableMapping.ColumnMappings.Add("GUID", "GUID");
-            tableMapping.ColumnMappings.Add("to_fais", "to_fais");
             tableMapping.ColumnMappings.Add("assignee", "assignee");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[owners] WHERE (([owner_id] = @Original_owner_id) AND ((@IsNull" +
-                "_own_name = 1 AND [own_name] IS NULL) OR ([own_name] = @Original_own_name)) AND " +
-                "((@IsNull_own_flat = 1 AND [own_flat] IS NULL) OR ([own_flat] = @Original_own_fl" +
-                "at)) AND ((@IsNull_own_inn = 1 AND [own_inn] IS NULL) OR ([own_inn] = @Original_" +
-                "own_inn)) AND ((@IsNull_own_zip = 1 AND [own_zip] IS NULL) OR ([own_zip] = @Orig" +
-                "inal_own_zip)) AND ((@IsNull_departm_name = 1 AND [departm_name] IS NULL) OR ([d" +
-                "epartm_name] = @Original_departm_name)) AND ((@IsNull_departm = 1 AND [departm] " +
-                "IS NULL) OR ([departm] = @Original_departm)) AND ((@IsNull_ownertyp_name = 1 AND" +
-                " [ownertyp_name] IS NULL) OR ([ownertyp_name] = @Original_ownertyp_name)) AND ((" +
-                "@IsNull_ownertyp = 1 AND [ownertyp] IS NULL) OR ([ownertyp] = @Original_ownertyp" +
-                ")) AND ((@IsNull_pred_typ = 1 AND [pred_typ] IS NULL) OR ([pred_typ] = @Original" +
-                "_pred_typ)) AND ((@IsNull_n_dela = 1 AND [n_dela] IS NULL) OR ([n_dela] = @Origi" +
-                "nal_n_dela)) AND ((@IsNull_fact_flat = 1 AND [fact_flat] IS NULL) OR ([fact_flat" +
-                "] = @Original_fact_flat)) AND ((@IsNull_fact_zip = 1 AND [fact_zip] IS NULL) OR " +
-                "([fact_zip] = @Original_fact_zip)) AND ((@IsNull_n_dog_fr = 1 AND [n_dog_fr] IS " +
-                "NULL) OR ([n_dog_fr] = @Original_n_dog_fr)) AND ((@IsNull_d_startd = 1 AND [d_st" +
-                "artd] IS NULL) OR ([d_startd] = @Original_d_startd)) AND ((@IsNull_d_endd = 1 AN" +
-                "D [d_endd] IS NULL) OR ([d_endd] = @Original_d_endd)) AND ((@IsNull_fio_otv = 1 " +
-                "AND [fio_otv] IS NULL) OR ([fio_otv] = @Original_fio_otv)) AND ((@IsNull_buhphon" +
-                "e = 1 AND [buhphone] IS NULL) OR ([buhphone] = @Original_buhphone)) AND ((@IsNul" +
-                "l_ras4et = 1 AND [ras4et] IS NULL) OR ([ras4et] = @Original_ras4et)) AND ((@IsNu" +
-                "ll_bank = 1 AND [bank] IS NULL) OR ([bank] = @Original_bank)) AND ((@IsNull_okpo" +
-                " = 1 AND [okpo] IS NULL) OR ([okpo] = @Original_okpo)) AND ((@IsNull_okohx = 1 A" +
-                "ND [okohx] IS NULL) OR ([okohx] = @Original_okohx)) AND ((@IsNull_kors4et = 1 AN" +
-                "D [kors4et] IS NULL) OR ([kors4et] = @Original_kors4et)) AND ((@IsNull_bank_ks4 " +
-                "= 1 AND [bank_ks4] IS NULL) OR ([bank_ks4] = @Original_bank_ks4)) AND ([iscellul" +
-                "ar] = @Original_iscellular) AND ((@IsNull_tel_kod = 1 AND [tel_kod] IS NULL) OR " +
-                "([tel_kod] = @Original_tel_kod)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR" +
-                " ([phone] = @Original_phone)) AND ((@IsNull_fax = 1 AND [fax] IS NULL) OR ([fax]" +
-                " = @Original_fax)) AND ((@IsNull_mail = 1 AND [mail] IS NULL) OR ([mail] = @Orig" +
-                "inal_mail)) AND ([licenz] = @Original_licenz) AND ((@IsNull_licenz_nom = 1 AND [" +
-                "licenz_nom] IS NULL) OR ([licenz_nom] = @Original_licenz_nom)) AND ((@IsNull_lic" +
-                "enz_work = 1 AND [licenz_work] IS NULL) OR ([licenz_work] = @Original_licenz_wor" +
-                "k)) AND ((@IsNull_licenz_do = 1 AND [licenz_do] IS NULL) OR ([licenz_do] = @Orig" +
-                "inal_licenz_do)) AND ([arhiv] = @Original_arhiv) AND ((@IsNull_prim = 1 AND [pri" +
-                "m] IS NULL) OR ([prim] = @Original_prim)) AND ((@IsNull_f_code_address = 1 AND [" +
-                "f_code_address] IS NULL) OR ([f_code_address] = @Original_f_code_address)) AND (" +
-                "(@IsNull_u_code_address = 1 AND [u_code_address] IS NULL) OR ([u_code_address] =" +
-                " @Original_u_code_address)) AND ((@IsNull_kpp = 1 AND [kpp] IS NULL) OR ([kpp] =" +
-                " @Original_kpp)) AND ((@IsNull_allerts = 1 AND [allerts] IS NULL) OR ([allerts] " +
-                "= @Original_allerts)) AND ((@IsNull_super_own = 1 AND [super_own] IS NULL) OR ([" +
-                "super_own] = @Original_super_own)) AND ((@IsNull_fio_ruc = 1 AND [fio_ruc] IS NU" +
-                "LL) OR ([fio_ruc] = @Original_fio_ruc)) AND ((@IsNull_ogrn_num = 1 AND [ogrn_num" +
-                "] IS NULL) OR ([ogrn_num] = @Original_ogrn_num)) AND ((@IsNull_ogrn_date = 1 AND" +
-                " [ogrn_date] IS NULL) OR ([ogrn_date] = @Original_ogrn_date)) AND ((@IsNull_PRN_" +
-                "RUSSIA = 1 AND [PRN_RUSSIA] IS NULL) OR ([PRN_RUSSIA] = @Original_PRN_RUSSIA)) A" +
-                "ND ((@IsNull_post_zip = 1 AND [post_zip] IS NULL) OR ([post_zip] = @Original_pos" +
-                "t_zip)) AND ((@IsNull_post_code_address = 1 AND [post_code_address] IS NULL) OR " +
-                "([post_code_address] = @Original_post_code_address)) AND ((@IsNull_post_flat = 1" +
-                " AND [post_flat] IS NULL) OR ([post_flat] = @Original_post_flat)) AND ((@IsNull_" +
-                "adress_string_customer = 1 AND [adress_string_customer] IS NULL) OR ([adress_str" +
-                "ing_customer] = @Original_adress_string_customer)) AND ((@IsNull_adress_string_c" +
-                "argo = 1 AND [adress_string_cargo] IS NULL) OR ([adress_string_cargo] = @Origina" +
-                "l_adress_string_cargo)) AND ((@IsNull_chiefNameForDoc = 1 AND [chiefNameForDoc] " +
-                "IS NULL) OR ([chiefNameForDoc] = @Original_chiefNameForDoc)) AND ((@IsNull_chief" +
-                "PositionForDoc = 1 AND [chiefPositionForDoc] IS NULL) OR ([chiefPositionForDoc] " +
-                "= @Original_chiefPositionForDoc)) AND ((@IsNull_ownerOrgDocType = 1 AND [ownerOr" +
-                "gDocType] IS NULL) OR ([ownerOrgDocType] = @Original_ownerOrgDocType)) AND ((@Is" +
-                "Null_shortOwnName = 1 AND [shortOwnName] IS NULL) OR ([shortOwnName] = @Original" +
-                "_shortOwnName)) AND ((@IsNull_kurator = 1 AND [kurator] IS NULL) OR ([kurator] =" +
-                " @Original_kurator)) AND ((@IsNull_create_user = 1 AND [create_user] IS NULL) OR" +
-                " ([create_user] = @Original_create_user)) AND ((@IsNull_create_date = 1 AND [cre" +
-                "ate_date] IS NULL) OR ([create_date] = @Original_create_date)) AND ((@IsNull_upd" +
-                "ate_user = 1 AND [update_user] IS NULL) OR ([update_user] = @Original_update_use" +
-                "r)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date] =" +
-                " @Original_update_date)) AND ((@IsNull_EIS_OBJECT_ID = 1 AND [EIS_OBJECT_ID] IS " +
-                "NULL) OR ([EIS_OBJECT_ID] = @Original_EIS_OBJECT_ID)) AND ([FILIAL_CODE] = @Orig" +
-                "inal_FILIAL_CODE) AND ((@IsNull_website = 1 AND [website] IS NULL) OR ([website]" +
-                " = @Original_website)) AND ([EGR_out] = @Original_EGR_out) AND ((@IsNull_EGR_out" +
-                "D = 1 AND [EGR_outD] IS NULL) OR ([EGR_outD] = @Original_EGR_outD)) AND ([GUID] " +
-                "= @Original_GUID) AND ([to_fais] = @Original_to_fais) AND ((@IsNull_assignee = 1" +
-                " AND [assignee] IS NULL) OR ([assignee] = @Original_assignee)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [owners] WHERE (([owner_id] = @Original_owner_id) AND ((@IsNull_own_n" +
+                "ame = 1 AND [own_name] IS NULL) OR ([own_name] = @Original_own_name)) AND ((@IsN" +
+                "ull_own_flat = 1 AND [own_flat] IS NULL) OR ([own_flat] = @Original_own_flat)) A" +
+                "ND ((@IsNull_own_inn = 1 AND [own_inn] IS NULL) OR ([own_inn] = @Original_own_in" +
+                "n)) AND ((@IsNull_own_zip = 1 AND [own_zip] IS NULL) OR ([own_zip] = @Original_o" +
+                "wn_zip)) AND ((@IsNull_departm_name = 1 AND [departm_name] IS NULL) OR ([departm" +
+                "_name] = @Original_departm_name)) AND ((@IsNull_departm = 1 AND [departm] IS NUL" +
+                "L) OR ([departm] = @Original_departm)) AND ((@IsNull_ownertyp_name = 1 AND [owne" +
+                "rtyp_name] IS NULL) OR ([ownertyp_name] = @Original_ownertyp_name)) AND ((@IsNul" +
+                "l_ownertyp = 1 AND [ownertyp] IS NULL) OR ([ownertyp] = @Original_ownertyp)) AND" +
+                " ((@IsNull_pred_typ = 1 AND [pred_typ] IS NULL) OR ([pred_typ] = @Original_pred_" +
+                "typ)) AND ((@IsNull_n_dela = 1 AND [n_dela] IS NULL) OR ([n_dela] = @Original_n_" +
+                "dela)) AND ((@IsNull_fact_flat = 1 AND [fact_flat] IS NULL) OR ([fact_flat] = @O" +
+                "riginal_fact_flat)) AND ((@IsNull_fact_zip = 1 AND [fact_zip] IS NULL) OR ([fact" +
+                "_zip] = @Original_fact_zip)) AND ((@IsNull_n_dog_fr = 1 AND [n_dog_fr] IS NULL) " +
+                "OR ([n_dog_fr] = @Original_n_dog_fr)) AND ((@IsNull_d_startd = 1 AND [d_startd] " +
+                "IS NULL) OR ([d_startd] = @Original_d_startd)) AND ((@IsNull_d_endd = 1 AND [d_e" +
+                "ndd] IS NULL) OR ([d_endd] = @Original_d_endd)) AND ((@IsNull_fio_otv = 1 AND [f" +
+                "io_otv] IS NULL) OR ([fio_otv] = @Original_fio_otv)) AND ((@IsNull_buhphone = 1 " +
+                "AND [buhphone] IS NULL) OR ([buhphone] = @Original_buhphone)) AND ((@IsNull_ras4" +
+                "et = 1 AND [ras4et] IS NULL) OR ([ras4et] = @Original_ras4et)) AND ((@IsNull_ban" +
+                "k = 1 AND [bank] IS NULL) OR ([bank] = @Original_bank)) AND ((@IsNull_okpo = 1 A" +
+                "ND [okpo] IS NULL) OR ([okpo] = @Original_okpo)) AND ((@IsNull_okohx = 1 AND [ok" +
+                "ohx] IS NULL) OR ([okohx] = @Original_okohx)) AND ((@IsNull_kors4et = 1 AND [kor" +
+                "s4et] IS NULL) OR ([kors4et] = @Original_kors4et)) AND ((@IsNull_bank_ks4 = 1 AN" +
+                "D [bank_ks4] IS NULL) OR ([bank_ks4] = @Original_bank_ks4)) AND ((@IsNull_tel_ko" +
+                "d = 1 AND [tel_kod] IS NULL) OR ([tel_kod] = @Original_tel_kod)) AND ((@IsNull_p" +
+                "hone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_fax " +
+                "= 1 AND [fax] IS NULL) OR ([fax] = @Original_fax)) AND ((@IsNull_mail = 1 AND [m" +
+                "ail] IS NULL) OR ([mail] = @Original_mail)) AND ((@IsNull_licenz_nom = 1 AND [li" +
+                "cenz_nom] IS NULL) OR ([licenz_nom] = @Original_licenz_nom)) AND ((@IsNull_licen" +
+                "z_work = 1 AND [licenz_work] IS NULL) OR ([licenz_work] = @Original_licenz_work)" +
+                ") AND ((@IsNull_licenz_do = 1 AND [licenz_do] IS NULL) OR ([licenz_do] = @Origin" +
+                "al_licenz_do)) AND ((@IsNull_prim = 1 AND [prim] IS NULL) OR ([prim] = @Original" +
+                "_prim)) AND ((@IsNull_f_code_address = 1 AND [f_code_address] IS NULL) OR ([f_co" +
+                "de_address] = @Original_f_code_address)) AND ((@IsNull_u_code_address = 1 AND [u" +
+                "_code_address] IS NULL) OR ([u_code_address] = @Original_u_code_address)) AND ((" +
+                "@IsNull_kpp = 1 AND [kpp] IS NULL) OR ([kpp] = @Original_kpp)) AND ((@IsNull_all" +
+                "erts = 1 AND [allerts] IS NULL) OR ([allerts] = @Original_allerts)) AND ((@IsNul" +
+                "l_super_own = 1 AND [super_own] IS NULL) OR ([super_own] = @Original_super_own))" +
+                " AND ((@IsNull_fio_ruc = 1 AND [fio_ruc] IS NULL) OR ([fio_ruc] = @Original_fio_" +
+                "ruc)) AND ((@IsNull_ogrn_num = 1 AND [ogrn_num] IS NULL) OR ([ogrn_num] = @Origi" +
+                "nal_ogrn_num)) AND ((@IsNull_ogrn_date = 1 AND [ogrn_date] IS NULL) OR ([ogrn_da" +
+                "te] = @Original_ogrn_date)) AND ((@IsNull_PRN_RUSSIA = 1 AND [PRN_RUSSIA] IS NUL" +
+                "L) OR ([PRN_RUSSIA] = @Original_PRN_RUSSIA)) AND ((@IsNull_post_zip = 1 AND [pos" +
+                "t_zip] IS NULL) OR ([post_zip] = @Original_post_zip)) AND ((@IsNull_post_code_ad" +
+                "dress = 1 AND [post_code_address] IS NULL) OR ([post_code_address] = @Original_p" +
+                "ost_code_address)) AND ((@IsNull_post_flat = 1 AND [post_flat] IS NULL) OR ([pos" +
+                "t_flat] = @Original_post_flat)) AND ((@IsNull_adress_string_customer = 1 AND [ad" +
+                "ress_string_customer] IS NULL) OR ([adress_string_customer] = @Original_adress_s" +
+                "tring_customer)) AND ((@IsNull_adress_string_cargo = 1 AND [adress_string_cargo]" +
+                " IS NULL) OR ([adress_string_cargo] = @Original_adress_string_cargo)) AND ((@IsN" +
+                "ull_chiefNameForDoc = 1 AND [chiefNameForDoc] IS NULL) OR ([chiefNameForDoc] = @" +
+                "Original_chiefNameForDoc)) AND ((@IsNull_chiefPositionForDoc = 1 AND [chiefPosit" +
+                "ionForDoc] IS NULL) OR ([chiefPositionForDoc] = @Original_chiefPositionForDoc)) " +
+                "AND ((@IsNull_ownerOrgDocType = 1 AND [ownerOrgDocType] IS NULL) OR ([ownerOrgDo" +
+                "cType] = @Original_ownerOrgDocType)) AND ((@IsNull_shortOwnName = 1 AND [shortOw" +
+                "nName] IS NULL) OR ([shortOwnName] = @Original_shortOwnName)) AND ((@IsNull_kura" +
+                "tor = 1 AND [kurator] IS NULL) OR ([kurator] = @Original_kurator)) AND ((@IsNull" +
+                "_create_user = 1 AND [create_user] IS NULL) OR ([create_user] = @Original_create" +
+                "_user)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([create_dat" +
+                "e] = @Original_create_date)) AND ((@IsNull_update_user = 1 AND [update_user] IS " +
+                "NULL) OR ([update_user] = @Original_update_user)) AND ((@IsNull_update_date = 1 " +
+                "AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)) AND ((@Is" +
+                "Null_EIS_OBJECT_ID = 1 AND [EIS_OBJECT_ID] IS NULL) OR ([EIS_OBJECT_ID] = @Origi" +
+                "nal_EIS_OBJECT_ID)) AND ((@IsNull_website = 1 AND [website] IS NULL) OR ([websit" +
+                "e] = @Original_website)) AND ((@IsNull_EGR_outD = 1 AND [EGR_outD] IS NULL) OR (" +
+                "[EGR_outD] = @Original_EGR_outD)) AND ((@IsNull_assignee = 1 AND [assignee] IS N" +
+                "ULL) OR ([assignee] = @Original_assignee)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_owner_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_own_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "own_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -28038,7 +27838,6 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kors4et", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kors4et", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bank_ks4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bank_ks4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bank_ks4", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bank_ks4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iscellular", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iscellular", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tel_kod", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tel_kod", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tel_kod", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tel_kod", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -28047,14 +27846,12 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fax", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_licenz_nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz_nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_licenz_work", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_work", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz_work", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_work", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_licenz_do", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_do", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz_do", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_do", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_arhiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "arhiv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_prim", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prim", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prim", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prim", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_f_code_address", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "f_code_address", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -28105,49 +27902,42 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_update_date", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "update_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EIS_OBJECT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EIS_OBJECT_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EIS_OBJECT_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EIS_OBJECT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FILIAL_CODE", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FILIAL_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_website", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "website", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_website", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "website", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EGR_out", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_out", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EGR_outD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_outD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EGR_outD", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_outD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_to_fais", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "to_fais", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_assignee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assignee", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_assignee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assignee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[owners] ([own_name], [own_flat], [own_inn], [own_zip], [depart" +
-                "m_name], [departm], [ownertyp_name], [ownertyp], [pred_typ], [n_dela], [fact_fla" +
-                "t], [fact_zip], [n_dog_fr], [d_startd], [d_endd], [fio_otv], [buhphone], [ras4et" +
-                "], [bank], [okpo], [okohx], [kors4et], [bank_ks4], [iscellular], [tel_kod], [pho" +
-                "ne], [fax], [mail], [licenz], [licenz_nom], [licenz_work], [licenz_do], [arhiv]," +
-                " [prim], [f_code_address], [u_code_address], [kpp], [allerts], [super_own], [fio" +
-                "_ruc], [ogrn_num], [ogrn_date], [PRN_RUSSIA], [post_zip], [post_code_address], [" +
-                "post_flat], [adress_string_customer], [adress_string_cargo], [chiefNameForDoc], " +
-                "[chiefPositionForDoc], [ownerOrgDocType], [shortOwnName], [kurator], [create_use" +
-                "r], [create_date], [update_user], [update_date], [EIS_OBJECT_ID], [FILIAL_CODE]," +
-                " [website], [EGR_out], [EGR_outD], [GUID], [to_fais], [assignee]) VALUES (@own_n" +
-                "ame, @own_flat, @own_inn, @own_zip, @departm_name, @departm, @ownertyp_name, @ow" +
-                "nertyp, @pred_typ, @n_dela, @fact_flat, @fact_zip, @n_dog_fr, @d_startd, @d_endd" +
-                ", @fio_otv, @buhphone, @ras4et, @bank, @okpo, @okohx, @kors4et, @bank_ks4, @isce" +
-                "llular, @tel_kod, @phone, @fax, @mail, @licenz, @licenz_nom, @licenz_work, @lice" +
-                "nz_do, @arhiv, @prim, @f_code_address, @u_code_address, @kpp, @allerts, @super_o" +
-                "wn, @fio_ruc, @ogrn_num, @ogrn_date, @PRN_RUSSIA, @post_zip, @post_code_address," +
-                " @post_flat, @adress_string_customer, @adress_string_cargo, @chiefNameForDoc, @c" +
-                "hiefPositionForDoc, @ownerOrgDocType, @shortOwnName, @kurator, @create_user, @cr" +
-                "eate_date, @update_user, @update_date, @EIS_OBJECT_ID, @FILIAL_CODE, @website, @" +
-                "EGR_out, @EGR_outD, @GUID, @to_fais, @assignee);\r\nSELECT owner_id, own_name, own" +
-                "_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pred_ty" +
-                "p, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv, buhphone, r" +
-                "as4et, bank, okpo, okohx, kors4et, bank_ks4, iscellular, tel_kod, phone, fax, ma" +
-                "il, licenz, licenz_nom, licenz_work, licenz_do, arhiv, prim, f_code_address, u_c" +
-                "ode_address, kpp, allerts, super_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, " +
-                "post_zip, post_code_address, post_flat, adress_string_customer, adress_string_ca" +
-                "rgo, chiefNameForDoc, chiefPositionForDoc, ownerOrgDocType, shortOwnName, kurato" +
-                "r, create_user, create_date, update_user, update_date, EIS_OBJECT_ID, FILIAL_COD" +
-                "E, website, EGR_out, EGR_outD, GUID, to_fais, assignee FROM owners WHERE (owner_" +
-                "id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [owners] ([own_name], [own_flat], [own_inn], [own_zip], [departm_name" +
+                "], [departm], [ownertyp_name], [ownertyp], [pred_typ], [n_dela], [fact_flat], [f" +
+                "act_zip], [n_dog_fr], [d_startd], [d_endd], [fio_otv], [buhphone], [ras4et], [ba" +
+                "nk], [okpo], [okohx], [kors4et], [bank_ks4], [tel_kod], [phone], [fax], [mail], " +
+                "[licenz_nom], [licenz_work], [licenz_do], [prim], [f_code_address], [u_code_addr" +
+                "ess], [kpp], [allerts], [super_own], [fio_ruc], [ogrn_num], [ogrn_date], [PRN_RU" +
+                "SSIA], [post_zip], [post_code_address], [post_flat], [adress_string_customer], [" +
+                "adress_string_cargo], [chiefNameForDoc], [chiefPositionForDoc], [ownerOrgDocType" +
+                "], [shortOwnName], [kurator], [create_user], [create_date], [update_user], [upda" +
+                "te_date], [EIS_OBJECT_ID], [website], [EGR_outD], [assignee]) VALUES (@own_name," +
+                " @own_flat, @own_inn, @own_zip, @departm_name, @departm, @ownertyp_name, @ownert" +
+                "yp, @pred_typ, @n_dela, @fact_flat, @fact_zip, @n_dog_fr, @d_startd, @d_endd, @f" +
+                "io_otv, @buhphone, @ras4et, @bank, @okpo, @okohx, @kors4et, @bank_ks4, @tel_kod," +
+                " @phone, @fax, @mail, @licenz_nom, @licenz_work, @licenz_do, @prim, @f_code_addr" +
+                "ess, @u_code_address, @kpp, @allerts, @super_own, @fio_ruc, @ogrn_num, @ogrn_dat" +
+                "e, @PRN_RUSSIA, @post_zip, @post_code_address, @post_flat, @adress_string_custom" +
+                "er, @adress_string_cargo, @chiefNameForDoc, @chiefPositionForDoc, @ownerOrgDocTy" +
+                "pe, @shortOwnName, @kurator, @create_user, @create_date, @update_user, @update_d" +
+                "ate, @EIS_OBJECT_ID, @website, @EGR_outD, @assignee);\r\nSELECT owner_id, own_name" +
+                ", own_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pr" +
+                "ed_typ, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv, buhpho" +
+                "ne, ras4et, bank, okpo, okohx, kors4et, bank_ks4, tel_kod, phone, fax, mail, lic" +
+                "enz_nom, licenz_work, licenz_do, prim, f_code_address, u_code_address, kpp, alle" +
+                "rts, super_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, post_zip, post_code_ad" +
+                "dress, post_flat, adress_string_customer, adress_string_cargo, chiefNameForDoc, " +
+                "chiefPositionForDoc, ownerOrgDocType, shortOwnName, kurator, create_user, create" +
+                "_date, update_user, update_date, EIS_OBJECT_ID, website, EGR_outD, assignee FROM" +
+                " owners WHERE (owner_id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@own_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "own_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@own_flat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "own_flat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -28172,16 +27962,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@okohx", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "okohx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kors4et", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kors4et", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bank_ks4", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bank_ks4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iscellular", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iscellular", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tel_kod", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tel_kod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fax", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz_nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz_work", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_work", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz_do", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_do", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@arhiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "arhiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prim", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@f_code_address", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "f_code_address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@u_code_address", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "u_code_address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -28207,117 +27994,107 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@update_user", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "update_user", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@update_date", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "update_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EIS_OBJECT_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EIS_OBJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FILIAL_CODE", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FILIAL_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@website", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "website", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EGR_out", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_out", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EGR_outD", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_outD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@to_fais", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "to_fais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assignee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assignee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[owners] SET [own_name] = @own_name, [own_flat] = @own_flat, [own_in" +
-                "n] = @own_inn, [own_zip] = @own_zip, [departm_name] = @departm_name, [departm] =" +
-                " @departm, [ownertyp_name] = @ownertyp_name, [ownertyp] = @ownertyp, [pred_typ] " +
-                "= @pred_typ, [n_dela] = @n_dela, [fact_flat] = @fact_flat, [fact_zip] = @fact_zi" +
-                "p, [n_dog_fr] = @n_dog_fr, [d_startd] = @d_startd, [d_endd] = @d_endd, [fio_otv]" +
-                " = @fio_otv, [buhphone] = @buhphone, [ras4et] = @ras4et, [bank] = @bank, [okpo] " +
-                "= @okpo, [okohx] = @okohx, [kors4et] = @kors4et, [bank_ks4] = @bank_ks4, [iscell" +
-                "ular] = @iscellular, [tel_kod] = @tel_kod, [phone] = @phone, [fax] = @fax, [mail" +
-                "] = @mail, [licenz] = @licenz, [licenz_nom] = @licenz_nom, [licenz_work] = @lice" +
-                "nz_work, [licenz_do] = @licenz_do, [arhiv] = @arhiv, [prim] = @prim, [f_code_add" +
-                "ress] = @f_code_address, [u_code_address] = @u_code_address, [kpp] = @kpp, [alle" +
-                "rts] = @allerts, [super_own] = @super_own, [fio_ruc] = @fio_ruc, [ogrn_num] = @o" +
-                "grn_num, [ogrn_date] = @ogrn_date, [PRN_RUSSIA] = @PRN_RUSSIA, [post_zip] = @pos" +
-                "t_zip, [post_code_address] = @post_code_address, [post_flat] = @post_flat, [adre" +
-                "ss_string_customer] = @adress_string_customer, [adress_string_cargo] = @adress_s" +
-                "tring_cargo, [chiefNameForDoc] = @chiefNameForDoc, [chiefPositionForDoc] = @chie" +
-                "fPositionForDoc, [ownerOrgDocType] = @ownerOrgDocType, [shortOwnName] = @shortOw" +
-                "nName, [kurator] = @kurator, [create_user] = @create_user, [create_date] = @crea" +
-                "te_date, [update_user] = @update_user, [update_date] = @update_date, [EIS_OBJECT" +
-                "_ID] = @EIS_OBJECT_ID, [FILIAL_CODE] = @FILIAL_CODE, [website] = @website, [EGR_" +
-                "out] = @EGR_out, [EGR_outD] = @EGR_outD, [GUID] = @GUID, [to_fais] = @to_fais, [" +
-                "assignee] = @assignee WHERE (([owner_id] = @Original_owner_id) AND ((@IsNull_own" +
-                "_name = 1 AND [own_name] IS NULL) OR ([own_name] = @Original_own_name)) AND ((@I" +
-                "sNull_own_flat = 1 AND [own_flat] IS NULL) OR ([own_flat] = @Original_own_flat))" +
-                " AND ((@IsNull_own_inn = 1 AND [own_inn] IS NULL) OR ([own_inn] = @Original_own_" +
-                "inn)) AND ((@IsNull_own_zip = 1 AND [own_zip] IS NULL) OR ([own_zip] = @Original" +
-                "_own_zip)) AND ((@IsNull_departm_name = 1 AND [departm_name] IS NULL) OR ([depar" +
-                "tm_name] = @Original_departm_name)) AND ((@IsNull_departm = 1 AND [departm] IS N" +
-                "ULL) OR ([departm] = @Original_departm)) AND ((@IsNull_ownertyp_name = 1 AND [ow" +
-                "nertyp_name] IS NULL) OR ([ownertyp_name] = @Original_ownertyp_name)) AND ((@IsN" +
-                "ull_ownertyp = 1 AND [ownertyp] IS NULL) OR ([ownertyp] = @Original_ownertyp)) A" +
-                "ND ((@IsNull_pred_typ = 1 AND [pred_typ] IS NULL) OR ([pred_typ] = @Original_pre" +
-                "d_typ)) AND ((@IsNull_n_dela = 1 AND [n_dela] IS NULL) OR ([n_dela] = @Original_" +
-                "n_dela)) AND ((@IsNull_fact_flat = 1 AND [fact_flat] IS NULL) OR ([fact_flat] = " +
-                "@Original_fact_flat)) AND ((@IsNull_fact_zip = 1 AND [fact_zip] IS NULL) OR ([fa" +
-                "ct_zip] = @Original_fact_zip)) AND ((@IsNull_n_dog_fr = 1 AND [n_dog_fr] IS NULL" +
-                ") OR ([n_dog_fr] = @Original_n_dog_fr)) AND ((@IsNull_d_startd = 1 AND [d_startd" +
-                "] IS NULL) OR ([d_startd] = @Original_d_startd)) AND ((@IsNull_d_endd = 1 AND [d" +
-                "_endd] IS NULL) OR ([d_endd] = @Original_d_endd)) AND ((@IsNull_fio_otv = 1 AND " +
-                "[fio_otv] IS NULL) OR ([fio_otv] = @Original_fio_otv)) AND ((@IsNull_buhphone = " +
-                "1 AND [buhphone] IS NULL) OR ([buhphone] = @Original_buhphone)) AND ((@IsNull_ra" +
-                "s4et = 1 AND [ras4et] IS NULL) OR ([ras4et] = @Original_ras4et)) AND ((@IsNull_b" +
-                "ank = 1 AND [bank] IS NULL) OR ([bank] = @Original_bank)) AND ((@IsNull_okpo = 1" +
-                " AND [okpo] IS NULL) OR ([okpo] = @Original_okpo)) AND ((@IsNull_okohx = 1 AND [" +
-                "okohx] IS NULL) OR ([okohx] = @Original_okohx)) AND ((@IsNull_kors4et = 1 AND [k" +
-                "ors4et] IS NULL) OR ([kors4et] = @Original_kors4et)) AND ((@IsNull_bank_ks4 = 1 " +
-                "AND [bank_ks4] IS NULL) OR ([bank_ks4] = @Original_bank_ks4)) AND ([iscellular] " +
-                "= @Original_iscellular) AND ((@IsNull_tel_kod = 1 AND [tel_kod] IS NULL) OR ([te" +
-                "l_kod] = @Original_tel_kod)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([p" +
-                "hone] = @Original_phone)) AND ((@IsNull_fax = 1 AND [fax] IS NULL) OR ([fax] = @" +
-                "Original_fax)) AND ((@IsNull_mail = 1 AND [mail] IS NULL) OR ([mail] = @Original" +
-                "_mail)) AND ([licenz] = @Original_licenz) AND ((@IsNull_licenz_nom = 1 AND [lice" +
-                "nz_nom] IS NULL) OR ([licenz_nom] = @Original_licenz_nom)) AND ((@IsNull_licenz_" +
-                "work = 1 AND [licenz_work] IS NULL) OR ([licenz_work] = @Original_licenz_work)) " +
-                "AND ((@IsNull_licenz_do = 1 AND [licenz_do] IS NULL) OR ([licenz_do] = @Original" +
-                "_licenz_do)) AND ([arhiv] = @Original_arhiv) AND ((@IsNull_prim = 1 AND [prim] I" +
-                "S NULL) OR ([prim] = @Original_prim)) AND ((@IsNull_f_code_address = 1 AND [f_co" +
-                "de_address] IS NULL) OR ([f_code_address] = @Original_f_code_address)) AND ((@Is" +
-                "Null_u_code_address = 1 AND [u_code_address] IS NULL) OR ([u_code_address] = @Or" +
-                "iginal_u_code_address)) AND ((@IsNull_kpp = 1 AND [kpp] IS NULL) OR ([kpp] = @Or" +
-                "iginal_kpp)) AND ((@IsNull_allerts = 1 AND [allerts] IS NULL) OR ([allerts] = @O" +
-                "riginal_allerts)) AND ((@IsNull_super_own = 1 AND [super_own] IS NULL) OR ([supe" +
-                "r_own] = @Original_super_own)) AND ((@IsNull_fio_ruc = 1 AND [fio_ruc] IS NULL) " +
-                "OR ([fio_ruc] = @Original_fio_ruc)) AND ((@IsNull_ogrn_num = 1 AND [ogrn_num] IS" +
-                " NULL) OR ([ogrn_num] = @Original_ogrn_num)) AND ((@IsNull_ogrn_date = 1 AND [og" +
-                "rn_date] IS NULL) OR ([ogrn_date] = @Original_ogrn_date)) AND ((@IsNull_PRN_RUSS" +
-                "IA = 1 AND [PRN_RUSSIA] IS NULL) OR ([PRN_RUSSIA] = @Original_PRN_RUSSIA)) AND (" +
-                "(@IsNull_post_zip = 1 AND [post_zip] IS NULL) OR ([post_zip] = @Original_post_zi" +
-                "p)) AND ((@IsNull_post_code_address = 1 AND [post_code_address] IS NULL) OR ([po" +
-                "st_code_address] = @Original_post_code_address)) AND ((@IsNull_post_flat = 1 AND" +
-                " [post_flat] IS NULL) OR ([post_flat] = @Original_post_flat)) AND ((@IsNull_adre" +
-                "ss_string_customer = 1 AND [adress_string_customer] IS NULL) OR ([adress_string_" +
-                "customer] = @Original_adress_string_customer)) AND ((@IsNull_adress_string_cargo" +
-                " = 1 AND [adress_string_cargo] IS NULL) OR ([adress_string_cargo] = @Original_ad" +
-                "ress_string_cargo)) AND ((@IsNull_chiefNameForDoc = 1 AND [chiefNameForDoc] IS N" +
-                "ULL) OR ([chiefNameForDoc] = @Original_chiefNameForDoc)) AND ((@IsNull_chiefPosi" +
-                "tionForDoc = 1 AND [chiefPositionForDoc] IS NULL) OR ([chiefPositionForDoc] = @O" +
-                "riginal_chiefPositionForDoc)) AND ((@IsNull_ownerOrgDocType = 1 AND [ownerOrgDoc" +
-                "Type] IS NULL) OR ([ownerOrgDocType] = @Original_ownerOrgDocType)) AND ((@IsNull" +
-                "_shortOwnName = 1 AND [shortOwnName] IS NULL) OR ([shortOwnName] = @Original_sho" +
-                "rtOwnName)) AND ((@IsNull_kurator = 1 AND [kurator] IS NULL) OR ([kurator] = @Or" +
-                "iginal_kurator)) AND ((@IsNull_create_user = 1 AND [create_user] IS NULL) OR ([c" +
-                "reate_user] = @Original_create_user)) AND ((@IsNull_create_date = 1 AND [create_" +
-                "date] IS NULL) OR ([create_date] = @Original_create_date)) AND ((@IsNull_update_" +
-                "user = 1 AND [update_user] IS NULL) OR ([update_user] = @Original_update_user)) " +
-                "AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date] = @Or" +
-                "iginal_update_date)) AND ((@IsNull_EIS_OBJECT_ID = 1 AND [EIS_OBJECT_ID] IS NULL" +
-                ") OR ([EIS_OBJECT_ID] = @Original_EIS_OBJECT_ID)) AND ([FILIAL_CODE] = @Original" +
-                "_FILIAL_CODE) AND ((@IsNull_website = 1 AND [website] IS NULL) OR ([website] = @" +
-                "Original_website)) AND ([EGR_out] = @Original_EGR_out) AND ((@IsNull_EGR_outD = " +
-                "1 AND [EGR_outD] IS NULL) OR ([EGR_outD] = @Original_EGR_outD)) AND ([GUID] = @O" +
-                "riginal_GUID) AND ([to_fais] = @Original_to_fais) AND ((@IsNull_assignee = 1 AND" +
-                " [assignee] IS NULL) OR ([assignee] = @Original_assignee)));\r\nSELECT owner_id, o" +
-                "wn_name, own_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, owner" +
-                "typ, pred_typ, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv," +
-                " buhphone, ras4et, bank, okpo, okohx, kors4et, bank_ks4, iscellular, tel_kod, ph" +
-                "one, fax, mail, licenz, licenz_nom, licenz_work, licenz_do, arhiv, prim, f_code_" +
-                "address, u_code_address, kpp, allerts, super_own, fio_ruc, ogrn_num, ogrn_date, " +
-                "PRN_RUSSIA, post_zip, post_code_address, post_flat, adress_string_customer, adre" +
-                "ss_string_cargo, chiefNameForDoc, chiefPositionForDoc, ownerOrgDocType, shortOwn" +
-                "Name, kurator, create_user, create_date, update_user, update_date, EIS_OBJECT_ID" +
-                ", FILIAL_CODE, website, EGR_out, EGR_outD, GUID, to_fais, assignee FROM owners W" +
+            this._adapter.UpdateCommand.CommandText = "UPDATE [owners] SET [own_name] = @own_name, [own_flat] = @own_flat, [own_inn] = @" +
+                "own_inn, [own_zip] = @own_zip, [departm_name] = @departm_name, [departm] = @depa" +
+                "rtm, [ownertyp_name] = @ownertyp_name, [ownertyp] = @ownertyp, [pred_typ] = @pre" +
+                "d_typ, [n_dela] = @n_dela, [fact_flat] = @fact_flat, [fact_zip] = @fact_zip, [n_" +
+                "dog_fr] = @n_dog_fr, [d_startd] = @d_startd, [d_endd] = @d_endd, [fio_otv] = @fi" +
+                "o_otv, [buhphone] = @buhphone, [ras4et] = @ras4et, [bank] = @bank, [okpo] = @okp" +
+                "o, [okohx] = @okohx, [kors4et] = @kors4et, [bank_ks4] = @bank_ks4, [tel_kod] = @" +
+                "tel_kod, [phone] = @phone, [fax] = @fax, [mail] = @mail, [licenz_nom] = @licenz_" +
+                "nom, [licenz_work] = @licenz_work, [licenz_do] = @licenz_do, [prim] = @prim, [f_" +
+                "code_address] = @f_code_address, [u_code_address] = @u_code_address, [kpp] = @kp" +
+                "p, [allerts] = @allerts, [super_own] = @super_own, [fio_ruc] = @fio_ruc, [ogrn_n" +
+                "um] = @ogrn_num, [ogrn_date] = @ogrn_date, [PRN_RUSSIA] = @PRN_RUSSIA, [post_zip" +
+                "] = @post_zip, [post_code_address] = @post_code_address, [post_flat] = @post_fla" +
+                "t, [adress_string_customer] = @adress_string_customer, [adress_string_cargo] = @" +
+                "adress_string_cargo, [chiefNameForDoc] = @chiefNameForDoc, [chiefPositionForDoc]" +
+                " = @chiefPositionForDoc, [ownerOrgDocType] = @ownerOrgDocType, [shortOwnName] = " +
+                "@shortOwnName, [kurator] = @kurator, [create_user] = @create_user, [create_date]" +
+                " = @create_date, [update_user] = @update_user, [update_date] = @update_date, [EI" +
+                "S_OBJECT_ID] = @EIS_OBJECT_ID, [website] = @website, [EGR_outD] = @EGR_outD, [as" +
+                "signee] = @assignee WHERE (([owner_id] = @Original_owner_id) AND ((@IsNull_own_n" +
+                "ame = 1 AND [own_name] IS NULL) OR ([own_name] = @Original_own_name)) AND ((@IsN" +
+                "ull_own_flat = 1 AND [own_flat] IS NULL) OR ([own_flat] = @Original_own_flat)) A" +
+                "ND ((@IsNull_own_inn = 1 AND [own_inn] IS NULL) OR ([own_inn] = @Original_own_in" +
+                "n)) AND ((@IsNull_own_zip = 1 AND [own_zip] IS NULL) OR ([own_zip] = @Original_o" +
+                "wn_zip)) AND ((@IsNull_departm_name = 1 AND [departm_name] IS NULL) OR ([departm" +
+                "_name] = @Original_departm_name)) AND ((@IsNull_departm = 1 AND [departm] IS NUL" +
+                "L) OR ([departm] = @Original_departm)) AND ((@IsNull_ownertyp_name = 1 AND [owne" +
+                "rtyp_name] IS NULL) OR ([ownertyp_name] = @Original_ownertyp_name)) AND ((@IsNul" +
+                "l_ownertyp = 1 AND [ownertyp] IS NULL) OR ([ownertyp] = @Original_ownertyp)) AND" +
+                " ((@IsNull_pred_typ = 1 AND [pred_typ] IS NULL) OR ([pred_typ] = @Original_pred_" +
+                "typ)) AND ((@IsNull_n_dela = 1 AND [n_dela] IS NULL) OR ([n_dela] = @Original_n_" +
+                "dela)) AND ((@IsNull_fact_flat = 1 AND [fact_flat] IS NULL) OR ([fact_flat] = @O" +
+                "riginal_fact_flat)) AND ((@IsNull_fact_zip = 1 AND [fact_zip] IS NULL) OR ([fact" +
+                "_zip] = @Original_fact_zip)) AND ((@IsNull_n_dog_fr = 1 AND [n_dog_fr] IS NULL) " +
+                "OR ([n_dog_fr] = @Original_n_dog_fr)) AND ((@IsNull_d_startd = 1 AND [d_startd] " +
+                "IS NULL) OR ([d_startd] = @Original_d_startd)) AND ((@IsNull_d_endd = 1 AND [d_e" +
+                "ndd] IS NULL) OR ([d_endd] = @Original_d_endd)) AND ((@IsNull_fio_otv = 1 AND [f" +
+                "io_otv] IS NULL) OR ([fio_otv] = @Original_fio_otv)) AND ((@IsNull_buhphone = 1 " +
+                "AND [buhphone] IS NULL) OR ([buhphone] = @Original_buhphone)) AND ((@IsNull_ras4" +
+                "et = 1 AND [ras4et] IS NULL) OR ([ras4et] = @Original_ras4et)) AND ((@IsNull_ban" +
+                "k = 1 AND [bank] IS NULL) OR ([bank] = @Original_bank)) AND ((@IsNull_okpo = 1 A" +
+                "ND [okpo] IS NULL) OR ([okpo] = @Original_okpo)) AND ((@IsNull_okohx = 1 AND [ok" +
+                "ohx] IS NULL) OR ([okohx] = @Original_okohx)) AND ((@IsNull_kors4et = 1 AND [kor" +
+                "s4et] IS NULL) OR ([kors4et] = @Original_kors4et)) AND ((@IsNull_bank_ks4 = 1 AN" +
+                "D [bank_ks4] IS NULL) OR ([bank_ks4] = @Original_bank_ks4)) AND ((@IsNull_tel_ko" +
+                "d = 1 AND [tel_kod] IS NULL) OR ([tel_kod] = @Original_tel_kod)) AND ((@IsNull_p" +
+                "hone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_fax " +
+                "= 1 AND [fax] IS NULL) OR ([fax] = @Original_fax)) AND ((@IsNull_mail = 1 AND [m" +
+                "ail] IS NULL) OR ([mail] = @Original_mail)) AND ((@IsNull_licenz_nom = 1 AND [li" +
+                "cenz_nom] IS NULL) OR ([licenz_nom] = @Original_licenz_nom)) AND ((@IsNull_licen" +
+                "z_work = 1 AND [licenz_work] IS NULL) OR ([licenz_work] = @Original_licenz_work)" +
+                ") AND ((@IsNull_licenz_do = 1 AND [licenz_do] IS NULL) OR ([licenz_do] = @Origin" +
+                "al_licenz_do)) AND ((@IsNull_prim = 1 AND [prim] IS NULL) OR ([prim] = @Original" +
+                "_prim)) AND ((@IsNull_f_code_address = 1 AND [f_code_address] IS NULL) OR ([f_co" +
+                "de_address] = @Original_f_code_address)) AND ((@IsNull_u_code_address = 1 AND [u" +
+                "_code_address] IS NULL) OR ([u_code_address] = @Original_u_code_address)) AND ((" +
+                "@IsNull_kpp = 1 AND [kpp] IS NULL) OR ([kpp] = @Original_kpp)) AND ((@IsNull_all" +
+                "erts = 1 AND [allerts] IS NULL) OR ([allerts] = @Original_allerts)) AND ((@IsNul" +
+                "l_super_own = 1 AND [super_own] IS NULL) OR ([super_own] = @Original_super_own))" +
+                " AND ((@IsNull_fio_ruc = 1 AND [fio_ruc] IS NULL) OR ([fio_ruc] = @Original_fio_" +
+                "ruc)) AND ((@IsNull_ogrn_num = 1 AND [ogrn_num] IS NULL) OR ([ogrn_num] = @Origi" +
+                "nal_ogrn_num)) AND ((@IsNull_ogrn_date = 1 AND [ogrn_date] IS NULL) OR ([ogrn_da" +
+                "te] = @Original_ogrn_date)) AND ((@IsNull_PRN_RUSSIA = 1 AND [PRN_RUSSIA] IS NUL" +
+                "L) OR ([PRN_RUSSIA] = @Original_PRN_RUSSIA)) AND ((@IsNull_post_zip = 1 AND [pos" +
+                "t_zip] IS NULL) OR ([post_zip] = @Original_post_zip)) AND ((@IsNull_post_code_ad" +
+                "dress = 1 AND [post_code_address] IS NULL) OR ([post_code_address] = @Original_p" +
+                "ost_code_address)) AND ((@IsNull_post_flat = 1 AND [post_flat] IS NULL) OR ([pos" +
+                "t_flat] = @Original_post_flat)) AND ((@IsNull_adress_string_customer = 1 AND [ad" +
+                "ress_string_customer] IS NULL) OR ([adress_string_customer] = @Original_adress_s" +
+                "tring_customer)) AND ((@IsNull_adress_string_cargo = 1 AND [adress_string_cargo]" +
+                " IS NULL) OR ([adress_string_cargo] = @Original_adress_string_cargo)) AND ((@IsN" +
+                "ull_chiefNameForDoc = 1 AND [chiefNameForDoc] IS NULL) OR ([chiefNameForDoc] = @" +
+                "Original_chiefNameForDoc)) AND ((@IsNull_chiefPositionForDoc = 1 AND [chiefPosit" +
+                "ionForDoc] IS NULL) OR ([chiefPositionForDoc] = @Original_chiefPositionForDoc)) " +
+                "AND ((@IsNull_ownerOrgDocType = 1 AND [ownerOrgDocType] IS NULL) OR ([ownerOrgDo" +
+                "cType] = @Original_ownerOrgDocType)) AND ((@IsNull_shortOwnName = 1 AND [shortOw" +
+                "nName] IS NULL) OR ([shortOwnName] = @Original_shortOwnName)) AND ((@IsNull_kura" +
+                "tor = 1 AND [kurator] IS NULL) OR ([kurator] = @Original_kurator)) AND ((@IsNull" +
+                "_create_user = 1 AND [create_user] IS NULL) OR ([create_user] = @Original_create" +
+                "_user)) AND ((@IsNull_create_date = 1 AND [create_date] IS NULL) OR ([create_dat" +
+                "e] = @Original_create_date)) AND ((@IsNull_update_user = 1 AND [update_user] IS " +
+                "NULL) OR ([update_user] = @Original_update_user)) AND ((@IsNull_update_date = 1 " +
+                "AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)) AND ((@Is" +
+                "Null_EIS_OBJECT_ID = 1 AND [EIS_OBJECT_ID] IS NULL) OR ([EIS_OBJECT_ID] = @Origi" +
+                "nal_EIS_OBJECT_ID)) AND ((@IsNull_website = 1 AND [website] IS NULL) OR ([websit" +
+                "e] = @Original_website)) AND ((@IsNull_EGR_outD = 1 AND [EGR_outD] IS NULL) OR (" +
+                "[EGR_outD] = @Original_EGR_outD)) AND ((@IsNull_assignee = 1 AND [assignee] IS N" +
+                "ULL) OR ([assignee] = @Original_assignee)));\r\nSELECT owner_id, own_name, own_fla" +
+                "t, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pred_typ, n" +
+                "_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv, buhphone, ras4e" +
+                "t, bank, okpo, okohx, kors4et, bank_ks4, tel_kod, phone, fax, mail, licenz_nom, " +
+                "licenz_work, licenz_do, prim, f_code_address, u_code_address, kpp, allerts, supe" +
+                "r_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, post_zip, post_code_address, po" +
+                "st_flat, adress_string_customer, adress_string_cargo, chiefNameForDoc, chiefPosi" +
+                "tionForDoc, ownerOrgDocType, shortOwnName, kurator, create_user, create_date, up" +
+                "date_user, update_date, EIS_OBJECT_ID, website, EGR_outD, assignee FROM owners W" +
                 "HERE (owner_id = @owner_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@own_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "own_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -28343,16 +28120,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@okohx", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "okohx", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kors4et", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kors4et", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bank_ks4", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bank_ks4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iscellular", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iscellular", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tel_kod", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tel_kod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fax", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz_nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz_work", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_work", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@licenz_do", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_do", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@arhiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "arhiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prim", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@f_code_address", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "f_code_address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@u_code_address", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "u_code_address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -28378,12 +28152,8 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@update_user", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "update_user", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@update_date", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "update_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EIS_OBJECT_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EIS_OBJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FILIAL_CODE", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FILIAL_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@website", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "website", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EGR_out", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_out", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EGR_outD", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_outD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@to_fais", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "to_fais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assignee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assignee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_owner_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_own_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "own_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -28432,7 +28202,6 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kors4et", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kors4et", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bank_ks4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bank_ks4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bank_ks4", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bank_ks4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iscellular", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iscellular", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tel_kod", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tel_kod", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tel_kod", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tel_kod", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -28441,14 +28210,12 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fax", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_mail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_mail", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_licenz_nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz_nom", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_licenz_work", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_work", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz_work", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_work", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_licenz_do", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_do", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_licenz_do", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "licenz_do", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_arhiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "arhiv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_prim", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prim", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prim", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prim", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_f_code_address", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "f_code_address", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -28499,14 +28266,10 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_update_date", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "update_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EIS_OBJECT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EIS_OBJECT_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EIS_OBJECT_ID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EIS_OBJECT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FILIAL_CODE", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FILIAL_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_website", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "website", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_website", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "website", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EGR_out", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_out", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EGR_outD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_outD", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EGR_outD", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EGR_outD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GUID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GUID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_to_fais", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "to_fais", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_assignee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assignee", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_assignee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assignee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@owner_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -28525,7 +28288,12 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT owner_id, own_name, own_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pred_typ, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv, buhphone, ras4et, bank, okpo, okohx, kors4et, bank_ks4, iscellular, tel_kod, phone, fax, mail, licenz, licenz_nom, licenz_work, licenz_do, arhiv, prim, f_code_address, u_code_address, kpp, allerts, super_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, post_zip, post_code_address, post_flat, adress_string_customer, adress_string_cargo, chiefNameForDoc, chiefPositionForDoc, ownerOrgDocType, shortOwnName, kurator, create_user, create_date, update_user, update_date, EIS_OBJECT_ID, FILIAL_CODE, website, EGR_out, EGR_outD, GUID, to_fais, assignee FROM dbo.owners";
+            this._commandCollection[0].CommandText = @"SELECT     owner_id, own_name, own_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pred_typ, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, 
+                      d_endd, fio_otv, buhphone, ras4et, bank, okpo, okohx, kors4et, bank_ks4, tel_kod, phone, fax, mail, licenz_nom, licenz_work, licenz_do, prim, f_code_address, 
+                      u_code_address, kpp, allerts, super_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, post_zip, post_code_address, post_flat, adress_string_customer, 
+                      adress_string_cargo, chiefNameForDoc, chiefPositionForDoc, ownerOrgDocType, shortOwnName, kurator, create_user, create_date, update_user, update_date, 
+                      EIS_OBJECT_ID, website, EGR_outD, assignee
+FROM         owners";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -28611,16 +28379,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string Original_okohx, 
                     string Original_kors4et, 
                     string Original_bank_ks4, 
-                    bool Original_iscellular, 
                     string Original_tel_kod, 
                     string Original_phone, 
                     string Original_fax, 
                     string Original_mail, 
-                    bool Original_licenz, 
                     string Original_licenz_nom, 
                     string Original_licenz_work, 
                     global::System.Nullable<global::System.DateTime> Original_licenz_do, 
-                    bool Original_arhiv, 
                     string Original_prim, 
                     string Original_f_code_address, 
                     string Original_u_code_address, 
@@ -28646,12 +28411,8 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string Original_update_user, 
                     global::System.Nullable<global::System.DateTime> Original_update_date, 
                     global::System.Nullable<long> Original_EIS_OBJECT_ID, 
-                    string Original_FILIAL_CODE, 
                     string Original_website, 
-                    int Original_EGR_out, 
                     global::System.Nullable<global::System.DateTime> Original_EGR_outD, 
-                    System.Guid Original_GUID, 
-                    byte Original_to_fais, 
                     global::System.Nullable<int> Original_assignee) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_owner_id));
             if ((Original_own_name == null)) {
@@ -28838,297 +28599,285 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                 this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_bank_ks4));
             }
-            this.Adapter.DeleteCommand.Parameters[47].Value = ((bool)(Original_iscellular));
             if ((Original_tel_kod == null)) {
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((string)(Original_tel_kod));
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_tel_kod));
             }
             if ((Original_phone == null)) {
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((string)(Original_phone));
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_phone));
             }
             if ((Original_fax == null)) {
-                this.Adapter.DeleteCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[53].Value = ((string)(Original_fax));
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_fax));
             }
             if ((Original_mail == null)) {
-                this.Adapter.DeleteCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[55].Value = ((string)(Original_mail));
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_mail));
             }
-            this.Adapter.DeleteCommand.Parameters[56].Value = ((bool)(Original_licenz));
             if ((Original_licenz_nom == null)) {
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_licenz_nom));
+            }
+            if ((Original_licenz_work == null)) {
                 this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_licenz_nom));
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_licenz_work));
             }
-            if ((Original_licenz_work == null)) {
+            if ((Original_licenz_do.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((System.DateTime)(Original_licenz_do.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[60].Value = ((string)(Original_licenz_work));
-            }
-            if ((Original_licenz_do.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[62].Value = ((System.DateTime)(Original_licenz_do.Value));
-            }
-            else {
+            if ((Original_prim == null)) {
                 this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[63].Value = ((bool)(Original_arhiv));
-            if ((Original_prim == null)) {
-                this.Adapter.DeleteCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[65].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.DeleteCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[65].Value = ((string)(Original_prim));
+                this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[62].Value = ((string)(Original_prim));
             }
             if ((Original_f_code_address == null)) {
-                this.Adapter.DeleteCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[67].Value = ((string)(Original_f_code_address));
+                this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[64].Value = ((string)(Original_f_code_address));
             }
             if ((Original_u_code_address == null)) {
-                this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[69].Value = ((string)(Original_u_code_address));
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[66].Value = ((string)(Original_u_code_address));
             }
             if ((Original_kpp == null)) {
-                this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[71].Value = ((string)(Original_kpp));
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[68].Value = ((string)(Original_kpp));
             }
             if ((Original_allerts == null)) {
-                this.Adapter.DeleteCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[73].Value = ((string)(Original_allerts));
+                this.Adapter.DeleteCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[70].Value = ((string)(Original_allerts));
             }
             if ((Original_super_own.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[75].Value = ((int)(Original_super_own.Value));
+                this.Adapter.DeleteCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[72].Value = ((int)(Original_super_own.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             if ((Original_fio_ruc == null)) {
-                this.Adapter.DeleteCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[77].Value = ((string)(Original_fio_ruc));
+                this.Adapter.DeleteCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[74].Value = ((string)(Original_fio_ruc));
             }
             if ((Original_ogrn_num == null)) {
-                this.Adapter.DeleteCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[79].Value = ((string)(Original_ogrn_num));
+                this.Adapter.DeleteCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[76].Value = ((string)(Original_ogrn_num));
             }
             if ((Original_ogrn_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[81].Value = ((System.DateTime)(Original_ogrn_date.Value));
+                this.Adapter.DeleteCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[78].Value = ((System.DateTime)(Original_ogrn_date.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             if ((Original_PRN_RUSSIA.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[83].Value = ((short)(Original_PRN_RUSSIA.Value));
+                this.Adapter.DeleteCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[80].Value = ((short)(Original_PRN_RUSSIA.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             if ((Original_post_zip.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[85].Value = ((int)(Original_post_zip.Value));
+                this.Adapter.DeleteCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[82].Value = ((int)(Original_post_zip.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             if ((Original_post_code_address == null)) {
-                this.Adapter.DeleteCommand.Parameters[86].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[86].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[87].Value = ((string)(Original_post_code_address));
+                this.Adapter.DeleteCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[84].Value = ((string)(Original_post_code_address));
             }
             if ((Original_post_flat == null)) {
-                this.Adapter.DeleteCommand.Parameters[88].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[88].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[89].Value = ((string)(Original_post_flat));
+                this.Adapter.DeleteCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[86].Value = ((string)(Original_post_flat));
             }
             if ((Original_adress_string_customer == null)) {
-                this.Adapter.DeleteCommand.Parameters[90].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[91].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[88].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[90].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[91].Value = ((string)(Original_adress_string_customer));
+                this.Adapter.DeleteCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[88].Value = ((string)(Original_adress_string_customer));
             }
             if ((Original_adress_string_cargo == null)) {
-                this.Adapter.DeleteCommand.Parameters[92].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[93].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[92].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[93].Value = ((string)(Original_adress_string_cargo));
+                this.Adapter.DeleteCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[90].Value = ((string)(Original_adress_string_cargo));
             }
             if ((Original_chiefNameForDoc == null)) {
-                this.Adapter.DeleteCommand.Parameters[94].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[95].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[91].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[92].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[94].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[95].Value = ((string)(Original_chiefNameForDoc));
+                this.Adapter.DeleteCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[92].Value = ((string)(Original_chiefNameForDoc));
             }
             if ((Original_chiefPositionForDoc == null)) {
-                this.Adapter.DeleteCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[93].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[94].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[97].Value = ((string)(Original_chiefPositionForDoc));
+                this.Adapter.DeleteCommand.Parameters[93].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[94].Value = ((string)(Original_chiefPositionForDoc));
             }
             if ((Original_ownerOrgDocType == null)) {
-                this.Adapter.DeleteCommand.Parameters[98].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[99].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[95].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[96].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[98].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[99].Value = ((string)(Original_ownerOrgDocType));
+                this.Adapter.DeleteCommand.Parameters[95].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[96].Value = ((string)(Original_ownerOrgDocType));
             }
             if ((Original_shortOwnName == null)) {
-                this.Adapter.DeleteCommand.Parameters[100].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[101].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[98].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[100].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[101].Value = ((string)(Original_shortOwnName));
+                this.Adapter.DeleteCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[98].Value = ((string)(Original_shortOwnName));
             }
             if ((Original_kurator == null)) {
-                this.Adapter.DeleteCommand.Parameters[102].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[103].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[100].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[102].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[103].Value = ((string)(Original_kurator));
+                this.Adapter.DeleteCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[100].Value = ((string)(Original_kurator));
             }
             if ((Original_create_user == null)) {
-                this.Adapter.DeleteCommand.Parameters[104].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[105].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[102].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[104].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[105].Value = ((string)(Original_create_user));
+                this.Adapter.DeleteCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[102].Value = ((string)(Original_create_user));
             }
             if ((Original_create_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[106].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[107].Value = ((System.DateTime)(Original_create_date.Value));
+                this.Adapter.DeleteCommand.Parameters[103].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[104].Value = ((System.DateTime)(Original_create_date.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[106].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[107].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[103].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[104].Value = global::System.DBNull.Value;
             }
             if ((Original_update_user == null)) {
-                this.Adapter.DeleteCommand.Parameters[108].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[109].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[105].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[106].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[108].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[109].Value = ((string)(Original_update_user));
+                this.Adapter.DeleteCommand.Parameters[105].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[106].Value = ((string)(Original_update_user));
             }
             if ((Original_update_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[110].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[111].Value = ((System.DateTime)(Original_update_date.Value));
+                this.Adapter.DeleteCommand.Parameters[107].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[108].Value = ((System.DateTime)(Original_update_date.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[110].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[111].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[107].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[108].Value = global::System.DBNull.Value;
             }
             if ((Original_EIS_OBJECT_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[112].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[113].Value = ((long)(Original_EIS_OBJECT_ID.Value));
+                this.Adapter.DeleteCommand.Parameters[109].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[110].Value = ((long)(Original_EIS_OBJECT_ID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[112].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[113].Value = global::System.DBNull.Value;
-            }
-            if ((Original_FILIAL_CODE == null)) {
-                throw new global::System.ArgumentNullException("Original_FILIAL_CODE");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[114].Value = ((string)(Original_FILIAL_CODE));
+                this.Adapter.DeleteCommand.Parameters[109].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[110].Value = global::System.DBNull.Value;
             }
             if ((Original_website == null)) {
+                this.Adapter.DeleteCommand.Parameters[111].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[112].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[111].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[112].Value = ((string)(Original_website));
+            }
+            if ((Original_EGR_outD.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[113].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[114].Value = ((System.DateTime)(Original_EGR_outD.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[113].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[114].Value = global::System.DBNull.Value;
+            }
+            if ((Original_assignee.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[115].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[116].Value = ((int)(Original_assignee.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[115].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[116].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[115].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[116].Value = ((string)(Original_website));
-            }
-            this.Adapter.DeleteCommand.Parameters[117].Value = ((int)(Original_EGR_out));
-            if ((Original_EGR_outD.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[118].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[119].Value = ((System.DateTime)(Original_EGR_outD.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[118].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[119].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[120].Value = ((System.Guid)(Original_GUID));
-            this.Adapter.DeleteCommand.Parameters[121].Value = ((byte)(Original_to_fais));
-            if ((Original_assignee.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[122].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[123].Value = ((int)(Original_assignee.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[122].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[123].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -29174,16 +28923,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string okohx, 
                     string kors4et, 
                     string bank_ks4, 
-                    bool iscellular, 
                     string tel_kod, 
                     string phone, 
                     string fax, 
                     string mail, 
-                    bool licenz, 
                     string licenz_nom, 
                     string licenz_work, 
                     global::System.Nullable<global::System.DateTime> licenz_do, 
-                    bool arhiv, 
                     string prim, 
                     string f_code_address, 
                     string u_code_address, 
@@ -29209,12 +28955,8 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string update_user, 
                     global::System.Nullable<global::System.DateTime> update_date, 
                     global::System.Nullable<long> EIS_OBJECT_ID, 
-                    string FILIAL_CODE, 
                     string website, 
-                    int EGR_out, 
                     global::System.Nullable<global::System.DateTime> EGR_outD, 
-                    System.Guid GUID, 
-                    byte to_fais, 
                     global::System.Nullable<int> assignee) {
             if ((own_name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -29354,227 +29096,215 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             else {
                 this.Adapter.InsertCommand.Parameters[22].Value = ((string)(bank_ks4));
             }
-            this.Adapter.InsertCommand.Parameters[23].Value = ((bool)(iscellular));
             if ((tel_kod == null)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(tel_kod));
+            }
+            if ((phone == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(tel_kod));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(phone));
             }
-            if ((phone == null)) {
+            if ((fax == null)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(phone));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(fax));
             }
-            if ((fax == null)) {
+            if ((mail == null)) {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(fax));
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(mail));
             }
-            if ((mail == null)) {
+            if ((licenz_nom == null)) {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(mail));
-            }
-            this.Adapter.InsertCommand.Parameters[28].Value = ((bool)(licenz));
-            if ((licenz_nom == null)) {
-                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(licenz_nom));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(licenz_nom));
             }
             if ((licenz_work == null)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(licenz_work));
+            }
+            if ((licenz_do.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((System.DateTime)(licenz_do.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((prim == null)) {
                 this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(licenz_work));
+                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(prim));
             }
-            if ((licenz_do.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((System.DateTime)(licenz_do.Value));
-            }
-            else {
+            if ((f_code_address == null)) {
                 this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[32].Value = ((bool)(arhiv));
-            if ((prim == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(f_code_address));
+            }
+            if ((u_code_address == null)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(u_code_address));
+            }
+            if ((kpp == null)) {
                 this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(prim));
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(kpp));
             }
-            if ((f_code_address == null)) {
+            if ((allerts == null)) {
                 this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(f_code_address));
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(allerts));
             }
-            if ((u_code_address == null)) {
-                this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
+            if ((super_own.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[35].Value = ((int)(super_own.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(u_code_address));
+                this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((kpp == null)) {
+            if ((fio_ruc == null)) {
                 this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(kpp));
+                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(fio_ruc));
             }
-            if ((allerts == null)) {
+            if ((ogrn_num == null)) {
                 this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(allerts));
+                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(ogrn_num));
             }
-            if ((super_own.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[38].Value = ((int)(super_own.Value));
+            if ((ogrn_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[38].Value = ((System.DateTime)(ogrn_date.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((fio_ruc == null)) {
+            if ((PRN_RUSSIA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[39].Value = ((short)(PRN_RUSSIA.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(fio_ruc));
+            if ((post_zip.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[40].Value = ((int)(post_zip.Value));
             }
-            if ((ogrn_num == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[40].Value = ((string)(ogrn_num));
-            }
-            if ((ogrn_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[41].Value = ((System.DateTime)(ogrn_date.Value));
-            }
-            else {
+            if ((post_code_address == null)) {
                 this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((PRN_RUSSIA.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[42].Value = ((short)(PRN_RUSSIA.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[41].Value = ((string)(post_code_address));
+            }
+            if ((post_flat == null)) {
                 this.Adapter.InsertCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((post_zip.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[43].Value = ((int)(post_zip.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[42].Value = ((string)(post_flat));
+            }
+            if ((adress_string_customer == null)) {
                 this.Adapter.InsertCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            if ((post_code_address == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(adress_string_customer));
+            }
+            if ((adress_string_cargo == null)) {
                 this.Adapter.InsertCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(post_code_address));
+                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(adress_string_cargo));
             }
-            if ((post_flat == null)) {
+            if ((chiefNameForDoc == null)) {
                 this.Adapter.InsertCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(post_flat));
+                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(chiefNameForDoc));
             }
-            if ((adress_string_customer == null)) {
+            if ((chiefPositionForDoc == null)) {
                 this.Adapter.InsertCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(adress_string_customer));
+                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(chiefPositionForDoc));
             }
-            if ((adress_string_cargo == null)) {
+            if ((ownerOrgDocType == null)) {
                 this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(adress_string_cargo));
+                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(ownerOrgDocType));
             }
-            if ((chiefNameForDoc == null)) {
+            if ((shortOwnName == null)) {
                 this.Adapter.InsertCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[48].Value = ((string)(chiefNameForDoc));
+                this.Adapter.InsertCommand.Parameters[48].Value = ((string)(shortOwnName));
             }
-            if ((chiefPositionForDoc == null)) {
+            if ((kurator == null)) {
                 this.Adapter.InsertCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[49].Value = ((string)(chiefPositionForDoc));
+                this.Adapter.InsertCommand.Parameters[49].Value = ((string)(kurator));
             }
-            if ((ownerOrgDocType == null)) {
+            if ((create_user == null)) {
                 this.Adapter.InsertCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[50].Value = ((string)(ownerOrgDocType));
+                this.Adapter.InsertCommand.Parameters[50].Value = ((string)(create_user));
             }
-            if ((shortOwnName == null)) {
-                this.Adapter.InsertCommand.Parameters[51].Value = global::System.DBNull.Value;
+            if ((create_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[51].Value = ((System.DateTime)(create_date.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[51].Value = ((string)(shortOwnName));
+                this.Adapter.InsertCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
-            if ((kurator == null)) {
+            if ((update_user == null)) {
                 this.Adapter.InsertCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[52].Value = ((string)(kurator));
+                this.Adapter.InsertCommand.Parameters[52].Value = ((string)(update_user));
             }
-            if ((create_user == null)) {
-                this.Adapter.InsertCommand.Parameters[53].Value = global::System.DBNull.Value;
+            if ((update_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[53].Value = ((System.DateTime)(update_date.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[53].Value = ((string)(create_user));
+                this.Adapter.InsertCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
-            if ((create_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[54].Value = ((System.DateTime)(create_date.Value));
+            if ((EIS_OBJECT_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[54].Value = ((long)(EIS_OBJECT_ID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
-            if ((update_user == null)) {
+            if ((website == null)) {
                 this.Adapter.InsertCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[55].Value = ((string)(update_user));
+                this.Adapter.InsertCommand.Parameters[55].Value = ((string)(website));
             }
-            if ((update_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[56].Value = ((System.DateTime)(update_date.Value));
+            if ((EGR_outD.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[56].Value = ((System.DateTime)(EGR_outD.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
-            if ((EIS_OBJECT_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[57].Value = ((long)(EIS_OBJECT_ID.Value));
+            if ((assignee.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[57].Value = ((int)(assignee.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[57].Value = global::System.DBNull.Value;
-            }
-            if ((FILIAL_CODE == null)) {
-                throw new global::System.ArgumentNullException("FILIAL_CODE");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[58].Value = ((string)(FILIAL_CODE));
-            }
-            if ((website == null)) {
-                this.Adapter.InsertCommand.Parameters[59].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[59].Value = ((string)(website));
-            }
-            this.Adapter.InsertCommand.Parameters[60].Value = ((int)(EGR_out));
-            if ((EGR_outD.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[61].Value = ((System.DateTime)(EGR_outD.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[61].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[62].Value = ((System.Guid)(GUID));
-            this.Adapter.InsertCommand.Parameters[63].Value = ((byte)(to_fais));
-            if ((assignee.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[64].Value = ((int)(assignee.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -29620,16 +29350,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string okohx, 
                     string kors4et, 
                     string bank_ks4, 
-                    bool iscellular, 
                     string tel_kod, 
                     string phone, 
                     string fax, 
                     string mail, 
-                    bool licenz, 
                     string licenz_nom, 
                     string licenz_work, 
                     global::System.Nullable<global::System.DateTime> licenz_do, 
-                    bool arhiv, 
                     string prim, 
                     string f_code_address, 
                     string u_code_address, 
@@ -29655,12 +29382,8 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string update_user, 
                     global::System.Nullable<global::System.DateTime> update_date, 
                     global::System.Nullable<long> EIS_OBJECT_ID, 
-                    string FILIAL_CODE, 
                     string website, 
-                    int EGR_out, 
                     global::System.Nullable<global::System.DateTime> EGR_outD, 
-                    System.Guid GUID, 
-                    byte to_fais, 
                     global::System.Nullable<int> assignee, 
                     int Original_owner_id, 
                     string Original_own_name, 
@@ -29686,16 +29409,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string Original_okohx, 
                     string Original_kors4et, 
                     string Original_bank_ks4, 
-                    bool Original_iscellular, 
                     string Original_tel_kod, 
                     string Original_phone, 
                     string Original_fax, 
                     string Original_mail, 
-                    bool Original_licenz, 
                     string Original_licenz_nom, 
                     string Original_licenz_work, 
                     global::System.Nullable<global::System.DateTime> Original_licenz_do, 
-                    bool Original_arhiv, 
                     string Original_prim, 
                     string Original_f_code_address, 
                     string Original_u_code_address, 
@@ -29721,12 +29441,8 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string Original_update_user, 
                     global::System.Nullable<global::System.DateTime> Original_update_date, 
                     global::System.Nullable<long> Original_EIS_OBJECT_ID, 
-                    string Original_FILIAL_CODE, 
                     string Original_website, 
-                    int Original_EGR_out, 
                     global::System.Nullable<global::System.DateTime> Original_EGR_outD, 
-                    System.Guid Original_GUID, 
-                    byte Original_to_fais, 
                     global::System.Nullable<int> Original_assignee, 
                     int owner_id) {
             if ((own_name == null)) {
@@ -29867,706 +29583,682 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(bank_ks4));
             }
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(iscellular));
             if ((tel_kod == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(tel_kod));
+            }
+            if ((phone == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(tel_kod));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(phone));
             }
-            if ((phone == null)) {
+            if ((fax == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(phone));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(fax));
             }
-            if ((fax == null)) {
+            if ((mail == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(fax));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(mail));
             }
-            if ((mail == null)) {
+            if ((licenz_nom == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(mail));
-            }
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((bool)(licenz));
-            if ((licenz_nom == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(licenz_nom));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(licenz_nom));
             }
             if ((licenz_work == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(licenz_work));
+            }
+            if ((licenz_do.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(licenz_do.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((prim == null)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(licenz_work));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(prim));
             }
-            if ((licenz_do.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(licenz_do.Value));
-            }
-            else {
+            if ((f_code_address == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((bool)(arhiv));
-            if ((prim == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(f_code_address));
+            }
+            if ((u_code_address == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(u_code_address));
+            }
+            if ((kpp == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(prim));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(kpp));
             }
-            if ((f_code_address == null)) {
+            if ((allerts == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(f_code_address));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(allerts));
             }
-            if ((u_code_address == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            if ((super_own.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(super_own.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(u_code_address));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((kpp == null)) {
+            if ((fio_ruc == null)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(kpp));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(fio_ruc));
             }
-            if ((allerts == null)) {
+            if ((ogrn_num == null)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(allerts));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(ogrn_num));
             }
-            if ((super_own.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(super_own.Value));
+            if ((ogrn_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(ogrn_date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((fio_ruc == null)) {
+            if ((PRN_RUSSIA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((short)(PRN_RUSSIA.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(fio_ruc));
+            if ((post_zip.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(post_zip.Value));
             }
-            if ((ogrn_num == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(ogrn_num));
-            }
-            if ((ogrn_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((System.DateTime)(ogrn_date.Value));
-            }
-            else {
+            if ((post_code_address == null)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((PRN_RUSSIA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((short)(PRN_RUSSIA.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(post_code_address));
+            }
+            if ((post_flat == null)) {
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((post_zip.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(post_zip.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(post_flat));
+            }
+            if ((adress_string_customer == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            if ((post_code_address == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(adress_string_customer));
+            }
+            if ((adress_string_cargo == null)) {
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(post_code_address));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(adress_string_cargo));
             }
-            if ((post_flat == null)) {
+            if ((chiefNameForDoc == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(post_flat));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(chiefNameForDoc));
             }
-            if ((adress_string_customer == null)) {
+            if ((chiefPositionForDoc == null)) {
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(adress_string_customer));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(chiefPositionForDoc));
             }
-            if ((adress_string_cargo == null)) {
+            if ((ownerOrgDocType == null)) {
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(adress_string_cargo));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(ownerOrgDocType));
             }
-            if ((chiefNameForDoc == null)) {
+            if ((shortOwnName == null)) {
                 this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(chiefNameForDoc));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(shortOwnName));
             }
-            if ((chiefPositionForDoc == null)) {
+            if ((kurator == null)) {
                 this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(chiefPositionForDoc));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(kurator));
             }
-            if ((ownerOrgDocType == null)) {
+            if ((create_user == null)) {
                 this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(ownerOrgDocType));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(create_user));
             }
-            if ((shortOwnName == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            if ((create_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((System.DateTime)(create_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(shortOwnName));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
-            if ((kurator == null)) {
+            if ((update_user == null)) {
                 this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(kurator));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(update_user));
             }
-            if ((create_user == null)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            if ((update_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((System.DateTime)(update_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(create_user));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
-            if ((create_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((System.DateTime)(create_date.Value));
+            if ((EIS_OBJECT_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((long)(EIS_OBJECT_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
-            if ((update_user == null)) {
+            if ((website == null)) {
                 this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(update_user));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(website));
             }
-            if ((update_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((System.DateTime)(update_date.Value));
+            if ((EGR_outD.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((System.DateTime)(EGR_outD.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
-            if ((EIS_OBJECT_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((long)(EIS_OBJECT_ID.Value));
+            if ((assignee.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(assignee.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
-            if ((FILIAL_CODE == null)) {
-                throw new global::System.ArgumentNullException("FILIAL_CODE");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(FILIAL_CODE));
-            }
-            if ((website == null)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(website));
-            }
-            this.Adapter.UpdateCommand.Parameters[60].Value = ((int)(EGR_out));
-            if ((EGR_outD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((System.DateTime)(EGR_outD.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[62].Value = ((System.Guid)(GUID));
-            this.Adapter.UpdateCommand.Parameters[63].Value = ((byte)(to_fais));
-            if ((assignee.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((int)(assignee.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[65].Value = ((int)(Original_owner_id));
+            this.Adapter.UpdateCommand.Parameters[58].Value = ((int)(Original_owner_id));
             if ((Original_own_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_own_name));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_own_name));
             }
             if ((Original_own_flat == null)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_own_flat));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_own_flat));
             }
             if ((Original_own_inn == null)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_own_inn));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_own_inn));
             }
             if ((Original_own_zip.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((int)(Original_own_zip.Value));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((int)(Original_own_zip.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             if ((Original_departm_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((string)(Original_departm_name));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_departm_name));
             }
             if ((Original_departm == null)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(Original_departm));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_departm));
             }
             if ((Original_ownertyp_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(Original_ownertyp_name));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_ownertyp_name));
             }
             if ((Original_ownertyp == null)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((string)(Original_ownertyp));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_ownertyp));
             }
             if ((Original_pred_typ == null)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(Original_pred_typ));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_pred_typ));
             }
             if ((Original_n_dela == null)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(Original_n_dela));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_n_dela));
             }
             if ((Original_fact_flat == null)) {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((string)(Original_fact_flat));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_fact_flat));
             }
             if ((Original_fact_zip.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(Original_fact_zip.Value));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((int)(Original_fact_zip.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             if ((Original_n_dog_fr == null)) {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((string)(Original_n_dog_fr));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_n_dog_fr));
             }
             if ((Original_d_startd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((System.DateTime)(Original_d_startd.Value));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((System.DateTime)(Original_d_startd.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             if ((Original_d_endd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((System.DateTime)(Original_d_endd.Value));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((System.DateTime)(Original_d_endd.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
             }
             if ((Original_fio_otv == null)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((string)(Original_fio_otv));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((string)(Original_fio_otv));
             }
             if ((Original_buhphone == null)) {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[99].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((string)(Original_buhphone));
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((string)(Original_buhphone));
             }
             if ((Original_ras4et == null)) {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[101].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((string)(Original_ras4et));
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((string)(Original_ras4et));
             }
             if ((Original_bank == null)) {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[103].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((string)(Original_bank));
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((string)(Original_bank));
             }
             if ((Original_okpo == null)) {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[105].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((string)(Original_okpo));
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((string)(Original_okpo));
             }
             if ((Original_okohx == null)) {
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[107].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((string)(Original_okohx));
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((string)(Original_okohx));
             }
             if ((Original_kors4et == null)) {
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[109].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[109].Value = ((string)(Original_kors4et));
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((string)(Original_kors4et));
             }
             if ((Original_bank_ks4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[111].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[104].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[111].Value = ((string)(Original_bank_ks4));
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((string)(Original_bank_ks4));
             }
-            this.Adapter.UpdateCommand.Parameters[112].Value = ((bool)(Original_iscellular));
             if ((Original_tel_kod == null)) {
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((string)(Original_tel_kod));
+            }
+            if ((Original_phone == null)) {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((string)(Original_phone));
+            }
+            if ((Original_fax == null)) {
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[110].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[110].Value = ((string)(Original_fax));
+            }
+            if ((Original_mail == null)) {
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[112].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[112].Value = ((string)(Original_mail));
+            }
+            if ((Original_licenz_nom == null)) {
                 this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[114].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[114].Value = ((string)(Original_tel_kod));
+                this.Adapter.UpdateCommand.Parameters[114].Value = ((string)(Original_licenz_nom));
             }
-            if ((Original_phone == null)) {
+            if ((Original_licenz_work == null)) {
                 this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[116].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((string)(Original_phone));
+                this.Adapter.UpdateCommand.Parameters[116].Value = ((string)(Original_licenz_work));
             }
-            if ((Original_fax == null)) {
+            if ((Original_licenz_do.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[118].Value = ((System.DateTime)(Original_licenz_do.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[118].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((string)(Original_fax));
-            }
-            if ((Original_mail == null)) {
+            if ((Original_prim == null)) {
                 this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[120].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((string)(Original_mail));
+                this.Adapter.UpdateCommand.Parameters[120].Value = ((string)(Original_prim));
             }
-            this.Adapter.UpdateCommand.Parameters[121].Value = ((bool)(Original_licenz));
-            if ((Original_licenz_nom == null)) {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[123].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[123].Value = ((string)(Original_licenz_nom));
-            }
-            if ((Original_licenz_work == null)) {
-                this.Adapter.UpdateCommand.Parameters[124].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[125].Value = global::System.DBNull.Value;
+            if ((Original_f_code_address == null)) {
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[122].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[124].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[125].Value = ((string)(Original_licenz_work));
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[122].Value = ((string)(Original_f_code_address));
             }
-            if ((Original_licenz_do.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[126].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[127].Value = ((System.DateTime)(Original_licenz_do.Value));
+            if ((Original_u_code_address == null)) {
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[124].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[126].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[127].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[124].Value = ((string)(Original_u_code_address));
             }
-            this.Adapter.UpdateCommand.Parameters[128].Value = ((bool)(Original_arhiv));
-            if ((Original_prim == null)) {
+            if ((Original_kpp == null)) {
+                this.Adapter.UpdateCommand.Parameters[125].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[126].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[125].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[126].Value = ((string)(Original_kpp));
+            }
+            if ((Original_allerts == null)) {
+                this.Adapter.UpdateCommand.Parameters[127].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[128].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[127].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[128].Value = ((string)(Original_allerts));
+            }
+            if ((Original_super_own.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[130].Value = ((int)(Original_super_own.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[130].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[130].Value = ((string)(Original_prim));
-            }
-            if ((Original_f_code_address == null)) {
+            if ((Original_fio_ruc == null)) {
                 this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[132].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[132].Value = ((string)(Original_f_code_address));
+                this.Adapter.UpdateCommand.Parameters[132].Value = ((string)(Original_fio_ruc));
             }
-            if ((Original_u_code_address == null)) {
+            if ((Original_ogrn_num == null)) {
                 this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[134].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[134].Value = ((string)(Original_u_code_address));
+                this.Adapter.UpdateCommand.Parameters[134].Value = ((string)(Original_ogrn_num));
             }
-            if ((Original_kpp == null)) {
+            if ((Original_ogrn_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[136].Value = ((System.DateTime)(Original_ogrn_date.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[136].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[136].Value = ((string)(Original_kpp));
+            if ((Original_PRN_RUSSIA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[138].Value = ((short)(Original_PRN_RUSSIA.Value));
             }
-            if ((Original_allerts == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[138].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[138].Value = ((string)(Original_allerts));
-            }
-            if ((Original_super_own.HasValue == true)) {
+            if ((Original_post_zip.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[140].Value = ((int)(Original_super_own.Value));
+                this.Adapter.UpdateCommand.Parameters[140].Value = ((int)(Original_post_zip.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[140].Value = global::System.DBNull.Value;
             }
-            if ((Original_fio_ruc == null)) {
+            if ((Original_post_code_address == null)) {
                 this.Adapter.UpdateCommand.Parameters[141].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[142].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[141].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[142].Value = ((string)(Original_fio_ruc));
+                this.Adapter.UpdateCommand.Parameters[142].Value = ((string)(Original_post_code_address));
             }
-            if ((Original_ogrn_num == null)) {
+            if ((Original_post_flat == null)) {
                 this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[144].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[144].Value = ((string)(Original_ogrn_num));
+                this.Adapter.UpdateCommand.Parameters[144].Value = ((string)(Original_post_flat));
             }
-            if ((Original_ogrn_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[146].Value = ((System.DateTime)(Original_ogrn_date.Value));
-            }
-            else {
+            if ((Original_adress_string_customer == null)) {
                 this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[146].Value = global::System.DBNull.Value;
             }
-            if ((Original_PRN_RUSSIA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[147].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[148].Value = ((short)(Original_PRN_RUSSIA.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[145].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[146].Value = ((string)(Original_adress_string_customer));
+            }
+            if ((Original_adress_string_cargo == null)) {
                 this.Adapter.UpdateCommand.Parameters[147].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[148].Value = global::System.DBNull.Value;
             }
-            if ((Original_post_zip.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[149].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[150].Value = ((int)(Original_post_zip.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[147].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[148].Value = ((string)(Original_adress_string_cargo));
+            }
+            if ((Original_chiefNameForDoc == null)) {
                 this.Adapter.UpdateCommand.Parameters[149].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[150].Value = global::System.DBNull.Value;
             }
-            if ((Original_post_code_address == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[149].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[150].Value = ((string)(Original_chiefNameForDoc));
+            }
+            if ((Original_chiefPositionForDoc == null)) {
                 this.Adapter.UpdateCommand.Parameters[151].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[152].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[151].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[152].Value = ((string)(Original_post_code_address));
+                this.Adapter.UpdateCommand.Parameters[152].Value = ((string)(Original_chiefPositionForDoc));
             }
-            if ((Original_post_flat == null)) {
+            if ((Original_ownerOrgDocType == null)) {
                 this.Adapter.UpdateCommand.Parameters[153].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[154].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[153].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[154].Value = ((string)(Original_post_flat));
+                this.Adapter.UpdateCommand.Parameters[154].Value = ((string)(Original_ownerOrgDocType));
             }
-            if ((Original_adress_string_customer == null)) {
+            if ((Original_shortOwnName == null)) {
                 this.Adapter.UpdateCommand.Parameters[155].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[156].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[155].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[156].Value = ((string)(Original_adress_string_customer));
+                this.Adapter.UpdateCommand.Parameters[156].Value = ((string)(Original_shortOwnName));
             }
-            if ((Original_adress_string_cargo == null)) {
+            if ((Original_kurator == null)) {
                 this.Adapter.UpdateCommand.Parameters[157].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[158].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[157].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[158].Value = ((string)(Original_adress_string_cargo));
+                this.Adapter.UpdateCommand.Parameters[158].Value = ((string)(Original_kurator));
             }
-            if ((Original_chiefNameForDoc == null)) {
+            if ((Original_create_user == null)) {
                 this.Adapter.UpdateCommand.Parameters[159].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[160].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[159].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[160].Value = ((string)(Original_chiefNameForDoc));
+                this.Adapter.UpdateCommand.Parameters[160].Value = ((string)(Original_create_user));
             }
-            if ((Original_chiefPositionForDoc == null)) {
+            if ((Original_create_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[161].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[162].Value = ((System.DateTime)(Original_create_date.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[161].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[162].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[161].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[162].Value = ((string)(Original_chiefPositionForDoc));
-            }
-            if ((Original_ownerOrgDocType == null)) {
+            if ((Original_update_user == null)) {
                 this.Adapter.UpdateCommand.Parameters[163].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[164].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[163].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[164].Value = ((string)(Original_ownerOrgDocType));
+                this.Adapter.UpdateCommand.Parameters[164].Value = ((string)(Original_update_user));
             }
-            if ((Original_shortOwnName == null)) {
+            if ((Original_update_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[165].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[166].Value = ((System.DateTime)(Original_update_date.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[165].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[166].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[165].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[166].Value = ((string)(Original_shortOwnName));
+            if ((Original_EIS_OBJECT_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[168].Value = ((long)(Original_EIS_OBJECT_ID.Value));
             }
-            if ((Original_kurator == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[168].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[167].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[168].Value = ((string)(Original_kurator));
-            }
-            if ((Original_create_user == null)) {
+            if ((Original_website == null)) {
                 this.Adapter.UpdateCommand.Parameters[169].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[170].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[169].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[170].Value = ((string)(Original_create_user));
+                this.Adapter.UpdateCommand.Parameters[170].Value = ((string)(Original_website));
             }
-            if ((Original_create_date.HasValue == true)) {
+            if ((Original_EGR_outD.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[171].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[172].Value = ((System.DateTime)(Original_create_date.Value));
+                this.Adapter.UpdateCommand.Parameters[172].Value = ((System.DateTime)(Original_EGR_outD.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[171].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[172].Value = global::System.DBNull.Value;
             }
-            if ((Original_update_user == null)) {
+            if ((Original_assignee.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[173].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[174].Value = ((int)(Original_assignee.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[173].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[174].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[173].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[174].Value = ((string)(Original_update_user));
-            }
-            if ((Original_update_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[175].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[176].Value = ((System.DateTime)(Original_update_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[175].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[176].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EIS_OBJECT_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[177].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[178].Value = ((long)(Original_EIS_OBJECT_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[177].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[178].Value = global::System.DBNull.Value;
-            }
-            if ((Original_FILIAL_CODE == null)) {
-                throw new global::System.ArgumentNullException("Original_FILIAL_CODE");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[179].Value = ((string)(Original_FILIAL_CODE));
-            }
-            if ((Original_website == null)) {
-                this.Adapter.UpdateCommand.Parameters[180].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[181].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[180].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[181].Value = ((string)(Original_website));
-            }
-            this.Adapter.UpdateCommand.Parameters[182].Value = ((int)(Original_EGR_out));
-            if ((Original_EGR_outD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[183].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[184].Value = ((System.DateTime)(Original_EGR_outD.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[183].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[184].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[185].Value = ((System.Guid)(Original_GUID));
-            this.Adapter.UpdateCommand.Parameters[186].Value = ((byte)(Original_to_fais));
-            if ((Original_assignee.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[187].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[188].Value = ((int)(Original_assignee.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[187].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[188].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[189].Value = ((int)(owner_id));
+            this.Adapter.UpdateCommand.Parameters[175].Value = ((int)(owner_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -30611,16 +30303,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string okohx, 
                     string kors4et, 
                     string bank_ks4, 
-                    bool iscellular, 
                     string tel_kod, 
                     string phone, 
                     string fax, 
                     string mail, 
-                    bool licenz, 
                     string licenz_nom, 
                     string licenz_work, 
                     global::System.Nullable<global::System.DateTime> licenz_do, 
-                    bool arhiv, 
                     string prim, 
                     string f_code_address, 
                     string u_code_address, 
@@ -30646,12 +30335,8 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string update_user, 
                     global::System.Nullable<global::System.DateTime> update_date, 
                     global::System.Nullable<long> EIS_OBJECT_ID, 
-                    string FILIAL_CODE, 
                     string website, 
-                    int EGR_out, 
                     global::System.Nullable<global::System.DateTime> EGR_outD, 
-                    System.Guid GUID, 
-                    byte to_fais, 
                     global::System.Nullable<int> assignee, 
                     int Original_owner_id, 
                     string Original_own_name, 
@@ -30677,16 +30362,13 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string Original_okohx, 
                     string Original_kors4et, 
                     string Original_bank_ks4, 
-                    bool Original_iscellular, 
                     string Original_tel_kod, 
                     string Original_phone, 
                     string Original_fax, 
                     string Original_mail, 
-                    bool Original_licenz, 
                     string Original_licenz_nom, 
                     string Original_licenz_work, 
                     global::System.Nullable<global::System.DateTime> Original_licenz_do, 
-                    bool Original_arhiv, 
                     string Original_prim, 
                     string Original_f_code_address, 
                     string Original_u_code_address, 
@@ -30712,14 +30394,10 @@ SELECT frset_sites_id, sogl_id, site_id, mobile, prim, dev_types_id, space_stati
                     string Original_update_user, 
                     global::System.Nullable<global::System.DateTime> Original_update_date, 
                     global::System.Nullable<long> Original_EIS_OBJECT_ID, 
-                    string Original_FILIAL_CODE, 
                     string Original_website, 
-                    int Original_EGR_out, 
                     global::System.Nullable<global::System.DateTime> Original_EGR_outD, 
-                    System.Guid Original_GUID, 
-                    byte Original_to_fais, 
                     global::System.Nullable<int> Original_assignee) {
-            return this.Update(own_name, own_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pred_typ, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv, buhphone, ras4et, bank, okpo, okohx, kors4et, bank_ks4, iscellular, tel_kod, phone, fax, mail, licenz, licenz_nom, licenz_work, licenz_do, arhiv, prim, f_code_address, u_code_address, kpp, allerts, super_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, post_zip, post_code_address, post_flat, adress_string_customer, adress_string_cargo, chiefNameForDoc, chiefPositionForDoc, ownerOrgDocType, shortOwnName, kurator, create_user, create_date, update_user, update_date, EIS_OBJECT_ID, FILIAL_CODE, website, EGR_out, EGR_outD, GUID, to_fais, assignee, Original_owner_id, Original_own_name, Original_own_flat, Original_own_inn, Original_own_zip, Original_departm_name, Original_departm, Original_ownertyp_name, Original_ownertyp, Original_pred_typ, Original_n_dela, Original_fact_flat, Original_fact_zip, Original_n_dog_fr, Original_d_startd, Original_d_endd, Original_fio_otv, Original_buhphone, Original_ras4et, Original_bank, Original_okpo, Original_okohx, Original_kors4et, Original_bank_ks4, Original_iscellular, Original_tel_kod, Original_phone, Original_fax, Original_mail, Original_licenz, Original_licenz_nom, Original_licenz_work, Original_licenz_do, Original_arhiv, Original_prim, Original_f_code_address, Original_u_code_address, Original_kpp, Original_allerts, Original_super_own, Original_fio_ruc, Original_ogrn_num, Original_ogrn_date, Original_PRN_RUSSIA, Original_post_zip, Original_post_code_address, Original_post_flat, Original_adress_string_customer, Original_adress_string_cargo, Original_chiefNameForDoc, Original_chiefPositionForDoc, Original_ownerOrgDocType, Original_shortOwnName, Original_kurator, Original_create_user, Original_create_date, Original_update_user, Original_update_date, Original_EIS_OBJECT_ID, Original_FILIAL_CODE, Original_website, Original_EGR_out, Original_EGR_outD, Original_GUID, Original_to_fais, Original_assignee, Original_owner_id);
+            return this.Update(own_name, own_flat, own_inn, own_zip, departm_name, departm, ownertyp_name, ownertyp, pred_typ, n_dela, fact_flat, fact_zip, n_dog_fr, d_startd, d_endd, fio_otv, buhphone, ras4et, bank, okpo, okohx, kors4et, bank_ks4, tel_kod, phone, fax, mail, licenz_nom, licenz_work, licenz_do, prim, f_code_address, u_code_address, kpp, allerts, super_own, fio_ruc, ogrn_num, ogrn_date, PRN_RUSSIA, post_zip, post_code_address, post_flat, adress_string_customer, adress_string_cargo, chiefNameForDoc, chiefPositionForDoc, ownerOrgDocType, shortOwnName, kurator, create_user, create_date, update_user, update_date, EIS_OBJECT_ID, website, EGR_outD, assignee, Original_owner_id, Original_own_name, Original_own_flat, Original_own_inn, Original_own_zip, Original_departm_name, Original_departm, Original_ownertyp_name, Original_ownertyp, Original_pred_typ, Original_n_dela, Original_fact_flat, Original_fact_zip, Original_n_dog_fr, Original_d_startd, Original_d_endd, Original_fio_otv, Original_buhphone, Original_ras4et, Original_bank, Original_okpo, Original_okohx, Original_kors4et, Original_bank_ks4, Original_tel_kod, Original_phone, Original_fax, Original_mail, Original_licenz_nom, Original_licenz_work, Original_licenz_do, Original_prim, Original_f_code_address, Original_u_code_address, Original_kpp, Original_allerts, Original_super_own, Original_fio_ruc, Original_ogrn_num, Original_ogrn_date, Original_PRN_RUSSIA, Original_post_zip, Original_post_code_address, Original_post_flat, Original_adress_string_customer, Original_adress_string_cargo, Original_chiefNameForDoc, Original_chiefPositionForDoc, Original_ownerOrgDocType, Original_shortOwnName, Original_kurator, Original_create_user, Original_create_date, Original_update_user, Original_update_date, Original_EIS_OBJECT_ID, Original_website, Original_EGR_outD, Original_assignee, Original_owner_id);
         }
     }
     

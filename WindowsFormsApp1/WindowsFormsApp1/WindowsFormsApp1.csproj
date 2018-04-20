@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentEdit.Designer.cs">
+      <DependentUpon>AgentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataProcessing.Designer.cs">
+      <DependentUpon>DataProcessing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +77,20 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentDataSet.cs">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StudentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgentEdit.resx">
+      <DependentUpon>AgentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataProcessing.resx">
+      <DependentUpon>DataProcessing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
