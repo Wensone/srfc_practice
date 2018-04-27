@@ -81,6 +81,13 @@ namespace WindowsFormsApp1
 
         private void agents_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            filter_set.Tables["station"].Rows.Clear();
+            filter_set.Tables["freq"].Rows.Clear();
+            filter_set.Tables["freq_ant_inf"].Rows.Clear();
+            filter_set.Tables["soglas"].Rows.Clear();
+            filter_set.Tables["frset_sites"].Rows.Clear();
+            filter_set.Tables["frset_freqs"].Rows.Clear();
+            filter_set.Tables["frset_ant_inf"].Rows.Clear();
             load_agent();
             this.rich_res_tab_SelectedIndexChanged(sender, e);
         }
@@ -182,7 +189,8 @@ namespace WindowsFormsApp1
         private void agent_add_button_Click(object sender, EventArgs e)
         {
             DataProcessing dp = new DataProcessing(agents);
-            dp.Show();
+            dp.ShowDialog();
+            ownersTableAdapter.Fill(studentDataSet.owners);
         }
 
         private void agent_edit_button_Click(object sender, EventArgs e)
@@ -190,12 +198,14 @@ namespace WindowsFormsApp1
             AgentEdit edit_window = new AgentEdit(agents, agent_information.CurrentRow);
             edit_window.ShowDialog();
             load_agent();
+            ownersTableAdapter.Fill(studentDataSet.owners);
         }
 
         private void agent_delete_button_Click(object sender, EventArgs e)
         {
             SqlCommand delete_command = new SqlCommand("DELETE FROM dbo.owners WHERE own_name = '" + agents.SelectedNode.Text + "';", connection);
             delete_command.ExecuteNonQuery();
+            agents.SelectedNode.Remove();
         }
     }
 }

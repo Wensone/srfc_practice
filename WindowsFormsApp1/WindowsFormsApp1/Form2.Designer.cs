@@ -102,7 +102,9 @@
             this.agent_information.AllowUserToDeleteRows = false;
             this.agent_information.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.agent_information.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.agent_information.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.agent_information.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.agent_information.Location = new System.Drawing.Point(189, 13);
             this.agent_information.Name = "agent_information";
             this.agent_information.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -153,7 +155,9 @@
             // 
             this.ant_information.AllowUserToAddRows = false;
             this.ant_information.AllowUserToDeleteRows = false;
+            this.ant_information.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.ant_information.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ant_information.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.ant_information.Location = new System.Drawing.Point(0, 342);
             this.ant_information.Name = "ant_information";
             this.ant_information.ReadOnly = true;
@@ -165,7 +169,9 @@
             // 
             this.freq_information.AllowUserToAddRows = false;
             this.freq_information.AllowUserToDeleteRows = false;
+            this.freq_information.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.freq_information.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.freq_information.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.freq_information.Location = new System.Drawing.Point(0, 187);
             this.freq_information.Name = "freq_information";
             this.freq_information.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -197,7 +203,9 @@
             // 
             this.station_information.AllowUserToAddRows = false;
             this.station_information.AllowUserToDeleteRows = false;
+            this.station_information.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.station_information.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.station_information.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.station_information.Location = new System.Drawing.Point(0, 44);
             this.station_information.Name = "station_information";
             this.station_information.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -223,7 +231,9 @@
             // 
             this.ant_inf_grid.AllowUserToAddRows = false;
             this.ant_inf_grid.AllowUserToDeleteRows = false;
+            this.ant_inf_grid.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.ant_inf_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ant_inf_grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.ant_inf_grid.Location = new System.Drawing.Point(0, 393);
             this.ant_inf_grid.Name = "ant_inf_grid";
             this.ant_inf_grid.ReadOnly = true;
@@ -235,7 +245,9 @@
             // 
             this.frset_freqs_grid.AllowUserToAddRows = false;
             this.frset_freqs_grid.AllowUserToDeleteRows = false;
+            this.frset_freqs_grid.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.frset_freqs_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.frset_freqs_grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.frset_freqs_grid.Location = new System.Drawing.Point(0, 265);
             this.frset_freqs_grid.Name = "frset_freqs_grid";
             this.frset_freqs_grid.ReadOnly = true;
@@ -247,7 +259,9 @@
             // 
             this.frset_sites_grid.AllowUserToAddRows = false;
             this.frset_sites_grid.AllowUserToDeleteRows = false;
+            this.frset_sites_grid.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.frset_sites_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.frset_sites_grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.frset_sites_grid.Location = new System.Drawing.Point(0, 145);
             this.frset_sites_grid.Name = "frset_sites_grid";
             this.frset_sites_grid.ReadOnly = true;
@@ -260,7 +274,9 @@
             // 
             this.soglas_grid.AllowUserToAddRows = false;
             this.soglas_grid.AllowUserToDeleteRows = false;
+            this.soglas_grid.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.soglas_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.soglas_grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.soglas_grid.Location = new System.Drawing.Point(0, 24);
             this.soglas_grid.Name = "soglas_grid";
             this.soglas_grid.ReadOnly = true;
@@ -360,6 +376,7 @@
             // 
             // agent_add_button
             // 
+            this.agent_add_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.agent_add_button.Location = new System.Drawing.Point(13, 523);
             this.agent_add_button.Name = "agent_add_button";
             this.agent_add_button.Size = new System.Drawing.Size(170, 23);
@@ -370,6 +387,7 @@
             // 
             // agent_edit_button
             // 
+            this.agent_edit_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.agent_edit_button.Location = new System.Drawing.Point(13, 552);
             this.agent_edit_button.Name = "agent_edit_button";
             this.agent_edit_button.Size = new System.Drawing.Size(170, 23);

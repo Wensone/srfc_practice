@@ -22,16 +22,31 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String own_name         = this.textBox1.Text;
-            String own_inn          = this.textBox2.Text;
-            int own_zip             = Convert.ToInt32(this.textBox3.Text);
-            String ownertyp_name    = this.textBox4.Text;
-            String ownertyp         = this.textBox5.Text;
-            String pred_typ         = this.textBox6.Text;
-            String fio_otv          = this.textBox7.Text;
-            String buhphone         = this.textBox8.Text;
-
-            if(own_name.Equals("") || own_inn.Equals("") || own_zip < 0 || own_zip > 999999999 || ownertyp_name.Equals("") || ownertyp.Equals("") || pred_typ.Equals("") || fio_otv.Equals("") || buhphone.Equals(""))
+            String own_name;
+            String own_inn;
+            int own_zip;
+            String ownertyp_name;
+            String ownertyp;
+            String pred_typ;
+            String fio_otv;
+            String buhphone;
+            try
+            {
+               own_name = this.textBox1.Text;
+               own_inn = this.textBox2.Text;
+               own_zip = Convert.ToInt32(this.textBox3.Text);
+               ownertyp_name = this.textBox4.Text;
+               ownertyp = this.textBox5.Text;
+               pred_typ = this.textBox6.Text;
+               fio_otv = this.textBox7.Text;
+               buhphone = this.textBox8.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Заполните все поля", "Ошибка");
+                return;
+            }
+            if(own_name.Equals("") || own_inn.Equals("") || own_zip < 0 || own_zip > 999999 || ownertyp_name.Equals("") || ownertyp.Equals("") || pred_typ.Equals("") || fio_otv.Equals("") || buhphone.Equals(""))
             {
                 MessageBox.Show("Некоторые данные введены некорректно", "Ошибка ввода");
             }

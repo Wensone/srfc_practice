@@ -216,7 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DataProcessing";
-            this.Text = "DataProcessing";
+            this.Text = "Добавление контрагента";
             this.ResumeLayout(false);
             this.PerformLayout();
 
