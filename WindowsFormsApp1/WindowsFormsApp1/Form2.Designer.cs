@@ -45,6 +45,9 @@
             this.frset_sites_grid = new System.Windows.Forms.DataGridView();
             this.soglas_grid = new System.Windows.Forms.DataGridView();
             this.agent_delete_button = new System.Windows.Forms.Button();
+            this.agent_add_button = new System.Windows.Forms.Button();
+            this.agent_edit_button = new System.Windows.Forms.Button();
+            this.selectStationsOnMap = new System.Windows.Forms.Button();
             this.freqBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDataSet = new WindowsFormsApp1.StudentDataSet();
             this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,8 +65,6 @@
             this.frset_freqsTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_freqsTableAdapter();
             this.frsetantinfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.frset_ant_infTableAdapter = new WindowsFormsApp1.StudentDataSetTableAdapters.frset_ant_infTableAdapter();
-            this.agent_add_button = new System.Windows.Forms.Button();
-            this.agent_edit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.agent_information)).BeginInit();
             this.rich_res_tab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -297,6 +298,38 @@
             this.agent_delete_button.UseVisualStyleBackColor = true;
             this.agent_delete_button.Click += new System.EventHandler(this.agent_delete_button_Click);
             // 
+            // agent_add_button
+            // 
+            this.agent_add_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.agent_add_button.Location = new System.Drawing.Point(13, 523);
+            this.agent_add_button.Name = "agent_add_button";
+            this.agent_add_button.Size = new System.Drawing.Size(170, 23);
+            this.agent_add_button.TabIndex = 4;
+            this.agent_add_button.Text = "Добавить запись";
+            this.agent_add_button.UseVisualStyleBackColor = true;
+            this.agent_add_button.Click += new System.EventHandler(this.agent_add_button_Click);
+            // 
+            // agent_edit_button
+            // 
+            this.agent_edit_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.agent_edit_button.Location = new System.Drawing.Point(13, 552);
+            this.agent_edit_button.Name = "agent_edit_button";
+            this.agent_edit_button.Size = new System.Drawing.Size(170, 23);
+            this.agent_edit_button.TabIndex = 5;
+            this.agent_edit_button.Text = "Изменить запись";
+            this.agent_edit_button.UseVisualStyleBackColor = true;
+            this.agent_edit_button.Click += new System.EventHandler(this.agent_edit_button_Click);
+            // 
+            // selectStationsOnMap
+            // 
+            this.selectStationsOnMap.Location = new System.Drawing.Point(13, 617);
+            this.selectStationsOnMap.Name = "selectStationsOnMap";
+            this.selectStationsOnMap.Size = new System.Drawing.Size(170, 23);
+            this.selectStationsOnMap.TabIndex = 6;
+            this.selectStationsOnMap.Text = "Станции на карте";
+            this.selectStationsOnMap.UseVisualStyleBackColor = true;
+            this.selectStationsOnMap.Click += new System.EventHandler(this.selectStationsOnMap_Click);
+            // 
             // freqBindingSource
             // 
             this.freqBindingSource.DataMember = "freq";
@@ -374,33 +407,12 @@
             // 
             this.frset_ant_infTableAdapter.ClearBeforeFill = true;
             // 
-            // agent_add_button
-            // 
-            this.agent_add_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.agent_add_button.Location = new System.Drawing.Point(13, 523);
-            this.agent_add_button.Name = "agent_add_button";
-            this.agent_add_button.Size = new System.Drawing.Size(170, 23);
-            this.agent_add_button.TabIndex = 4;
-            this.agent_add_button.Text = "Добавить запись";
-            this.agent_add_button.UseVisualStyleBackColor = true;
-            this.agent_add_button.Click += new System.EventHandler(this.agent_add_button_Click);
-            // 
-            // agent_edit_button
-            // 
-            this.agent_edit_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.agent_edit_button.Location = new System.Drawing.Point(13, 552);
-            this.agent_edit_button.Name = "agent_edit_button";
-            this.agent_edit_button.Size = new System.Drawing.Size(170, 23);
-            this.agent_edit_button.TabIndex = 5;
-            this.agent_edit_button.Text = "Изменить запись";
-            this.agent_edit_button.UseVisualStyleBackColor = true;
-            this.agent_edit_button.Click += new System.EventHandler(this.agent_edit_button_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 645);
+            this.Controls.Add(this.selectStationsOnMap);
             this.Controls.Add(this.agent_edit_button);
             this.Controls.Add(this.agent_add_button);
             this.Controls.Add(this.agent_delete_button);
@@ -473,5 +485,6 @@
         private StudentDataSetTableAdapters.frset_ant_infTableAdapter frset_ant_infTableAdapter;
         private System.Windows.Forms.Button agent_add_button;
         private System.Windows.Forms.Button agent_edit_button;
+        private System.Windows.Forms.Button selectStationsOnMap;
     }
 }

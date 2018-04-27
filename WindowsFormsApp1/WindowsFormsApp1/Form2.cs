@@ -8,9 +8,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
+    public class ProcessedData
+    {
+        FileStream stream;
+        DataRow[][] data;
+        string path = @"C:\Users\manakov_pd\Source\Repos\srfc_practice\WindowsFormsApp1\WindowsFormsApp1\MAP3\geoJSON.js";
+        public ProcessedData(DataRow[][] rows)
+        {
+            stream = File.Open(path, FileMode.Create);
+            data = rows;
+            parse_db();
+        }
+
+        public void parse_db()
+        {
+            add_to_file("var points = { \"type\": \"FeatureCollection\",\"features\": [\n");
+            for (int i = 0; i < data.Count(); i++)
+            {
+                int id = Convert.ToInt32(data[i][0].ItemArray.GetValue(0));
+                int lathr = Convert.ToInt32(data[i][0].ItemArray.GetValue(6));
+                int longtr = Convert.ToInt32(data[i][0].ItemArray.GetValue(9));
+                string address = Convert.ToString(data[i][0].ItemArray.GetValue(20));
+                string ready_string = "{\"geometry\": {\"type\": \"Point\",\"coordinates\": [" +
+                    longtr + ", " + lathr +
+                    "]},\"type\": \"Feature\",\"properties\": {\"popupContent\": " +
+                    "\"" + address + "\"" +
+                    "},\"id\": " +
+                    id +
+                    "}" + (i == data.Count() - 1 ? "\n]};" : ",\n");
+
+                add_to_file(win_to_utf(ready_string));
+            }
+            stream.Close();
+        }
+
+        public string win_to_utf(string text)
+        {
+            Encoding utf8 = Encoding.GetEncoding("UTF-8");
+            Encoding win1251 = Encoding.GetEncoding("Windows-1251");
+
+            byte[] utf8Bytes = win1251.GetBytes(text);
+            byte[] win1251Bytes = Encoding.Convert(win1251, utf8, Encoding.Default.GetBytes(text));
+            return win1251.GetString(win1251Bytes);
+        }
+
+        public void add_to_file(string str)
+        {
+            stream.Write(Encoding.Default.GetBytes(str), 0, str.Length);
+        } 
+    }
     public partial class Form2 : Form
     {
         SqlConnection connection;
@@ -42,7 +92,16 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            SqlCommand select_sites = new SqlCommand("SELECT * FROM dbo.sites", connection);
+            SqlDataReader table = select_sites.ExecuteReader();
+            DataTable sites_table = new DataTable();
+            sites_table.Load(table);
+            sites_table.TableName = "sites";
+            studentDataSet.Tables.Add(sites_table);
+            studentDataSet.Relations.Add("FK_site_id", studentDataSet.Tables["station"].Columns["site_id"], 
+                studentDataSet.Tables["sites"].Columns["site_id"], false);
             filter_set = studentDataSet.Clone();
+
             ownersTableAdapter.Fill(studentDataSet.owners);
             stationTableAdapter.Fill(studentDataSet.station);
             freqTableAdapter.Fill(studentDataSet.freq);
@@ -137,6 +196,27 @@ namespace WindowsFormsApp1
             if (frset_sites_grid.Rows.Count != 0) frset_sites_grid.Rows[0].Selected = false;
         }
 
+        private DataRow[][] add_sites()
+        {
+
+            DataRow[][] sites;
+            DataRow[] owner = studentDataSet.Tables["owners"].Select("own_name = '" + agents.SelectedNode.Text + "'");
+            DataRow[] stations = owner[0].GetChildRows("FK_station_owners");
+            int count = 0;
+            for (; count < stations.Count(); count++)
+            {
+                string a = Convert.ToString(stations[count].ItemArray.GetValue(3));
+                if (a.Equals("")) break;
+            }
+            sites = new DataRow [count][];
+            for (int i = 0; i < count; i++)
+            {
+                string a = Convert.ToString(stations[i].ItemArray.GetValue(3));
+                if (!a.Equals("")) sites[i] = stations[i].GetChildRows("FK_site_id");
+            }
+            return sites;
+        }
+
         private void rich_res_tab_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRow[] owner = studentDataSet.Tables["owners"].Select("own_name = '" + agents.SelectedNode.Text + "'");
@@ -206,6 +286,20 @@ namespace WindowsFormsApp1
             SqlCommand delete_command = new SqlCommand("DELETE FROM dbo.owners WHERE own_name = '" + agents.SelectedNode.Text + "';", connection);
             delete_command.ExecuteNonQuery();
             agents.SelectedNode.Remove();
+        }
+
+        private void selectStationsOnMap_Click(object sender, EventArgs e)
+        {
+            DataRow[][] temp_sites = add_sites();
+
+            if (temp_sites.Count() == 0)
+            {
+                MessageBox.Show("Для этих станций не указана геолокация", "Еррор");
+                return;
+            }
+            ProcessedData data = new ProcessedData(temp_sites);
+            viewMapStaton vms = new viewMapStaton();
+            vms.Show();
         }
     }
 }

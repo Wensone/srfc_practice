@@ -1,0 +1,42 @@
+LPARAMETERS show_all
+LOCAL xmlFile,workDir,fileName,outPutStr
+
+repDir = SYS(5) + SYS(2003) + "\MAP3\"
+filename = repDir + "\geoJSON.js"
+
+outPutStr = 'var points = { "type": "FeatureCollection","features": [' + CHR(13) + CHR(10)
+STRTOFILE(outPutStr,fileName,4)
+outPutStr = ""
+
+IF show_all == 1
+	SELECT * FROM Res_Cursor WHERE lath > 0 AND !arhiv INTO CURSOR LATH_CUR
+	SELECT("LATH_CUR")	
+	IF RECCOUNT("LATH_CUR") > 0
+		GO TOP
+		SCAN
+			outPutStr = outPutStr + '{"geometry": {"type": "Point","coordinates": ['+ALLTRIM(STR(LATH_CUR.long,18,6))+', '+ALLTRIM(STR(LATH_CUR.lath,18,6))+']},"type": "Feature","properties": { "popupContent": "'+STRCONV(ALLTRIM(LATH_CUR.site_name),9)+'" },"id": '+ALLTRIM(STR(LATH_CUR.stat_id))+'},'  + CHR(13) + CHR(10)
+			*STRTOFILE(outPutStr,fileName,1)			
+		ENDSCAN
+		
+		outPutStr = LEFT(outPutStr,LEN(ALLTRIM(outPutStr)) - 3) + ' ]};'
+		STRTOFILE(outPutStr,fileName,1)
+		
+		DO FORM htmlviewer WITH repDir + "openStreet.html"
+	ELSE
+		MESSAGEBOX("Iao eii?aeiao!",16,"Aieiaiea...")
+		*FCLOSE(xmlFile)
+	ENDIF
+	SELECT("LATH_CUR")
+	USE
+ELSE
+	IF Res_Cursor.lath > 0
+		outPutStr =  outPutStr + '{"geometry": {"type": "Point","coordinates": ['+ALLTRIM(STR(Res_Cursor.long,18,6))+', '+ALLTRIM(STR(Res_Cursor.lath,18,6))+']},"type": "Feature","properties": { "popupContent": "'+STRCONV(ALLTRIM(Res_Cursor.site_name),9)+'" },"id": '+ALLTRIM(STR(Res_Cursor.stat_id))+'},' + CHR(13) + CHR(10)
+		outPutStr = LEFT(outPutStr,LEN(ALLTRIM(outPutStr)) - 1) + ' ]};'
+		STRTOFILE(outPutStr,fileName,4)
+
+		DO FORM htmlviewer WITH repDir + "openStreet.html"
+	ELSE
+		MESSAGEBOX("Iao eii?aeiao!",16,"Aieiaiea...")
+		*FCLOSE(xmlFile)
+	ENDIF
+ENDIF

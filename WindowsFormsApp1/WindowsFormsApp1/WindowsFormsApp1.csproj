@@ -63,9 +63,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form2.cs" />
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
@@ -84,6 +82,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="viewMapStaton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewMapStaton.Designer.cs">
+      <DependentUpon>viewMapStaton.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AgentEdit.resx">
       <DependentUpon>AgentEdit.cs</DependentUpon>
@@ -109,6 +113,10 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="viewMapStaton.resx">
+      <DependentUpon>viewMapStaton.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MAP3\debug.log" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,6 +140,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MAP3\code.txt" />
+    <Content Include="MAP3\geoJSON.js" />
+    <Content Include="MAP3\openStreet.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
